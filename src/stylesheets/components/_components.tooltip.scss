@@ -1,0 +1,74 @@
+.c-tooltip {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1;
+  margin-left: $sp-tiny;
+  cursor: pointer;
+
+  .c-tooltip__icon {
+    background-color: $grey-light;
+    border-radius: 50%;
+    display: block;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+    height: 22px;
+    padding: 5px;
+    text-align: center;
+    width: 22px;
+    // alignment update
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Tooltipser overrides - http://iamceege.github.io/tooltipster/#styling
+.tooltipster-sidetip.tooltipster-light.tooltipster-light-customized
+  .tooltipster-box {
+  background: $white;
+  border-radius: 6px;
+  max-width: 400px !important;
+  box-shadow: $global-box-shadow-tooltip;
+  font-weight: $font-weight-medium;
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-light-customized
+  .tooltipster-content {
+  @include spacing($sp-small, padding, all);
+  color: $grey;
+  line-height: 1.3;
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-bottom
+  .tooltipster-arrow-background {
+  border-bottom-color: $white;
+  top: 1px;
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-left
+  .tooltipster-arrow-background {
+  border-left-color: $white;
+  left: -1px;
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-right
+  .tooltipster-arrow-background {
+  border-right-color: $white;
+  left: 1px;
+}
+
+.tooltipster-sidetip.tooltipster-light.tooltipster-top
+  .tooltipster-arrow-background {
+  border-top-color: $white;
+  top: -1px;
+}
+
+// up date for cms content tooltips
+.s-cms-content {
+
+  .c-tooltip {
+    margin-left: 0;
+    margin-right: $sp-tiny;
+  }
+}

@@ -1,0 +1,51 @@
+.c-results-text {
+  text-align: center;
+
+  hr {
+    background-color: $grey-light;
+    border: none;
+    height: 1px;
+    margin: $sp-large 0;
+    width: 100%;
+  }
+
+  .c-results-text__intro {
+    @extend .u-font-p1-medium;
+  }
+
+  .c-results-text__price {
+    @extend .u-font-h5;
+    color: $blue;
+    margin-bottom: 0;
+    background: $grey-xlight;
+    padding: $sp-large;
+    border-radius: $global-button-radius;
+
+    span {
+      @extend .u-font-h1;
+      display: block;
+      margin-top: $sp-tiny;
+
+      @include mq($from: desktop) {
+        margin-bottom: -$sp-small;
+      }
+    }
+  }
+
+  .c-results-text__terms {
+    @extend .u-font-p1-medium;
+
+    small {
+      color: $grey;
+      display: block;
+      margin-top: -$sp-tiny;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &.c-results-text--bad-result {
+    .c-results-text__price {
+      color: $orange;
+    }
+  }
+}

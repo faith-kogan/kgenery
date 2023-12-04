@@ -1,0 +1,109 @@
+// counter
+.c-counter {
+	text-align: center;
+
+  .c-counter-box {
+  	color: $pink;
+  	background: $grey-xlight;
+  	padding: $sp-base $sp-xxlarge;
+  	border-radius: 4px;
+    @include sf-typography("h1");
+    font-size: $sp-huge;
+    max-width: 700px;
+    margin: auto;
+
+    &:after {
+    	content: " kWh";
+    	font-size: $sp-xlarge;
+    	display: block;
+
+    	@include mq($from: tablet) {
+    		display: inline-block;
+    		margin-left: $sp-base;
+    	}
+
+    	@include mq($from: desktop) {
+    		font-size: $sp-huge;
+    	}
+    }
+  }
+}
+
+// carousel
+.c-carousel--container h4 span a {
+	font-weight: $font-weight-base;
+}
+
+.c-carousel {
+	display: none;
+	padding-bottom: $sp-base;
+
+	// arrows
+	.slick-arrow.c-btn--carousel {
+		position: absolute;
+		top: 40%;
+		width: $sp-large;
+		height: $sp-large;
+		background: $white;
+		border-radius: 50%;
+		display: flex;
+		cursor: pointer;
+		opacity: .7;
+		z-index: 1;
+
+		&:hover {
+			opacity: 1;
+		}
+		
+		svg {
+			width: $sp-base;
+			height: $sp-base;
+			margin: auto;
+			fill: $pink;
+		}
+
+		&.c-btn--carousel-next {
+			right: 0;
+		}
+	}
+}
+
+// 2 column grid for video
+@supports (display: grid) {
+	@include mq($from: tablet) {
+		.c-grid--two-column {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: $sp-huge;
+		}
+	}
+}
+
+// instagram carousel
+.slick-initialized {
+	//margin-left: -$sp-tiny;
+
+	.slick-track {
+		left: -16px;
+	}
+
+	.slick-slide div {
+		margin: 0 $sp-base;
+	}
+}
+
+.c-carousel--card {
+	padding: $sp-base;
+	background: $white;
+	border: 1px solid $grey-light;
+	border-radius: 4px;
+	margin: $sp-base;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,40 @@
+.s-cms-content .c-badges,
+.c-badges {
+  //@include spacing($sp-base, padding, all);
+  //align-items: center;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  padding-bottom: 0 !important;
+
+  margin-bottom: $sp-large;
+
+  li {
+    //@include spacing($sp-tiny, padding, all);
+    margin-bottom: 0;
+    padding: 0;
+    padding-bottom: $sp-small;
+    list-style-type: none;
+
+    @include mq($from: tablet) {
+      padding: 0;
+      padding-right: $sp-small;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  img {
+    display: block;
+    margin: 0;
+    width: 160px;
+  }
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+}

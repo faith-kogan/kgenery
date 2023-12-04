@@ -1,0 +1,8 @@
+.c-search-form {
+  @include spacing($sp-medium);
+  max-width: $general-slim-width;
+
+  @include mq($from: tablet) {
+    @include spacing(5px, padding, top);
+  }
+}

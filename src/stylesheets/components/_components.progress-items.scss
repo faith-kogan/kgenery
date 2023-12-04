@@ -1,0 +1,92 @@
+.c-progress-items {
+  @include spacing($sp-base, margin, top);
+  @include spacing();
+  list-style: none;
+  margin-left: 0;
+
+  @include mq($from: tablet) {
+    display: flex;
+    width: 100%;
+  }
+
+  li {
+    flex-grow: 1;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      .c-progress-items__icon {
+        display: none;
+      }
+    }
+
+    @include mq($until: tablet) {
+      position: relative;
+      padding-bottom: $sp-xxlarge;
+      margin-bottom: $sp-xxlarge;
+    }
+
+    @include mq($from: desktop) {
+      width: 33.3%;
+    }
+  }
+
+  figure {
+    @include spacing($sp-small);
+
+    @include mq($until: tablet) {
+      max-width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include mq($from: tablet) {
+      position: relative;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  figcaption {
+    @include sf-typography("p1");
+    font-weight: $font-weight-medium;
+  }
+
+  .c-progress-items__icon {
+    align-items: center;
+    background-color: $blue;
+    border-radius: 50%;
+    bottom: -($sp-xxlarge / 2);
+    display: flex;
+    height: $sp-xxlarge;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: $sp-xxlarge;
+
+    @include mq($from: tablet) {
+      bottom: auto;
+      left: auto;
+      right: -($sp-xxlarge / 2);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include mq($from: wide) {
+      height: $sp-huge;
+      width: $sp-huge;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $white;
+      display: block;
+    }
+  }
+}

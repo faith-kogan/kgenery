@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67px" height="73px" viewBox="0 0 67 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LargeIcon/GreenPower" transform="translate(-6.000000, -4.000000)">
+            <g id="Group" transform="translate(6.000000, 4.000000)">
+                <path d="M56,15.6923828 L56,51.5 C56,62.8218374 46.8218374,72 35.5,72 C24.1781626,72 15,62.8218374 15,51.5 L15,37.0350342" id="Rectangle-9" stroke="#ed193a" stroke-width="2"></path>
+                <path d="M29,18 L3,18 L3,30 C3,33.8659932 6.13400675,37 10,37 L22,37 C25.8659932,37 29,33.8659932 29,30 L29,18 Z" id="Rectangle-6" stroke="#ed193a" stroke-width="2"></path>
+                <rect id="Rectangle-4" stroke="#ed193a" stroke-width="2" x="1" y="15" width="29" height="3" rx="1.5"></rect>
+                <path d="M8,13.0473965 L12,13.0319343 L12,3 C12,1.8954305 11.1045695,1 10,1 C8.8954305,1 8,1.8954305 8,3 L8,13.0473965 Z" id="Rectangle-7" stroke="#ed193a" stroke-width="2"></path>
+                <path d="M20,13.0473965 L24,13.0319343 L24,3 C24,1.8954305 23.1045695,1 22,1 C20.8954305,1 20,1.8954305 20,3 L20,13.0473965 Z" id="Rectangle-7-Copy" stroke="#ed193a" stroke-width="2"></path>
+                <rect id="Rectangle-8" fill="#ed193a" x="9" y="23" width="14" height="3" rx="1.5"></rect>
+                <rect id="Rectangle-8-Copy" fill="#ed193a" x="9" y="29" width="14" height="3" rx="1.5"></rect>
+                <path d="M46,34.3296323 L46,17.1396272 C46,11.8569035 50.2824937,7.57440982 55.5652174,7.57440982 L56.4347826,7.57440982 C61.7175063,7.57440982 66,11.8569035 66,17.1396272 C66,25.6602718 66,31.3902735 66,34.3296323 C66,35.0617711 62.6666667,38.8768611 56,45.7749023 C56,45.8640951 52.6666667,42.049005 46,34.3296323 Z" id="Rectangle" stroke="#ed193a" stroke-width="2"></path>
+                <path d="M66,24 L56,34" id="Path-3" stroke="#ed193a" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,36 @@
+.o-halves {
+  @include spacing($sp-medium);
+  list-style: none;
+  margin-left: 0;
+
+  @include mq($from: desktop) {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  .o-halves__item {
+    @include mq($from: desktop) {
+      width: 50%;
+    }
+
+    // Items on the left
+    &:nth-child(2n + 1) {
+      @include mq($from: desktop) {
+        padding-right: $sp-huge;
+      }
+      @include mq($from: wide) {
+        padding-right: 130px;
+      }
+    }
+
+    // Items on the right
+    &:nth-child(2n + 2) {
+      @include mq($from: desktop) {
+        padding-left: $sp-huge;
+      }
+      @include mq($from: wide) {
+        padding-left: 130px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.o-grid-list {
+  @include spacing(-$sp-tiny, margin, left);
+  @include spacing(-$sp-tiny, margin, right);
+  @include spacing(
+    -$sp-base,
+    margin,
+    bottom
+  ); // Compensate for bottom margin on .c-card
+  list-style: none;
+
+  @include mq($from: tablet) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  li {
+    @include spacing($sp-tiny, padding, left);
+    @include spacing($sp-tiny, padding, right);
+
+    @include mq($from: tablet) {
+      width: 33.3%;
+    }
+
+    @include mq($from: large) {
+      width: 25%;
+    }
+
+    @include mq($from: wide) {
+      width: 20%;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.c-breadcrumbs {
+  @include sf-typography("breadcrumbs");
+  list-style: none;
+  margin-bottom: $sp-medium;
+  margin-left: 0;
+  overflow: hidden;
+  padding-top: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a {
+    margin: 0 $sp-tiny;
+  }
+
+  .breadcrumb_last {
+    margin-left: $sp-tiny;
+  }
+
+  // WP - hack to target the first a tag
+  > span > span > a {
+    margin-left: 0;
+  }
+
+  @include mq($from: desktop) {
+    margin-bottom: $sp-xxlarge;
+  }
+}

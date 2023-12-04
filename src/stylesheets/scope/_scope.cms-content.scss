@@ -1,0 +1,324 @@
+.s-cms-content {
+
+  // text select highlight
+  ::selection {
+    background: lighten($pink, 40%);
+    color: $grey-dark;
+  }
+
+  ::-moz-selection {
+    background: lighten($pink, 40%);
+    color: $grey-dark;
+  }
+
+  // Headings
+  h1,
+  h2 {
+    color: $pink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    line-height: 120%;
+  }
+
+
+  img {
+    margin-bottom: $sp-xlarge;
+    max-width: 100%;
+    height: auto;   // QA powershop review
+
+    &.u-margin-bottom-zero {
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    background-color: $grey-light;
+    border: none;
+    height: 1px;
+    margin: $sp-large 0;
+    width: 100%;
+
+    &.u-hr--base {
+      margin: $sp-base 0;
+    }
+  }
+
+  // Images
+  figure {
+    margin-bottom: $sp-xlarge;
+    max-width: 100%;
+
+    img {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+  }
+
+  // Image Captions
+  figcaption {
+    // background: #ccc;
+    // padding: $sp-small $sp-base;
+  }
+
+  cite {
+  }
+
+  a {
+    font-weight: $font-weight-medium;
+    word-break: break-word;
+    border-bottom: 1px solid rgba($pink, .5);
+
+    &:hover {
+      text-decoration: none;
+      border-color: $pink;
+    }
+
+    &.c-btn {
+      border: none;
+    }
+  }
+
+  strong {
+    font-weight: $font-weight-semibold;
+  }
+
+  p {
+    margin-bottom: $sp-large;
+    margin-top: 0;
+
+    // updates to include more bottom spacing flexibility
+    &.u-margin-bottom-zero {
+      margin-bottom: 0;
+    }
+
+    &.u-margin-bottom-tiny {
+      @include spacing($sp-tiny);
+    }
+
+    &.u-margin-bottom-small {
+      @include spacing($sp-small);
+    }
+
+    &.u-margin-bottom-medium {
+      @include spacing($sp-medium);
+    }
+
+    &.u-spacing-bottom-large {
+      margin-bottom: $sp-huge;
+
+      @include mq($from: desktop) {
+        margin-bottom: 124px;
+      }
+    }
+
+    &.u-spacing-bottom-large {
+      @include spacing($sp-large);
+    }
+
+    &.u-spacing-bottom-huge {
+      margin-bottom: $sp-huge;
+
+      @include mq($from: desktop) {
+        margin-bottom: 124px;
+      }
+    }
+  }
+
+  ul {
+    @extend %c-list;
+    @extend %c-list--unordered;
+
+    li {
+      list-style-type: disc;
+      list-style-position: inside;
+      text-indent: -17px; // specific amount for alignment
+      padding-left: 20px;
+
+
+      ul,
+      ol {
+        padding-left: 1.2em;
+        padding-top: $sp-small;
+        margin-bottom: 0;
+      }
+
+      ul li {
+        list-style-type: circle;
+
+        ul li {
+          list-style-type: square;
+        }
+
+        ol li {
+          list-style-type: decimal;
+        }
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &.c-document-item {
+        list-style-type: none;
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // override plugin lists and other html that resides in s-cms-content wrapper
+  .heateor_sss_sharing_ul li,
+  li.c-document-item,
+  .c-badges li,
+  .comments-area li {
+    text-indent: 0;
+  }
+
+  ol {
+    @extend %c-list;
+    @extend %c-list--ordered;
+
+    li {
+      list-style-type: decimal;
+      list-style-position: inside;
+      padding: 0;
+
+      ul,
+      ol {
+        padding-left: 1.2em;
+        padding-top: $sp-small;
+        margin-bottom: 0;
+      }
+
+      ul li {
+        list-style-type: circle;
+
+        ul li {
+          list-style-type: square;
+        }
+
+        ol li {
+          list-style-type: decimal;
+        }
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+
+    // comments override
+    &.comment-list {
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+
+  dl:not(.c-faqs) {
+    @include sf-typography("list");
+    @include spacing();
+
+    dt {
+      font-weight: $font-weight-medium;
+      margin-bottom: 0.5em;
+    }
+    dd {
+      margin-bottom: 1em;
+      margin-left: 0;
+    }
+  }
+
+  &.u-text-center {
+    ul,
+    ol {
+      li:before {
+        margin-right: 0.25em;
+        position: relative;
+        top: -0.3em;
+      }
+    }
+  }
+
+  pre,
+  pre p {
+    font-family: courier, sans-serif;
+  }
+
+  blockquote {
+
+    @include sf-typography("h6");
+    font-weight: $font-weight-semibold;
+    &:before {
+      @include sf-typography("h1");
+      color: $pink;
+      content: '"';
+      display: block;
+      font-style: italic;
+      line-height: 1 !important;
+      margin-bottom: 0 !important;
+      max-height: 90px;
+    }
+
+    p {
+      @include sf-typography("h6");
+      font-weight: $font-weight-semibold;
+
+      &:last-of-type {
+        margin-bottom: 0.6em;
+      }
+    }
+
+    footer {
+      @include sf-typography("p2");
+      font-weight: $font-weight-medium;
+
+      &:before {
+        content: "- ";
+      }
+    }
+  }
+
+  // ask nicely widget
+  .an_comment_box {
+    min-width: 100%;
+    border: none;
+    border-bottom: 1px solid $grey-light;
+    padding-bottom: $sp-medium;
+
+    .an_photo img {
+      margin-bottom: 0;
+    }
+
+    .an_testimonial_text {
+      margin-bottom: 0;
+      line-height: 1em;
+
+      font-family: "omnes-pro";
+      color: $grey-dark;
+
+      &.an_photo_text {
+        color: $white;
+      }
+    }
+  }
+
+  .an_powered_by_box {
+    display: none;
+  }
+}
+
+hr {
+  background-color: $grey-light;
+  border: none;
+  height: 1px;
+  margin: $sp-large 0;
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+{% extends 'layouts/campaign.njk' %}
+
+{% block content %}
+<div class="o-wrapper" data-module="PromoCookies" data-promoName="oxfam" data-promoId="223" data-promoTermsUrl="/switch-now/terms" data-promoExpires="June 30, 2018 23:59:59">
+
+  <div class="o-layout">
+
+    <div class="o-layout__item  u-1/1">
+      <figure class="c-article-header">
+        {% include "shared/earth-hour/earth-hour-test-2.svg" %}
+      </figure>
+    </div>
+
+    <section class="o-wrapper" data-module="EarthHour">
+      <div class="o-layout__item s-cms-content">
+
+          <h1>Earth hour</h1>
+
+          <button class="c-btn c-btn--outlined c-btn--small earth-hour-button earth-hour-button-off">Lights off</button>
+          <hr />
+
+          <div class="c-intro">
+            <p>For a long time we have admied the incredible work that Hepburn Wind have done. Hepburn Wind have led the way for community owned energy projects around Australia and that’s why we’re super excited to be Hepburn Wind’s newest electricity partner, adding Gale and Gusto to our wind farm family.</p>
+          </div>
+
+          <p>Powershop’s parent company Meridian Energ ow and operate two wind farms right here in Australia. Gus and Shaun who manage Meridian’s Mt Mercer wind farm, just outside Ballarat, are now the caretakers of Gale and Gusto, providing top class expertise to help keep them running for years to come.</p>
+
+          <p>Powershop will also provide a financial contribution to Hepburn Wind for every person who switches their electricity to Powershop. Plus, once your switch is complete you have access to the Hepburn Wind Community Green product in our shop, which is a certified GreenPower product.</p>
+
+          <p>At Powershop we have always been great supporters of initiatives that contribute to and promote the growth of the renewable energy mix in Australia. We are Australia’s greenest power company (Greenpeace Green Electricity Guide 2014, 2015 & 2018) and are Australia’s first and only 100% certified carbon neutral electricity retailer, meaning our customers’ electricity use is also 100% carbon neutral.</p>
+
+          <p>Partnering with Hepburn Wind was a no brainer and we are pretty chuffed to be able to support projects that reduce Australia’s reliance on fossil fuels.</p>
+
+          {% include "shared/video.njk" %}
+
+          <h2 class="u-font-h5  u-pink">Q&amp;A</h2>
+          {% include 'shared/faqs.njk' %}
+
+      </div>
+
+    </section>
+
+  </div><!-- o-layout -->
+
+</div><!-- o-wrapper -->
+
+{% include "shared/cta-extended.njk" %}
+
+{% endblock %}

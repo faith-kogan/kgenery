@@ -1,0 +1,70 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<section class="o-wrapper  o-wrapper--vertical-spacing-xxlarge">
+  <div class="o-layout">
+    <div class="o-layout__item  u-1/4@desktop  u-hide@mobile-and-tablet-only">
+        {% include "shared/accordion-sidenav.njk" %}
+    </div>
+    
+    <div class="o-layout__item  u-7/12@desktop  u-push-1/12@desktop">
+      <div class="c-article-intro">
+        <h1 class="u-font-h2  c-article-intro__title">Search results</h1>
+      </div>
+      
+      <form class="c-search-form" action="#">
+        <div class="c-input">
+          <label
+          class="u-hidden-visually"
+          for="page-search"
+          >
+          Search this site
+        </label>
+        <div class="c-input__button-inside">
+          <div>
+            <input
+            type="text"
+            class="c-input-text"
+            name="page-search"
+            id="page-search"
+            />
+            <button type="submit">
+              <span class="u-hidden-visually">Go</span> <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#search"></use></svg>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+      
+    </form>
+    
+    <h2 class="u-font-p2-medium">Showing 1-10 of 128</h2>
+
+    <div class="u-hide@desktop">
+        {% include "shared/accordion-sidenav.njk" %}
+    </div>
+    
+    <ul class="o-simple-list">
+      <li>
+        {% include "shared/text-and-image.njk" %}
+      </li>
+      <li>
+        {% include "shared/text-and-image.njk" %}
+      </li>
+      <li>
+        {% include "shared/text-and-image.njk" %}
+      </li>
+    </ul>
+    
+    </div><!-- o-layout__item -->
+    
+    <div class="o-layout__item">
+      {% include "shared/pagination.njk" %}
+    </div>
+    
+  </div>
+</section><!-- o-wrapper -->
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+.c-sidenav {
+  @include sf-typography("p2");
+  font-weight: $font-weight-medium;
+  list-style: none;
+  margin: 0;
+
+  a {
+    @include spacing($sp-tiny, padding, top);
+    @include spacing($sp-tiny, padding, bottom);
+    @include spacing($sp-base, padding, left);
+    @include spacing($sp-base, padding, right);
+    border-bottom: 1px solid $grey-light;
+    color: inherit;
+    display: block;
+
+    &.is-current {
+      background-color: $grey-xlight;
+      color: $pink;
+    }
+  }
+}

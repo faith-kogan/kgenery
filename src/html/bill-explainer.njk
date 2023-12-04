@@ -1,0 +1,76 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item">
+      <!-- Container for bill explainer -->
+      <div class="c-tabs u-spacing-bottom-large s-cms-content">
+
+        <h4>Account review <span>explainer</span></h4>
+
+        <!-- tab nav -->
+        <ul class="c-tabs__navigation o-grid-layout o-grid-layout--columns-2-half-half-mobile" data-module="Tabs">
+          <li><a class="active" href="#tab-1">Electricity</a></li>
+          <li><a href="#tab-2">Gas</a></li>
+        </ul>
+
+        <!-- tab content -->
+        <div class="c-tabs__content">
+          <!-- tab 1 -->
+          <div id="tab-1" class="c-tabs__content-pane active">
+            <section>
+              
+              <!-- tooltip -->
+              <span class="c-tooltip">
+                <span class="c-tooltip__icon" title="Adaptogen tattooed 3 wolf moon ethical fanny pack, dreamcatcher pok pok try-hard letterpress tumblr PBR&B poutine. Intelligentsia beard kogi, post-ironic vegan knausgaard stumptown synth cronut kombucha. Glossier crucifix artisan normcore cred retro poutine vinyl kale chips banjo meggings church-key photo booth. Trust fund stumptown kombucha selvage, ramps iPhone wolf polaroid man braid normcore vinyl distillery retro shabby chic freegan. Woke kale chips banjo, shabby chic man braid taxidermy jean shorts street art whatever blue bottle plaid salvia artisan.">?</span>
+              </span>
+
+              <img src="/images/bill-explainer/bill-explain-section-1.png" alt="" />
+            </section>
+            <section>
+
+              <!-- tooltip -->
+              <span class="c-tooltip">
+                <span class="c-tooltip__icon" title="Fixie air plant portland, organic keytar prism wolf 8-bit. Ugh mumblecore before they sold out, yuccie freegan williamsburg vinyl blue bottle hammock. Yuccie microdosing kitsch seitan letterpress venmo.">?</span>
+              </span>
+
+              <img src="/images/bill-explainer/bill-explain-section-2.png" alt="" />
+            </section>
+            <section>
+              <img src="/images/bill-explainer/bill-explain-section-3.png" alt="" />
+            </section>
+            <section>
+              <img src="/images/bill-explainer/bill-explain-section-4.png" alt="" />
+            </section>
+            <section>
+              <img src="/images/bill-explainer/bill-explain-section-5.png" alt="" />
+            </section>
+          </div>
+          <!-- tab 2 -->
+          <div id="tab-2" class="c-tabs__content-pane">
+            <img src="/images/bill-explainer/bill-explain-section-1.png" alt="" />
+            <img src="/images/bill-explainer/bill-explain-section-2.png" alt="" />
+            <img src="/images/bill-explainer/bill-explain-section-3.png" alt="" />
+            <img src="/images/bill-explainer/bill-explain-section-4.png" alt="" />
+            <img src="/images/bill-explainer/bill-explain-section-5.png" alt="" />
+          </div>
+        </div>
+      
+      <h4>Account review coming <span>explainer</span></h4>
+      </div>
+    </div>
+  </div>
+</section><!-- o-wrapper -->
+
+
+
+{% endblock %}

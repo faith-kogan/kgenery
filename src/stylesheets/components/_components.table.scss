@@ -1,0 +1,112 @@
+.c-table {
+  @include spacing();
+  border-collapse: separate;
+  border-radius: $global-radius;
+  border-spacing: 0;
+  border: 1px solid $grey-light;
+  width: 100%;
+
+  &.c-table--centered {
+    max-width: $general-slim-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  thead {
+    th {
+      @include sf-typography("p5");
+      font-weight: $font-weight-semibold;
+      padding: $sp-tiny;
+      border-bottom: 1px solid $grey-light;
+
+      @include mq($from: tablet) {
+        padding: $sp-tiny $sp-medium;
+      }
+    }
+
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+
+  tr {
+    @include mq($until: tablet) {
+      display: block;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      td {
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  th,
+  td {
+    @include mq($from: tablet) {
+      text-align: right;
+    }
+
+    &:first-child {
+      @include mq($from: tablet) {
+        text-align: left;
+      }
+    }
+  }
+
+  td {
+    @include sf-typography("p4");
+
+    @include mq($until: tablet) {
+      display: block;
+      padding: 5px $sp-base;
+      text-align: right;
+    }
+
+    @include mq($from: tablet) {
+      border-bottom: 1px solid $grey-light;
+      padding: $sp-medium;
+    }
+
+    &:first-child {
+      @include mq($until: tablet) {
+        padding-top: $sp-tiny;
+      }
+    }
+
+    &:last-child {
+      @include mq($until: tablet) {
+        border-bottom: 1px solid $grey-light;
+        padding-bottom: $sp-tiny;
+      }
+    }
+
+    &:before {
+      @include sf-typography("p5");
+      content: attr(data-label);
+      font-weight: $font-weight-semibold;
+      float: left;
+      text-transform: uppercase;
+
+      @include mq($from: tablet) {
+        display: none;
+      }
+    }
+  }
+
+  th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    // QA update
+    small {
+      font-size: $sp-small;
+      text-transform: none;
+      line-height: $sp-small;
+      letter-spacing: 0;
+    }
+  }
+}

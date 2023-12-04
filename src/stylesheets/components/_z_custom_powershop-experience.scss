@@ -1,0 +1,323 @@
+// fallback for IE 11 and non display: grid browsers
+.o-grid-layout {
+  max-width: 1440px;
+  margin: auto;
+  display: block;
+
+  // ways to pay icon
+  .o-grid-layout__pay-icon {
+    display: none;
+  }
+
+  .c-card--powerpack {
+    max-width: 288px;
+    float: left;
+    margin: 1em;
+    height: 500px;
+  }
+
+  .c-btn--powerpacks {
+    display: block;
+    clear: both;
+  }
+
+  .c-rounded-title {
+    display: none;
+  }
+}
+
+// browsers that support display: grid
+@supports (display: grid) {
+  .o-grid-layout {
+    display: grid;
+    max-width: none;
+
+    &.o-grid-layout--powershop-experience {
+      padding-left: $sp-base;
+      // 3 columns for powershop experience unique layout
+      grid-template-columns: 0 minmax(auto, 1304px) $sp-base;
+      
+
+      // image scroll
+      .o-grid-layout__image-scroll {
+        display: flex;
+        flex-wrap: no-wrap;
+        overflow-x: auto;
+        font-size: 0;
+
+        // grid position
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-column-end: 4;
+
+        img {
+          flex: 0 0 auto;
+          margin-right: $sp-base;
+          height: 100%;
+          width: auto;
+
+          @include mq($from: tablet) {
+            height: auto;
+          }
+        }
+      }
+
+      @include mq($from: tablet) {
+        grid-template-columns: minmax($sp-large, 1fr) minmax(auto, 1304px) minmax($sp-large, 1fr);
+        padding-left: 0;
+      }
+
+      @include mq($from: desktop) {
+        grid-template-columns: minmax($sp-huge, 1fr) minmax(auto, 1304px) minmax($sp-huge, 1fr);
+        padding-left: 0;
+      }
+
+      // single centered button
+      &.o-grid-layout__button-row {
+        grid-template-columns: 0 0 minmax(auto, 100%) 0 $sp-base;
+
+        .u-text-center {
+          text-align: left;
+        }
+
+        @include mq($from: tablet) {
+          grid-template-columns: 0  1fr minmax(auto, 500px) 1fr $sp-base;
+        }
+      }
+    }
+
+    // ways to pay your bill custom grid
+    &.o-grid-layout--ways-to-pay-your-bill {
+
+      .o-grid-layout__pay-icon {
+        display: block;
+      }
+
+      // mobile first grid template
+      grid-template-columns: 0 minmax(auto, 30px) $sp-base auto $sp-base;
+
+      @include mq($from: tablet) {
+        grid-template-columns: $sp-large 40px $sp-base .5fr $sp-base 0 40px $sp-base .5fr $sp-base;
+      }
+
+      @include mq($from: desktop) {
+        max-width: 1440px;
+        margin: auto;
+        grid-template-columns: $sp-huge 40px $sp-base .5fr $sp-huge 0 40px $sp-base .5fr $sp-huge;
+      }
+    }
+
+    // powerpacks custom grid
+    &.o-grid-layout--powerpacks {
+
+      // mobile first grid template
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+      @include mq($from: desktop) {
+        grid-template-columns: repeat(3, minmax(260px, 1fr));
+        grid-gap: $sp-large;
+      }
+    }
+
+    // powerpacks detailed custom grid
+    &.o-grid-layout--powerpacks-detailed {
+
+      // mobile first grid template
+      grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+
+      @include mq($from: desktop) {
+        grid-template-columns: repeat(2, minmax(288px, 1fr));
+        grid-gap: $sp-large;
+      }
+    }
+
+    // Powershop experience track usage custom grid
+    &.o-grid-layout--track-usage {
+      text-align: center;
+
+      // mobile first grid template
+      grid-template-columns: 100%;
+
+      @include mq($from: tablet) {
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        justify-items: center;
+      }
+
+      // phone images
+      .c-track-usage-phone {
+
+        img {
+          width: 193px;
+          height: auto;
+          margin-bottom: $sp-base;
+        }
+
+        figure {
+          margin-bottom: 0;
+        }
+
+        figcaption {
+          @include sf-typography("p3");
+          font-weight: $font-weight-medium;
+          letter-spacing: 0;
+        }
+      }
+
+      // arrows
+      .c-rounded-title {
+        height: $sp-huge;
+        width: $sp-huge;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+
+        @include mq($from: tablet) {
+          position: relative;
+          top: 4em;
+        }
+
+        span {
+          margin: auto;
+          line-height: 0;
+        }
+
+        svg {
+          fill: $white;
+          width: 24px;
+          height: 24px;
+          transform: rotate(90deg);
+
+          @include mq($from: tablet) {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
+
+    h4 {
+      margin-bottom: $sp-base;
+    }
+
+    .c-card--powerpack {
+      max-width: none;
+      float: none;
+      margin: 0;
+      height: auto;
+    }
+  }
+}
+
+// powerpack card simple
+.c-card--powerpack {
+  border: 1px solid $grey-light;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  .c-card__background-image {
+    background: url('https://s3-ap-southeast-2.amazonaws.com/psau-wordpress/wp-content/uploads/2018/08/14161119/power-saver.svg');
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    border-radius: $global-radius $global-radius 0 0;
+
+    &.c-card__background-image--top {
+      background-position: center top;
+    }
+
+    .o-grid-layout--powerpacks-detailed & {
+
+      @include mq($from: large) {
+        height: 320px;
+      }
+    }
+  }
+
+  .c-card__body {
+    border-radius: 0 0 $global-radius $global-radius;
+
+    .c-card__heading {
+      margin-bottom: $sp-tiny;
+      font-size: $sp-medium;
+    }
+  }
+}
+
+// powerpack card detailed
+
+// dragscroll grab mouse icon
+.dragscroll {
+  cursor: grab;
+}
+
+// s-cms-content override
+.s-cms-content {
+
+  .o-grid-layout--powershop-experience {
+
+    // no image width restriction
+    .o-grid-layout__image-scroll {
+
+      img {
+        margin-bottom: 0;
+        max-width: none;
+      }
+    }
+
+    // description list
+    dl {
+      margin-bottom: 0!important;
+
+      dd {
+        @include sf-typography("p4");
+        line-height: 1!important;
+        display: inline-block;
+        padding: $sp-tiny $sp-small;
+        border-radius: 3px;
+        color: $white;
+        background: $purple;
+      }
+    } 
+  }
+}
+
+// Powershop experience card (_components-card)
+.c-card__powershop-experience {
+  position: relative;
+  height: 300px;
+  line-height: 0;
+
+  @include mq($from: tablet) {
+    height: auto;
+  }
+
+  .c-card--powershop-experience-number,
+  .c-card--powershop-experience-text {
+    position: absolute;
+    color: $white;
+  }
+
+  .c-card--powershop-experience-number {
+    top: $sp-large;
+    left: $sp-large;
+    background: $blue;
+    @include sf-typography("h6");
+    font-weight: $font-weight-semibold;
+    padding: $sp-large;
+    border-radius: 50%;
+    width: $sp-base;
+    height: $sp-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c-card--powershop-experience-text {
+    top: $sp-xlarge;
+    left: $sp-huge * 1.9;
+    @include sf-typography("h6");
+  }
+}

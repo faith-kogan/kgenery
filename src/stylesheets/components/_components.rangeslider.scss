@@ -1,0 +1,123 @@
+.c-rangeslider {
+  @include spacing($sp-xlarge, margin, top);
+  @include spacing($sp-large);
+  position: relative;
+
+  @include mq($until: tablet) {
+    @include spacing($sp-huge, margin, top);
+  }
+
+  .c-rangeslider__key {
+    display: flex;
+    list-style: none;
+    margin: $sp-xlarge 0 0 0;
+    width: 100%;
+    justify-content: space-around;
+
+    @include mq($until: desktop) {
+      display: none;
+    }
+
+    li {
+      text-align: center;
+    }
+
+    p {
+      @include sf-typography("p4");
+      line-height: 1.2 !important;
+    }
+
+    b {
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+
+  .c-rangeslider__dividers {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+
+    li {
+      width: 25%;
+      text-align: right;
+      position: relative;
+
+      &:last-child:after {
+        display: none;
+      }
+
+      span {
+        @extend .u-hidden-visually;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        height: 8px; // Height of slider
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); // Seems unique, add to colours if used again
+      }
+    }
+  }
+
+  .rangeslider__fill {
+    background-color: $blue;
+  }
+
+  .rangeslider-horizontal {
+    background-color: $grey-xlight;
+    box-shadow: none;
+    height: 8px;
+  }
+
+  .rangeslider__handle {
+    background-color: $grey-xlight;
+    border: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    width: 20px;
+    height: 20px;
+    outline: none;
+    z-index: 20;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .rangeslider__handle-label {
+    @include sf-typography("h6");
+    color: $blue;
+    left: 50%;
+    min-width: 140px;
+    position: absolute;
+    text-align: center;
+    top: -30px;
+    transform: translateX(-50%);
+
+    @include mq($from: desktop) {
+      top: -40px;
+    }
+  }
+
+  .rangeslider__labels {
+    @include spacing($sp-tiny, margin, top);
+
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+}

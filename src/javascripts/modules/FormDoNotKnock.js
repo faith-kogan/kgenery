@@ -1,0 +1,9 @@
+export default class JotformDoNotKnock {
+  constructor(el) {
+    this.el = el
+
+	JotForm.init(function(){ setTimeout(function() { $('input_3').hint(' Name'); }, 20); JotForm.clearFieldOnHide="disable"; /*INIT-END*/
+    }); JotForm.prepareCalculationsOnTheFly([null,{"name":"chooseYour","qid":"1","text":"Choose your sticker","type":"control_radio"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"name3","qid":"3","text":"Name","type":"control_textbox"},null,{"name":"promoCode","qid":"5","text":"Promo code","type":"control_textbox"},{"name":"unitif","qid":"6","text":"Unit (if applicable)","type":"control_textbox"},{"name":"number","qid":"7","text":"Number","type":"control_textbox"},{"name":"street","qid":"8","text":"Street","type":"control_textbox"},{"name":"cityOr","qid":"9","text":"City or Suburb","type":"control_textbox"},{"name":"postcode","qid":"10","text":"Postcode","type":"control_textbox"},{"name":"state","qid":"11","text":"State","type":"control_dropdown"}]); setTimeout(function() {
+    JotForm.paymentExtrasOnTheFly([null,{"name":"chooseYour","qid":"1","text":"Choose your sticker","type":"control_radio"},{"name":"submit","qid":"2","text":"Submit","type":"control_button"},{"name":"name3","qid":"3","text":"Name","type":"control_textbox"},null,{"name":"promoCode","qid":"5","text":"Promo code","type":"control_textbox"},{"name":"unitif","qid":"6","text":"Unit (if applicable)","type":"control_textbox"},{"name":"number","qid":"7","text":"Number","type":"control_textbox"},{"name":"street","qid":"8","text":"Street","type":"control_textbox"},{"name":"cityOr","qid":"9","text":"City or Suburb","type":"control_textbox"},{"name":"postcode","qid":"10","text":"Postcode","type":"control_textbox"},{"name":"state","qid":"11","text":"State","type":"control_dropdown"}]);}, 20);
+  }
+}

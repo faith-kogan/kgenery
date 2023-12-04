@@ -1,0 +1,68 @@
+h1 {
+  @include sf-typography("h2");
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+}
+
+h2 {
+  @include sf-typography("h3");
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+}
+
+h3 {
+  @include sf-typography("h4");
+}
+
+h4 {
+  @include sf-typography("h5");
+}
+
+h5 {
+  @include sf-typography("h6");
+}
+
+p {
+  @include sf-typography("p2");
+
+  margin-top: 0;
+  margin-bottom: 1em;
+
+  b,
+  strong {
+    font-weight: $font-weight-semibold;
+  }
+
+  i,
+  em {
+    font-style: italic;
+  }
+}
+
+small {
+  @include sf-typography("small");
+  line-height: $sp-medium!important;
+}
+
+// custom colours
+.e-colour--white { color: $white!important;}
+.e-colour--pink { color: $pink!important;}
+.e-colour--magenta { color: $magenta!important;}
+.e-colour--purple { color: $purple!important;}
+.e-colour--grey-dark { color: $grey-dark!important;}
+.e-colour--grey { color: $grey!important;}
+.e-colour--grey-light { color: $grey-light!important;}
+.e-colour--grey-xlight { color: $grey-xlight!important;}
+.e-colour--blue { color: $blue!important;}
+.e-colour--blue-light { color: $blue-light!important;}
+.e-colour--green { color: $green!important;}
+.e-colour--orange { color: $orange!important;}
+.e-colour--yellow { color: $yellow!important;}
+.e-colour--peach { color: $peach!important;}
+.e-colour--black { color: $black!important;}

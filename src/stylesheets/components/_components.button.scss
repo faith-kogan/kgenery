@@ -1,0 +1,317 @@
+.c-btn,
+.s-cms-content a.c-btn {
+  align-items: center;
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: $global-button-radius;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $boing;
+  font-weight: $font-weight-semibold;
+  min-width: 150px;
+  outline: none;
+  padding: $sp-tiny $sp-base;
+  position: relative;
+  text-align: left;
+  transition: $global-transition;
+
+  &:hover {
+    background-color: darken($blue, $global-darken);
+    border-color: darken($blue, $global-darken);
+    text-decoration: none;
+
+    .s-cms-content & {
+      border-color: darken($blue, $global-darken);
+    }
+  }
+
+  svg {
+    fill: $white;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: $global-transition;
+    width: 16px;
+  }
+
+  &.c-btn--icon-left {
+    padding-left: $sp-xxlarge;
+
+    svg {
+      left: $sp-base;
+    }
+  }
+
+  &.c-btn--icon-right {
+    padding-right: $sp-xxlarge;
+
+    svg {
+      right: $sp-base;
+    }
+
+    &:hover {
+      svg {
+        transform: translateY(-50%) translateX(5px);
+      }
+    }
+  }
+
+  &.c-btn--white {
+    background-color: $white;
+    border-color: $white;
+    color: $pink;
+
+    &:hover {
+      border-color: $blue;
+    }
+
+    svg {
+      fill: $pink;
+    }
+
+    &.c-btn--outlined {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+
+      &:hover {
+        background-color: $white;
+        color: $pink;
+      }
+    }
+  }
+
+  &.c-btn--pink {
+    background-color: $pink;
+    border-color: $pink;
+    color: $white;
+
+    &:hover {
+      background-color: darken($pink, $global-darken);
+      border-color: darken($pink, $global-darken);
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &.c-btn--red {
+    background-color: $koganRed;
+    border-color: $koganRed;
+    color: $white;
+
+    &:hover {
+      background-color: darken($koganRed, $global-darken);
+      border-color: darken($koganRed, $global-darken);
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &.c-btn--grey {
+    background-color: $grey;
+    border-color: $grey;
+    color: $white;
+
+    &:hover {
+      background-color: darken($grey, $global-darken);
+      border-color: darken($grey, $global-darken);
+    }
+
+    svg {
+      fill: $white;
+    }
+
+    &.c-btn--outlined {
+      background-color: transparent;
+      border-color: $grey;
+      color: $grey;
+
+      &:hover {
+        background-color: $grey;
+        color: $white;
+      }
+    }
+  }
+
+  &.c-btn--chunky {
+    font-size: 20px;
+    min-height: 48px;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+
+    &.c-btn--icon-left {
+      padding-left: $sp-huge;
+
+      svg {
+        @include mq($from: desktop) {
+          left: $sp-large;
+        }
+      }
+    }
+
+    &.c-btn--icon-right {
+      padding-right: $sp-huge;
+
+      svg {
+        @include mq($from: desktop) {
+          right: $sp-large;
+        }
+      }
+    }
+
+    @include mq($from: desktop) {
+      min-height: 58px;
+    }
+
+    @include mq($from: tablet) {
+      padding-left: $sp-medium;
+      padding-right: $sp-medium;
+    }
+
+    @include mq($from: desktop) {
+      // min-width: 300px;
+      padding: 14px $sp-large;
+    }
+  }
+
+  &.c-btn--outlined {
+    background-color: $white;
+    border: 1px solid $pink;
+    color: $pink;
+    padding-left: $sp-xlarge;
+    padding-right: $sp-xlarge;
+
+    &:hover {
+      background-color: $pink;
+      color: $white;
+    }
+
+    .s-cms-content & {
+
+      &:hover {
+        border-color: darken($pink, $global-darken);
+      }
+    }
+
+    &.c-btn--chunky {
+      min-width: 0; // QA - based on switch design
+      padding-left: $sp-large;
+      padding-right: $sp-large;
+    }
+
+    // colour variants
+    &.c-btn--outlined--blue {
+      border-color: $blue;
+      color: $blue;
+
+      &:hover {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+
+    // colour variants
+    &.c-btn--outlined--red {
+      border-color: $koganRed;
+      color: $koganRed;
+
+      &:hover {
+        background-color: $koganRed;
+        color: $white;
+      }
+    }
+  }
+
+
+
+  &.c-btn--small {
+    font-size: $font-size-base;
+  }
+
+  &.c-btn--outlined-hover {
+    &:hover {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  &.c-btn--full {
+    display: block;
+    width: 100%;
+  }
+
+  &.c-btn--centered {
+    text-align: center;
+  }
+
+  &.c-btn--loading {
+    background-color: $pink;
+    pointer-events: none;
+    text-align: center;
+
+    svg {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  &.c-btn--join-get-price {
+    margin: $sp-xlarge 0;
+  }
+
+  &.c-btn--full\@mobile {
+    @include mq($until: tablet) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &:disabled {
+    background-color: $grey;
+    border-color: $grey;
+    pointer-events: none;
+  }
+
+  @include mq($from: desktop) {
+    font-size: rem(18px);
+    padding: $sp-small $sp-base;
+  }
+
+  // button with rounded image (used on Business met the team page)
+  &.c-btn--rounded-image {
+    display: flex;
+    background: $grey-light;
+    border: none;
+    color: $grey-dark;
+
+    &:hover {
+      background: $pink;
+      color: $white;
+    }
+
+    .c-btn--rounded-image__image {
+      width: $sp-xlarge;
+      height: $sp-xlarge;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      margin-right: $sp-base;
+      flex-shrink: 0;
+    }
+
+    .c-btn--rounded-image__content {
+      align-self: center;
+      line-height: 1.1em;
+    }
+  }
+}

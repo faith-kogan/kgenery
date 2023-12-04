@@ -1,0 +1,74 @@
+.c-earth-hour {
+
+	&.c-earth-hour--on {
+		background: $black;
+	}
+
+	// tighten campain header spacing
+	.c-article-header {
+		margin: 0;
+	}
+}
+
+.c-earth-hour--on {
+	color: $white;
+
+	.s-cms-content {
+
+		p {
+			font-weight: $font-weight-medium;
+		}
+
+		hr {
+			background: $grey-dark;
+		}	
+	} 
+
+	.earth-hour-button {
+		border-color: $pink;
+		color: $pink;
+		background: transparent;
+	}
+
+	.c-footer-nav ul a,
+	#google_language_translator select.goog-te-combo {
+		color: $white;
+	}
+
+	.c-footer__info-item #google_language_translator .goog-te-combo {
+
+	  background-image: url('data:image/svg+xml;utf8,
+	  <svg
+	      xmlns="http://www.w3.org/2000/svg"
+	      width="30"
+	      height="24"
+	      viewbox="0 0 30 24">
+	      <path fill="%23ffffff" d="M0.5,0L0.5,0C0.8,0,1,0.2,1,0.5v23C1,23.8,0.8,24,0.5,24l0,0C0.2,24,0,23.8,0,23.5v-23C0,0.2,0.2,0,0.5,0z"/>
+	      <path fill="%23ffffff" d="M21,14.6l-5.3-5.3c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4l6,6c0.4,0.4,1,0.4,1.4,0l6-6c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L21,14.6z"/>
+	  </svg>')
+	}
+}
+
+.earth-hour-header {
+
+	#planet {
+		z-index: 0;
+	}
+
+	.light-off {
+		opacity: 0;
+	}
+
+	// alternate
+	.c-earth-hour--on & {
+		
+		.light-off {
+			opacity: 1;
+		}
+
+		.light-on {
+			opacity: 0;
+		}
+	}
+	
+}

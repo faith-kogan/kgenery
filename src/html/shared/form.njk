@@ -1,0 +1,104 @@
+<section class="o-layout  u-ui-section">
+	<div class="o-layout__item  u-1/1">
+		<h2 class="u-font-h5  u-ui-heading">Form fields <code>.c-form</code></h2>
+		<h3 class="u-font-h6  u-ui-heading-small">Text input <code>.c-input-text</code></h3>
+		<div class="u-ui-note">Wrap each for field in <code>.c-input</code></div>
+
+		<form class="c-form">
+			<div class="c-input">
+				<label class="c-input-label" for="text-input">Input label</label>
+				<input class="c-input-text" id="text-input" type="text" placeholder="Default" />
+			</div>
+
+			<div class="c-input">
+				<label class="c-input-label" for="text-input">Input label</label>
+				<input class="c-input-text" id="text-input" type="text" value="tony.jones@gmail.com" autofocus />
+				<small>Lorem ipsum dolor sit amet, consetetur</small>
+			</div>
+
+			<div class="c-input">
+				<label class="c-input-label" for="text-input">Input label</label>
+				<input class="c-input-text" id="text-input" type="text" placeholder="Disabled" disabled />
+			</div>
+
+			<div class="c-input">
+				<label class="c-input-label" for="text-input">Input label</label>
+				<input class="c-input-text" id="text-input" type="email" value="tony.jones@gmail.com" required />
+				<small class="c-input__error">This is an error message</small>
+			</div>
+
+			<div class="c-input">
+				<label class="c-input-label" for="text-input">Input label</label>
+				<input class="c-input-text" id="text-input" type="email" value="tony" required />
+				<small class="c-input__error">This is an error message</small>
+			</div>
+		</form>
+
+		<h3 class="u-font-h6  u-ui-heading-small">Textarea <code>.c-textarea</code></h3>
+
+		<form class="c-form">
+			<div class="c-input">
+				<label class="c-input-label" for="textarea">Input label</label>
+				<textarea name="textarea" class="c-textarea" id="textarea" rows="1"></textarea>
+			</div>
+		</form>
+
+		<h3 class="u-font-h6  u-ui-heading-small">Dropdown <code>.c-select</code></h3>
+
+		<form class="c-form">
+			<div class="c-input">
+				<select class="c-select" name="select"> <!--Supplement an id here instead of using 'text'-->
+					<option value="first">Really long selection to see how it appears over two lines</option>
+					<option value="second">Second Value</option>
+					<option value="third">Third Value</option>
+				</select>
+			</div>
+		</form>
+
+		<h3 class="u-font-h6  u-ui-heading-small">Checkbox <code>.c-checkbox</code></h3>
+
+		<form class="c-form">
+			<div class="c-input">
+				<div class="c-checkbox">
+					<input class="c-checkbox__input" id="checkbox1" type="checkbox">
+					<label class="c-checkbox__label" for="checkbox1">Label</label>
+				</div>
+			</div>
+			<div class="c-input">
+				<div class="c-checkbox">
+					<input class="c-checkbox__input" id="checkbox2" type="checkbox">
+					<label class="c-checkbox__label" for="checkbox2">Label</label>
+				</div>
+        <small className="c-input__error">{state.errors.terms}</small>
+			</div>
+		</form>
+
+    		<h3 class="u-font-h6  u-ui-heading-small">Checkbox <code>.c-checkbox  .c-checkbox--alt</code></h3>
+
+		<form class="c-form">
+			<div class="c-input">
+				<div class="c-checkbox  c-checkbox--alt">
+					<input class="c-checkbox__input" id="checkbox3" type="checkbox">
+					<label class="c-checkbox__label" for="checkbox3">Label</label>
+				</div>
+			</div>
+		</form>
+
+		<h3 class="u-font-h6  u-ui-heading-small">Radio <code>.c-radio</code></h3>
+
+		<form class="c-form">
+			<div class="c-input">
+				<div class="c-radio">
+					<input class="c-radio__input" type="radio" name="common-radio-name" id="radio-1" />
+					<label class="c-radio__label" for="radio-1">Choice one</label>
+				</div>
+			</div>
+			<div class="c-input">
+				<div class="c-radio">
+					<input class="c-radio__input" type="radio" name="common-radio-name" id="radio-2" />
+					<label class="c-radio__label" for="radio-2">Choice two</label>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>

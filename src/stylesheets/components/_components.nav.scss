@@ -1,0 +1,211 @@
+.c-nav {
+  background-color: $white;
+  position: relative;
+
+  .c-nav__icon {
+    align-items: center;
+    backface-visibility: hidden;
+    background: none;
+    border: none;
+    display: flex;
+    height: 69px;
+    justify-content: center;
+    margin-left: auto;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+
+    svg {
+      fill: $grey-dark;
+      transition: $global-transition;
+      width: $sp-base;
+    }
+
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+
+  // Parent nav
+  > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .c-nav__item {
+      position: relative;
+
+      // &.current-menu-item {
+      //   > a {
+      //     &:after {
+      //       transform: translateX(-50%) scale(1);
+      //     }
+      //   }
+      // }
+
+      &.c-nav__item--has-children {
+        position: relative;
+
+        // Controls mobile accordions
+        &.is-active {
+          ul {
+            @include mq($until: desktop) {
+              max-height: 30em;
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .c-nav__icon {
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        // Show subnav on desktop
+        &:hover {
+          ul {
+            @include mq($from: desktop) {
+              box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.16);
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              visibility: visible;
+            }
+          }
+        }
+
+        &:hover,
+        &.current-menu-item, // WP
+        &.current_page_ancestor // WP
+        {
+          > a {
+            @include mq($from: desktop) {
+              background-color: $white;
+
+              &:after {
+                transform: translateX(-50%) scale(1);
+              }
+            }
+          }
+        }
+
+        // Parent link
+        > a {
+          @include mq($until: desktop) {
+            padding-right: $sp-xxlarge;
+          }
+
+          @include mq($from: desktop) {
+            line-height: 1;
+            padding-bottom: 29px;
+            padding-left: $sp-tiny;
+            padding-right: $sp-tiny;
+            padding-top: 31px;
+
+            &:after {
+              background-color: $pink;
+              bottom: 0;
+              content: "";
+              display: block;
+              height: 2px;
+              left: 50%;
+              position: absolute;
+              transform: translateX(-50%) scale(0);
+              transition: transform 200ms $global-transition-timing-function 0s;
+              width: 100%;
+            }
+          }
+
+          @include mq($from: large) {
+            padding-bottom: 26px;
+            padding-left: $sp-base;
+            padding-right: $sp-base;
+            padding-top: 30px;
+          }
+        }
+
+        // Subnav
+        ul {
+          // Hide the first element unless on mobile - due to parent element operating accordion
+          > li {
+            &:first-child {
+              @include mq($from: desktop) {
+                display: none;
+              }
+            }
+          }
+          @include mq($until: desktop) {
+            max-height: 0;
+            opacity: 0.5;
+            overflow: hidden;
+            transform: translateY(-5px);
+            transition: $global-accordion-transition;
+          }
+
+          @include mq($from: desktop) {
+            background-color: $white;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.16);
+            min-width: 280px;
+            opacity: 0;
+            position: absolute;
+            transform: translateY(-5px) scale(0.99);
+            transition: $global-transition;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $grey-dark;
+      display: block;
+      font-weight: $font-weight-medium;
+      padding: 22px $sp-base;
+
+      &:hover {
+        background-color: $grey-xlight;
+        color: $pink;
+        text-decoration: none;
+      }
+    }
+
+    // main subnav indicate current menu item
+    .c-nav__item--current-menu-item a {
+      background-color: $grey-xlight;
+      color: $pink;
+      text-decoration: none;
+      pointer-events: none;
+    }
+
+    > li > a {
+      @include mq($until: desktop) {
+        border-bottom: 1px solid $grey-light;
+        display: flex;
+      }
+    }
+
+    // Child nav
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li:last-child a {
+        @include mq($until: desktop) {
+          border-bottom: 1px solid $grey-light;
+        }
+      }
+    }
+
+    @include mq($from: desktop) {
+      display: flex;
+    }
+
+    @include mq($from: large) {
+      font-size: 18px; // @TODO: Create a suite of font sizes if used enough outside of the typography helpers
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.c-input-text {
+  @extend %input-styles;
+
+  // For email field
+  // &[type="email"]:valid {
+  //   background: url('data:image/svg+xml;utf8,
+  //     <svg
+  //         xmlns="http://www.w3.org/2000/svg"
+  //         width="20"
+  //         height="20"
+  //         viewbox="0 0 20 20">
+  //         <circle fill="%237cae41" cx="9.3" cy="9.3" r="9"/>
+  //         <path fill="white" d="M5.6,9.8C5.2,9.4,4.5,9.4,4,9.8c-0.4,0.4-0.4,1.2,0,1.6l2.8,2.7c0.4,0.4,1.1,0.4,1.6,0l6.2-6
+  //             c0.4-0.4,0.5-1.1,0-1.6c-0.4-0.4-1.1-0.5-1.6,0l-5.4,5.2L5.6,9.8z" />
+  //     </svg>')
+  //     no-repeat calc(100% - 15px) center;
+  //   transition: none;
+  // }
+
+  &:invalid {
+    border: 1px solid $orange;
+    box-shadow: none;
+
+    + small {
+      display: inline-block;
+      color: $orange;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

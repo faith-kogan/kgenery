@@ -1,0 +1,100 @@
+.u-ui-colors {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 50px 0;
+  padding: 0;
+
+  li {
+    align-items: flex-end;
+    display: flex;
+    padding: 15px;
+    width: 20%;
+    border: 2px solid #fff;
+
+    p {
+      align-self: flex-end;
+      color: black;
+    }
+  }
+}
+
+.u-ui-code {
+  background-color: #666;
+  color: #ffffff;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-left: 20px;
+  padding: 8px 15px;
+  text-transform: none;
+  vertical-align: middle;
+}
+
+.u-ui-note {
+  background-color: #754acc;
+  color: $white;
+  display: block;
+  font-size: 18px;
+  margin: 30px 0;
+  padding: 25px;
+
+  &:before {
+    content: "DEVELOPER NOTE*";
+    display: block;
+    font-size: rems(14px);
+    font-weight: $font-weight-semibold;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  .u-ui-code-wrap,
+  code {
+    background-color: #fff;
+    color: #754acc;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+%ui-heading {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4em;
+  font-weight: 400 !important;
+  line-height: 1;
+  margin-bottom: 30px;
+  margin-top: $sp-medium;
+  padding-right: $sp-base;
+  padding-left: $sp-base;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $inuit-wrapper-width;
+
+  code {
+    @extend .u-ui-code;
+  }
+}
+
+.u-ui-heading {
+  @extend %ui-heading;
+}
+
+.u-ui-heading-small {
+  @extend %ui-heading;
+  font-size: 22px !important;
+  font-size: 18px;
+  margin-bottom: 1.8em;
+  color: $grey-dark !important;
+}
+
+.u-ui-section {
+  padding: $sp-medium 0 !important;
+}

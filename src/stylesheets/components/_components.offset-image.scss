@@ -1,0 +1,24 @@
+.c-offset-image {
+  margin-bottom: $sp-medium;
+  max-width: 100%;
+  padding-left: $sp-base;
+
+  @include mq($from: desktop) {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 300px;
+    max-width: 40%; // bit of a magic number as this is a "floating" element
+  }
+}
+
+.c-offset-image--inline {
+  @include mq($from: desktop) {
+    display: flex;
+    position: relative;
+    float: none;
+    margin-left: auto;
+    top: auto;
+    max-width: 55%; // bit of a magic number as this is a "floating" element
+  }
+}

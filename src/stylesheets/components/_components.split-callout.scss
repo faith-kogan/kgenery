@@ -1,0 +1,169 @@
+.c-split-callout {
+  @include spacing($sp-large);
+  @include spacing($sp-base);
+  border: 1px solid $grey-light;
+  border-radius: $global-radius;
+  border-radius: $global-radius;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq($from: desktop) {
+    display: flex;
+  }
+
+  > header,
+  > footer {
+    // @TODO: Improve spacing mixin to take multiple values
+    @include spacing($sp-xxlarge, padding, top);
+    @include spacing($sp-xxlarge, padding, bottom);
+    @include spacing($sp-medium, padding, left);
+    @include spacing($sp-medium, padding, right);
+
+    @include mq($from: desktop) {
+      width: 50%;
+    }
+  }
+
+  > header,
+  .c-split-callout__lite-option {
+    align-items: center;
+    border-radius: $global-radius $global-radius 0 0;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+    position: relative;
+
+    @include mq($from: desktop) {
+      border-radius: $global-radius 0 0 $global-radius;
+      margin-bottom: -1px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+
+      &.has-content {
+        margin-bottom: $sp-tiny;
+
+        @include mq($from: tablet) {
+          margin-bottom: $sp-medium;
+        }
+      }
+    }
+
+    > svg {
+      @include spacing($sp-base);
+      fill: $white;
+      height: 42px;
+      width: 42px;
+
+      &.i-zapgas {
+        width: 63px;
+      }
+
+      &.logo {
+        height: 28px;
+        width: auto;
+
+        @include mq($from: tablet) {
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  > footer {
+    h2 {
+      &.has-content {
+        margin-bottom: $sp-tiny;
+
+        @include mq($from: tablet) {
+          margin-bottom: $sp-medium;
+        }
+      }
+    }
+
+    > svg {
+      @include spacing($sp-base);
+      fill: $pink;
+      height: 42px;
+      width: 42px;
+
+      path {
+        fill: $pink;
+      }
+
+      &.i-zapthin {
+        height: 46px;
+        width: 46px;
+      }
+    }
+
+    &.c-split-callout__lite-option {
+      color: $grey-dark;
+    }
+  }
+
+  .c-rounded-title {
+    left: 50%;
+    position: absolute;
+    top: 100%;
+    transform: translate3d(-50%, -50%, 0);
+
+    @include mq($from: desktop) {
+      left: 100%;
+      top: 50%;
+    }
+
+    span {
+      margin: 0;
+    }
+  }
+
+  .c-input__button-inside {
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    > div {
+      @include mq($from: desktop) {
+      }
+      width: 200px;
+    }
+  }
+}
+
+.c-split-callout--short {
+  > header,
+  > footer {
+    // QA - overrides for switch-now split
+    @include spacing($sp-large, padding, top);
+    @include spacing($sp-large, padding, bottom);
+  }
+}
+
+// Differs slightly to p1 style defined in styleguide
+.c-split-callout__content {
+  margin-bottom: $sp-medium;
+
+  @include mq($from: tablet) {
+    margin-bottom: $sp-large;
+  }
+
+  p {
+    @include inuit-font-size(18px, 26px);
+
+    margin-bottom: $sp-medium;
+  }
+
+  // Differs slightly to list style defined in styleguide
+  ul {
+    font-size: rem(1rem);
+    margin-bottom: 0;
+    margin-top: $sp-tiny;
+  }
+}

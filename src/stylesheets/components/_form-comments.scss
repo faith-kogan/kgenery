@@ -1,0 +1,108 @@
+.s-cms-content {
+
+  .c-form {
+
+    ol,
+    ol ul {
+
+      li {
+        padding-left: $sp-large;
+
+        &:before {
+          content: counter(section, decimal);
+          background: lighten($pink, 20%);
+          color: $white;
+          font-weight: 600;
+          border-radius: 50%;
+          text-align: center;
+          font-size: 1em;
+          line-height: 170%;
+          top: 0;
+          width: 1.5em;
+          height: 1.5em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    ol > li {
+      border-bottom: 1px solid $grey-light;
+      margin-bottom: $sp-medium;
+    }
+  }
+}
+
+
+// form (wrapped in comment-respond)
+.c-form {
+
+  .comments-area {
+    border-top: 1px solid $grey-light;
+    padding-top: $sp-medium;
+
+    img {
+      margin: 0;
+    }
+
+    .comment-intro {
+      line-height: 170%;
+    }
+  }
+
+  .comment-respond {
+    @extend fieldset;
+    margin: 0!important;
+
+    // label
+    label {
+      @include sf-typography("label");
+      @include spacing($sp-tiny *.5);
+      display: block;
+    }
+
+    // textarea
+    textarea {
+      @extend %input-styles;
+      min-height: 130px;
+      resize: vertical;
+
+      @include mq($from: tablet) {
+        min-height: 160px;
+      }
+    }
+
+    // input
+    input {
+      @extend %input-styles;
+
+      &.invalid {
+        border: 1px solid $orange;
+        box-shadow: none;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    // submit
+    .form-submit .submit {
+      @extend .c-btn;
+      background-color: $pink;
+      border-color: $pink;
+      width: 100%;
+
+      &:hover {
+        background-color: darken($pink, $global-darken);
+        background-position: right 10px bottom 12px;
+        border-color: darken($pink, $global-darken);
+      }
+    }
+  }
+}

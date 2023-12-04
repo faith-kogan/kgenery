@@ -1,0 +1,130 @@
+.c-footer-nav {
+  .c-footer-nav__col {
+    position: relative;
+
+    // Controls mobile accordions
+    &.is-active {
+      ul {
+        @include mq($until: desktop) {
+          max-height: 80em;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .c-footer-nav__icon {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    @include mq($from: desktop) {
+      padding-right: $sp-medium;
+      width: 100%;
+    }
+  }
+
+  h2 {
+    @include sf-typography("footer-heading");
+
+    position: relative;
+
+    @include mq($until: desktop) {
+      border-bottom: 1px solid $grey-light;
+      margin: 0;
+      padding: 22px $sp-base;
+    }
+
+    @include mq($from: desktop) {
+      margin-bottom: $sp-base;
+    }
+  }
+
+  .c-footer-nav__icon {
+    align-items: center;
+    backface-visibility: hidden;
+    background: none;
+    border: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin-left: auto;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: $global-transition;
+    width: 50px;
+
+    svg {
+      fill: $grey-dark;
+      width: $sp-base;
+    }
+
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+
+  // Child nav
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: $grey-dark;
+      display: block;
+
+      @include mq($until: desktop) {
+        font-weight: $font-weight-medium;
+        padding: 22px $sp-base;
+
+        &:hover {
+          background-color: $grey-xlight;
+          color: $pink;
+          text-decoration: none;
+        }
+      }
+
+      // style update
+      display: inline-block;
+      border-bottom: 1px solid $white;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid $grey-dark;
+      }
+    }
+
+    > li {
+      > a {
+        @include mq($until: desktop) {
+          display: flex;
+        }
+      }
+      @include mq($from: desktop) {
+        margin-bottom: $sp-medium;
+      }
+    }
+
+    li:last-child a {
+      @include mq($until: desktop) {
+        border-bottom: 1px solid $grey-light;
+      }
+    }
+
+    @include mq($until: desktop) {
+      max-height: 0;
+      opacity: 0.5;
+      overflow: hidden;
+      transform: translateY(-5px);
+      transition: $global-accordion-transition;
+    }
+  }
+
+  @include mq($from: desktop) {
+    display: flex;
+  }
+}

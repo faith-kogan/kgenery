@@ -1,0 +1,42 @@
+.c-card-footer {
+  @include inuit-font-size(14px, 18px);
+  align-self: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+.c-card-footer__cat {
+  color: $grey-dark;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+
+  @include mq($until: desktop) {
+    margin-right: 10px;
+  }
+
+  @include mq($from: desktop) {
+    display: block;
+    padding-right: 48px; // QA - just to make sure it doesn't impact the arrow
+  }
+}
+
+.c-card-footer__date {
+  color: $grey;
+}
+
+.c-card-footer__icon {
+  bottom: -3px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+
+  svg {
+    fill: $pink;
+    height: 18px;
+    width: 18px;
+  }
+
+  @include mq($from: desktop) {
+    bottom: 3px;
+  }
+}

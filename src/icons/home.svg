@@ -1,0 +1,7 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="550px" viewBox="0 0 500 550" style="enable-background:new 0 0 500 550;" xml:space="preserve">
+<title>Home</title>
+<path class="st0" d="M490.3,180.3l-225-175c-9-7-21.7-7-30.7,0l-225,175C3.6,185,0,192.3,0,200v275c0,41.4,33.6,75,75,75h350
+	c41.4,0,75-33.6,75-75V200C500,192.3,496.4,185,490.3,180.3z M300,500H200V300h100V500z M450,475c0,13.8-11.2,25-25,25h-75V275
+	c0-13.8-11.2-25-25-25H175c-13.8,0-25,11.2-25,25v225H75c-13.8,0-25-11.2-25-25V212.2L250,56.7l200,155.6V475z"/>
+</svg>

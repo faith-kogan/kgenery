@@ -1,0 +1,73 @@
+.c-pagination-list {
+  @include spacing($sp-xxlarge);
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  margin-top: $sp-xxlarge;
+
+  li {
+    margin-right: $sp-small;
+
+    svg {
+      display: inline-block;
+      fill: $grey-dark;
+      height: 16px;
+      width: 16px;
+    }
+
+    &:nth-child(3) {
+      svg {
+        display: inline-block;
+        fill: $grey-dark;
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        background-color: $blue;
+        border-color: $blue;
+        color: $white;
+        text-decoration: none;
+
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+}
+
+.c-pagination-list__item,
+.page-numbers {
+  @include inuit-font-size(18px, 1em);
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $grey-light;
+  border-radius: $global-radius;
+  color: $grey-dark;
+  display: inline-block;
+  display: flex;
+  font-weight: $font-weight-medium;
+  height: 50px;
+  justify-content: center;
+  width: 50px;
+
+  &.is-disabled {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.current {
+    background-color: $blue;
+    border-color: $blue;
+    color: $white;
+  }
+}

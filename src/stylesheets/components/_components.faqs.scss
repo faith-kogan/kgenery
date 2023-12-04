@@ -1,0 +1,108 @@
+.c-faqs {
+  dt {
+    @include sf-typography("p1");
+    @include spacing($sp-small, padding, top);
+    @include spacing($sp-small, padding, bottom);
+    @include spacing($sp-tiny, padding, left);
+    border-top: 1px solid $grey-light;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    line-height: 1.6 !important;
+    padding-right: $sp-xxlarge;
+    position: relative;
+    transition: $global-transition;
+
+    &:hover {
+      color: $pink;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    // SVG icon when used for Help Centre
+    svg {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      top: 9px;
+      margin-right: $sp-tiny;
+      fill: $pink;
+    }
+
+    &.is-active {
+      + dd {
+        @include spacing($sp-base, padding, bottom);
+        max-height: 1000em; // QA - required for CSS animation - increased to acc. more copy
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .c-faqs__toggle-icon {
+        svg {
+          transform: translate3d(0, 0, 0) rotate(180deg);
+        }
+      }
+    }
+
+    .c-faqs__toggle-icon {
+      align-items: center;
+      backface-visibility: hidden;
+      background: none;
+      border: none;
+      display: flex;
+      height: 100%;
+      height: 100%;
+      justify-content: center;
+      margin-left: auto;
+      outline: none;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+
+      svg {
+        fill: $grey-dark;
+        transform: translate3d(0, 0, 0);
+        transition: $global-transition;
+        width: $sp-base;
+      }
+    }
+  }
+  dd {
+    @include sf-typography("p2");
+    @include spacing($sp-tiny, padding, right);
+    @include spacing($sp-tiny, padding, left);
+    display: block;
+    margin: 0 0 0 0;
+    max-height: 1px; // Space for the bottom border
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(-5px);
+    transition: max-height ease-in-out 0.4s, transform ease-in-out 0.3s,
+      opacity ease-in-out 0.3s, padding 0.2s ease-in-out;
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      background-color: $grey-light;
+      bottom: 0;
+      content: "";
+      display: block;
+      display: none;
+      height: 1px;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

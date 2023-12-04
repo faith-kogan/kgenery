@@ -1,0 +1,14 @@
+[cityPower]: {
+
+    averageCost: "$1,199",
+    percentageOffMegaPack: "10%",
+    lessMoreMegaPack: "less than",
+    percentageOffPowerPack: "6%",
+    lessMorePowerPack: "less than",
+    annualSpend: "$1,561",
+    annualSpendComparison: "more than",
+    energyConsumed: "4000kWh",
+    tariffNiceName: "Anytime",
+    solarFeed: "12c/kWh",
+
+  },

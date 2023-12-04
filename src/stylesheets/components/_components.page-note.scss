@@ -1,0 +1,14 @@
+.c-page-note {
+  // @include spacing($sp-xxlarge, margin, top); // QA - moved this out of react app for CMS
+  @include spacing();
+
+  .c-page-note__title {
+    @extend .u-font-p2-semibold;
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    @extend .u-font-p4;
+    line-height: 1.4;
+  }
+}

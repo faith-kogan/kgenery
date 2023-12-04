@@ -1,0 +1,26 @@
+$global-button-radius: 3px;
+$global-radius: 5px;
+$global-darken: 5%;
+
+$global-transition-duration: 200ms;
+$global-transition-timing-function: cubic-bezier(0.25, 0.01, 0.25, 1);
+$global-transition: all $global-transition-duration
+  $global-transition-timing-function;
+
+$global-accordion-transition: max-height ease-in-out 0.4s,
+  transform ease-in-out 0.3s, opacity ease-in-out 0.3s;
+
+$global-box-shadow: 0 4px 2px rgba($black, 0.1);
+$global-box-shadow-large: 0 0 20px rgba($black, 0.1);
+$global-box-shadow-tooltip: 0 2px 8px rgba($black, 0.097);
+
+$header-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+
+$header-height: 75px;
+$header-mobile-height: 62px;
+
+$general-slim-width: 640px;
+
+// Z indexes
+$z-search: 400;
+$z-header: 300;

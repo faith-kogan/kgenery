@@ -1,0 +1,57 @@
+@keyframes grow {
+  0% {
+    transform: scaleY(1);
+    border-radius: 100%;
+  }
+
+  1% {
+    border-radius: 40%;
+  }
+
+  25% {
+    transform: scaleY(4);
+    border-radius: 24%;
+  }
+
+  49% {
+    border-radius: 40%;
+  }
+
+  50% {
+    transform: scaleY(1);
+    border-radius: 100%;
+  }
+}
+
+.c-loading {
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+
+  span {
+    animation: grow 900ms ease-in-out infinite;
+    background: $pink;
+    border-radius: 100%;
+    display: block;
+    height: 6px;
+    opacity: 0.8;
+    position: relative;
+    width: 6px;
+
+    &:nth-child(1) {
+      animation-delay: 0;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 100ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 200ms;
+    }
+  }
+}

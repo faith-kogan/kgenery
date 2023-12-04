@@ -1,0 +1,9 @@
+.c-textarea {
+  @extend %input-styles;
+  min-height: 130px;
+  resize: vertical;
+
+  @include mq($from: tablet) {
+    min-height: 160px;
+  }
+}

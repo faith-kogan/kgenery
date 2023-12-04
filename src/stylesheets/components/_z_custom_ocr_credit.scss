@@ -1,0 +1,73 @@
+.c-ocr-credit {
+	background: $grey-light;
+	padding: $sp-medium;
+
+	.c-ocr__header {
+		margin: 0;
+		width: 100%;
+		@include sf-typography("h3");
+		text-align: center;
+	}
+
+	.c-ocr__btn {
+		margin: 0 auto $sp-base;
+		text-align: center;
+		width: auto;
+	}
+}
+
+.c-image--ocr-credit-svg {
+
+	.st0{fill:none;}
+	.st1{fill:#ed193a;}
+	.st2{fill:#672345;}
+	.st3{fill:#9E5825;}
+	.st4{fill:#FBDF59;}
+	.st5{fill:#F3C120;}
+	.st6{fill:#CD7629;}
+	.st7{opacity:0.37;fill:#FFFFFF;enable-background:new;}
+	.st8{fill:#DEB225;}
+	.st9{fill:#FFFFFF;}
+	.st10{fill:$grey-mid;}
+	.st11{fill:#EB1D6B;}
+	.st12{fill:#EB1C6C;}
+
+	svg {
+		margin: auto;
+	}
+}
+
+@include mq($from: mobile) {
+	.c-ocr-credit {
+
+		.c-ocr__header {
+			margin: 0;
+			@include sf-typography("h4");
+		}
+	}
+}
+
+@include mq($from: tablet) {
+	.c-ocr-credit {
+
+		.c-ocr__btn {
+			margin: 0;
+			width: 100%;
+		}
+	}
+}
+
+// display no credit message
+.no-credit {
+
+	.c-ocr-credit {
+		display: block;
+		background: none;
+	}
+
+	.c-ocr-header,
+	.c-image--ocr-credit-svg
+	 {
+		display: none;
+	}
+}

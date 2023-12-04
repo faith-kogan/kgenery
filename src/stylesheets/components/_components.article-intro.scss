@@ -1,0 +1,33 @@
+.c-article-intro {
+  margin-bottom: $sp-medium;
+
+  @include mq($from: desktop) {
+    margin-bottom: $sp-xlarge;
+  }
+}
+
+.c-article-intro__title {
+
+  &::-moz-selection {
+    background: lighten($pink, 40%);
+    color: $grey-dark;
+  }
+
+  &::selection {
+    background: lighten($pink, 40%);
+    color: $grey-dark;
+  }
+
+  line-height: 130%!important;
+
+  color: $pink;
+  margin-bottom: $sp-small;
+
+  @include mq($from: desktop) {
+    margin-bottom: $sp-medium;
+  }
+}
+
+.c-article-intro__author {
+  font-weight: $font-weight-medium;
+}

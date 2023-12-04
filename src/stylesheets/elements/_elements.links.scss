@@ -1,0 +1,8 @@
+a {
+  color: $koganRed;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

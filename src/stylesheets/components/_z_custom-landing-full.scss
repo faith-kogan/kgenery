@@ -1,0 +1,40 @@
+.c-custom--landing-full {
+
+  .o-split-hero__item--stacked {
+
+    .o-split-hero__row {
+      padding-bottom: 0;
+      flex: 1;
+
+      .c-card--quarter {
+
+        // first row
+        &:first-child,
+        &:last-child {
+          margin-top: 0;
+          margin-bottom: $sp-base;
+        }
+
+        @include mq($from: desktop) {
+            
+          &:first-child {
+            margin-right: $sp-base;
+          }
+
+          &:last-child {
+            margin-left: $sp-base;
+          }
+        }
+      }
+
+      // last row
+      &:last-child {
+
+        .c-card--quarter {
+          margin-top: 16px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

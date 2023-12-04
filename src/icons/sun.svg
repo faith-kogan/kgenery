@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>LargeIcon/Leaf Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design-system" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="2-Icons" transform="translate(-579.000000, -1633.000000)" stroke="#ed193a">
+            <g id="Icon/Sun/Base" transform="translate(577.000000, 1631.000000)">
+                <g id="sun" transform="translate(3.333333, 3.333333)">
+                    <circle id="Oval" stroke-width="2" cx="36.6666667" cy="36.6666667" r="16.6666667"></circle>
+                    <path d="M36.6666667,0 L36.6666667,6.66666667" id="Shape" stroke-width="2"></path>
+                    <path d="M36.6666667,66.6666667 L36.6666667,73.3333333" id="Shape" stroke-width="2"></path>
+                    <path d="M10.7333333,10.7333333 L15.4666667,15.4666667" id="Shape" stroke-width="2"></path>
+                    <path d="M57.8666667,57.8666667 L62.6,62.6" id="Shape" stroke-width="2"></path>
+                    <path d="M0,36.6666667 L6.66666667,36.6666667" id="Shape" stroke-width="2"></path>
+                    <path d="M66.6666667,36.6666667 L73.3333333,36.6666667" id="Shape" stroke-width="2"></path>
+                    <path d="M10.7333333,62.6 L15.4666667,57.8666667" id="Shape" stroke-width="2"></path>
+                    <path d="M57.8666667,15.4666667 L62.6,10.7333333" id="Shape" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

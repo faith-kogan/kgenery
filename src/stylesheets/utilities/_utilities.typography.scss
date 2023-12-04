@@ -1,0 +1,25 @@
+// ==========================================================================||
+//  $typographies map defined in settings.typography
+// ==========================================================================||
+
+@each $typography-namespace, $typography in $typographies {
+  span.u-font-#{$typography-namespace} {
+    display: block;
+  }
+
+  .u-font-#{$typography-namespace} {
+    @include sf-typography($typography-namespace);
+  }
+
+  // Medium
+  .u-font-#{$typography-namespace}-medium {
+    @include sf-typography($typography-namespace);
+    font-weight: $font-weight-medium;
+  }
+
+  // Semi-bold
+  .u-font-#{$typography-namespace}-semibold {
+    @include sf-typography($typography-namespace);
+    font-weight: $font-weight-semibold;
+  }
+}

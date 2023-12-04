@@ -1,0 +1,43 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<section class="o-wrapper">
+  <article class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </article>
+</section>
+
+<section class="o-panel o-panel--no-bottom-spacing o-panel--no-top-spacing">
+  
+  <article class="o-wrapper">
+    
+    <div class="o-layout">
+      
+      <div class="o-layout__item u-7/12@desktop s-cms-content u-spacing-bottom-zero">
+        
+        <h1 class="u-spacing-bottom-large">The Powershop experience</h1>
+        
+        <p class="u-font-p1 u-margin-bottom-zero">Discover the benefits of renewable energy with us. From competitive pricing to the simple switch. We give you the power to pay your bills the way you want while keeping track of the energy you use. It's easy to help the environment and save some money with our app and online tracking tools.</p>
+        
+      </div>
+      
+    </div><!-- o-layout -->
+    
+  </article><!-- o-wrapper -->
+  
+</section>
+
+{% include "shared/ps-experience/powershop-journey.njk" %}
+
+{% include "shared/ps-experience/ways-to-pay.njk" %}
+
+{% include "shared/ps-experience/powerpacks.njk" %}
+
+{% include "shared/ps-experience/track-usage.njk" %}
+
+{% include "shared/cta-extended.njk" %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+// sassy social share
+.heateor_sss_horizontal_sharing {
+  @include spacing($sp-medium);
+
+  .heateor_sss_sharing_title {
+  	@include sf-typography("p3");
+  	font-weight: $font-weight-semibold!important;
+    @include spacing($sp-tiny);
+  }
+}

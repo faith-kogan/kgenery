@@ -1,0 +1,75 @@
+{
+  "message": "Blendid!",
+  "colors": [
+    "pink",
+    "magenta",
+    "purple",
+    "grey-dark",
+    "grey",
+    "grey-light",
+    "grey-xlight",
+    "blue",
+    "blue-light",
+    "green",
+    "orange",
+    "yellow",
+    "peach",
+    "pink-to-purple",
+    "pink-to-orange"
+  ],
+  "list": [
+    "Lorem ipsum dolor sit amet, consectetur",
+    "Adipisicing elit, sed do eiusmod",
+    "Tempor incididunt ut labore et dolore magna aliqua",
+    "Ut enim ad minim veniam",
+    "Quis nostrud exercitation ullamco laboris."
+  ],
+  "cards": [
+    "<h1 class='c-card__heading'><span>Renewables.</span> We love them! Let me explain.</h1>",
+    "<h2 class='c-card__heading'>At Powershop we do things differently. Let us show you <span>how we work</span>.</h3>",
+    "<h3 class='c-card__heading'>We love it when you do <span>solar</span>. Let us tell you about it.</h3>",
+    "<h3 class='c-card__heading'>We have a great <span>Community Energy</span> program.</h3>",
+    "<h3 class='c-card__heading'>We want you to reduce your <span>carbon footprint</span>.</h3>",
+    "<h1 class='c-card__heading'><div class='c-card__heading--huge'>South Australia</div> we're here!</h1>",
+    "<h1 class='c-card__heading'><div class='c-card__heading--huge'>Thinking about Powershop?</div>Score a $100 discount</h1>",
+    "<h1 class='c-card__heading'><div class='c-card__heading--huge'>Already a customer?</div>Bag a $100 discount per mate you switch!</h1>"
+  ],
+  "iconSection": [
+    {
+      "icon": "feather",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    },
+    {
+      "icon": "greenpower",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    },
+    {
+      "icon": "sun",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    },
+    {
+      "icon": "conversation",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    },
+    {
+      "icon": "shop",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    },
+    {
+      "icon": "track",
+      "title": "We are 100% carbon neutral, footprint-free",
+      "content":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet tincidunt turpis. Nullam tristique urna ut nibh rhoncus egestas."
+    }
+  ]
+}

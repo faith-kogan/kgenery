@@ -1,0 +1,47 @@
+.c-custom--split-compare {
+
+	.c-section-heading {
+		padding: 0;
+	}
+
+	.c-split-callout {
+
+		header,
+		footer {
+			padding: $sp-xxlarge;
+			justify-content: flex-start;
+
+			p,
+			ul {
+				text-align: left;
+				@include sf-typography("p3");
+
+				strong {
+					font-weight: $font-weight-medium;
+				}
+			}
+
+			.c-rounded-title span {
+				line-height: 100%;
+			}
+
+			
+
+			img {
+				width: 100%;
+				height: auto;
+				font-size: 0;
+				margin: 0 auto $sp-base;
+			}
+
+			h3 {
+				font-weight: $font-weight-base;
+			}
+		}
+
+		> header {
+			border-right: 1px solid $grey-light;
+			color: $grey-dark;
+		}
+	}
+}

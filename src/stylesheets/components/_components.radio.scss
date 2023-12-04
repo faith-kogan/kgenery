@@ -1,0 +1,43 @@
+.c-radio {
+  .c-radio__input {
+    opacity: 0;
+    position: absolute;
+
+    & + .c-radio__label {
+      display: flex;
+      height: 30px;
+      line-height: $sp-base * 1.8;
+
+      &::before {
+        border-radius: 50%;
+        border: 2px solid $grey-xlight;
+        content: "";
+        display: inline-block;
+        height: 26px;
+        margin-right: 17px;
+        width: 26px;
+        background-color: transparent;
+        transition: $global-transition;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &:focus + .c-radio__label::before {
+      box-shadow: 0 0 3px $blue-light;
+    }
+
+    &:checked + .c-radio__label::before {
+      background-image: url('data:image/svg+xml;utf8,
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewbox="0 0 24 24">
+          <circle fill="%23ed193a" cx="12" cy="12" r="8"/>
+      </svg>');
+      background-color: $white;
+      border: 2px solid $pink;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.o-split-hero {
+  @include spacing($sp-base, padding, top);
+  @include spacing($sp-base, padding, bottom);
+  background-color: $grey-xlight;
+  padding-right: $sp-base;
+  padding-left: $sp-base;
+
+  @include mq($from: tablet, $until: wide) {
+    padding-right: $sp-large;
+    padding-left: $sp-large;
+  }
+
+  @include mq($from: wide) {
+    padding-right: $sp-huge;
+    padding-left: $sp-huge;
+  }
+
+  .o-split-hero__row {
+    @include mq($from: desktop) {
+      @include spacing($sp-base, padding, bottom);
+      display: flex;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .o-split-hero__item {
+    @include mq($from: desktop) {
+      width: 50%;
+      align-items: stretch;
+      display: flex;
+
+      &:first-child {
+        @include spacing($sp-tiny, margin, right);
+      }
+
+      &:last-child {
+        @include spacing($sp-tiny, margin, left);
+        flex-direction: column;
+        flex-shrink: 0;
+      }
+    }
+
+    &.o-split-hero__item--stacked {
+      flex-direction: column;
+
+      .c-card {
+        &:first-child {
+          @include mq($from: desktop) {
+            margin-bottom: $sp-base;
+          }
+        }
+        &:last-child {
+          @include mq($from: desktop) {
+            margin-top: $sp-base;
+          }
+        }
+      }
+    }
+  }
+
+  .c-card {
+    @include mq($until: desktop) {
+      @include spacing($sp-base);
+    }
+
+    @include mq($from: desktop) {
+      flex: 1;
+    }
+
+    a {
+      @include mq($from: desktop) {
+        height: calc(
+          18vw - 32px
+        ); // Minus the spacing to make heights equal when stacked next to each other
+      }
+    }
+
+    &.c-card--large,
+    &.c-card--feature {
+      a,
+      .no-link {
+        @include mq($from: desktop) {
+          height: 36vw; // Twice the size of the card (18vw)
+        }
+      }
+    }
+  }
+
+  &.o-split-hero--uneven {
+    .o-split-hero__item {
+      @include mq($from: desktop) {
+        &:first-child {
+          width: 60%;
+        }
+
+        &:last-child {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

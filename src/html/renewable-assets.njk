@@ -1,0 +1,27 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<section class="o-wrapper">
+  <article class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </article>
+</section>
+
+<section class="o-panel o-panel--no-bottom-spacing o-panel--no-top-spacing">
+  <article class="o-wrapper">
+    <div class="o-layout">
+      <div class="o-layout__item u-7/12@desktop s-cms-content u-spacing-bottom-zero">
+        <h1 class="u-spacing-bottom-large">Renewable assets</h1>
+        <p class="u-font-p1">At Powershop, we give a dam about renewables. Our parent company is Australasia’s largest 100% renewable generator. We’re firmly invested in developing even more renewable generation, to contribute to a greener energy future, and to help us pass savings back to our customers.</p>
+        <p class="u-font-p1 u-margin-bottom-zero">Meridian Energy owns only renewable generation assets, and we’ve also entered into a number of Power Purchase Agreements (PPAs) – where we agree to buy a certain amount of power from a renewable generation assets, in support of new renewable generation around Australia.</p>
+      </div>
+    </div><!-- o-layout -->
+  </article><!-- o-wrapper -->
+</section>
+
+{% include "shared/renewable-assets/renewable-assets.njk" %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<div class="o-wrapper  o-wrapper--vertical-spacing">
+  
+  <!-- Container for rates React app -->
+  <div class="u-min-height" data-module="RatesApp" data-rates-customer="residential">
+    {% include "shared/loading.njk" %}
+  </div>
+  
+</div><!-- o-wrapper -->
+
+{% endblock %}

@@ -1,0 +1,43 @@
+.c-centered-hero {
+  @include spacing($sp-large);
+  @include spacing($sp-medium, padding, left);
+  @include spacing($sp-medium, padding, right);
+  @include spacing($sp-xxlarge, padding, bottom);
+  @include spacing($sp-xxlarge, padding, top);
+  align-items: center;
+  border-radius: $global-radius;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  .c-input__button-inside {
+    > div {
+      margin: 0 auto;
+      width: 160px;
+      @include mq($from: desktop) {
+        width: 190px;
+      }
+    }
+
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.c-centered-hero input {
+  color: $black;
+}
+
+.c-background-koganRed {
+  background-color: $koganRed;
+}

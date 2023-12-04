@@ -1,0 +1,17 @@
+#entryRating {
+    height:0;
+    overflow: hidden;
+    transition: $global-transition;
+
+    &.active {
+        height: auto;
+        padding:20px;
+    }
+}
+
+.rc-rating {
+
+    .c-rating-container {
+        padding: 0 0 2em;
+    }
+}

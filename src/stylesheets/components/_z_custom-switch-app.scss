@@ -1,0 +1,218 @@
+.c-switch-app {
+  .c-switch-app__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 320px;
+  }
+
+  // unique elements (to refactor)
+  .c-switch-app--solar-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .c-switch-app--solar-rates {
+    line-height: $sp-medium;
+  }
+
+  .c-switch-app--gas-label {
+    margin-bottom: $sp-tiny;
+  }
+
+  .u-font-h4 {
+    font-weight: $font-weight-medium;
+    line-height: 1.2em;
+
+    span {
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  .gas-note {
+    font-size: $sp-base;
+    line-height: 120%;
+  }
+
+  // tooltip icon positioning
+  .u-relative {
+    position: relative;
+
+    > span {
+      position: absolute;
+      right: 0;
+      top: -$sp-small;
+    }
+  }
+
+  .c-switch-app__offer-heading {
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+  }
+
+  .c-switch-app-packs-grid {
+    border: none;
+
+    @include mq($from: tablet) {
+      display: grid;
+      grid-gap: $sp-base;
+      grid-template-columns: 1fr auto 1fr;
+    }
+    p,
+    span {
+      text-align: center;
+    }
+
+    strong a {
+      font-weight: $font-weight-semibold;
+      border: none;
+    }
+
+    .c-switch-app--packs-para {
+      margin-bottom: $sp-medium;
+
+      @include mq($from: tablet) {
+        margin-bottom: $sp-tiny;
+      }
+    }
+
+    > header,
+    > footer {
+      background: $grey-xlight;
+      border-radius: 4px;
+      padding: $sp-base;
+
+      @include mq($from: wide) {
+        padding-right: $sp-xxlarge;
+      }
+    }
+
+    > header {
+      margin-bottom: $sp-small;
+
+      @include mq($from: tablet) {
+        margin: 0;
+      }
+    }
+
+    > header p,
+    > footer p,
+    img {
+      line-height: 120%;
+      margin: 0;
+    }
+
+    img {
+      align-self: end;
+      justify-self: center;
+      margin-bottom: $sp-medium;
+      max-height: 80px;
+      max-width: 80px;
+    }
+
+    .c-switch-app-rounded {
+      align-self: center;
+      background: $grey-light;
+      border-radius: 50%;
+      display: flex;
+      font-weight: $font-weight-semibold;
+      height: $sp-huge;
+      margin: 0;
+      padding: $sp-base;
+      width: $sp-huge;
+
+      @include mq($until: tablet) {
+        margin: auto;
+        margin-bottom: $sp-small;
+      }
+    }
+
+    .c-rates-percent {
+      background: $white;
+      border-radius: 4px;
+      font-size: $sp-large;
+      font-weight: $font-weight-semibold;
+      justify-self: center;
+      line-height: 100%;
+      margin-bottom: $sp-base;
+      padding: $sp-small;
+      text-align: center;
+
+      @include mq($from: large) {
+        justify-self: start;
+      }
+    }
+
+    .c-switch-app-packs-grid__inner {
+
+      a {
+        border: none;
+      }
+
+      > a {
+        justify-self: center;
+      }
+
+      @include mq($from: large) {
+        display: grid;
+        grid-gap: $sp-base;
+        grid-template-columns: 1fr 4fr;
+
+        p,
+        span {
+          text-align: left;
+        }
+
+        .c-switch-app--grid__inner-percent {
+          grid-gap: $sp-base;
+          grid-template-columns: 1fr auto;
+
+          @include mq($from: large) {
+            grid-template-columns: auto 1fr;
+          }
+        }
+
+        > a {
+          justify-self: start;
+
+          img {
+            margin: 0;
+          }
+        }
+
+        .c-rates-percent {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .c-switch-app--join-now {
+    margin: auto;
+    max-width: 150px;
+  }
+
+  .c-switch-app--gas {
+    @include mq($from: desktop) {
+      margin: 0;
+
+      img {
+        align-self: start;
+      }
+
+      .c-switch-app-gas-para {
+        font-size: $sp-medium;
+        text-align: left;
+      }
+    }
+  }
+
+  .c-switch-app-gas-graphic {
+    margin: 0;
+  }
+
+  .c-switch-app-gas-graphic {
+    height: 80px;
+    width: 80px;
+  }
+}

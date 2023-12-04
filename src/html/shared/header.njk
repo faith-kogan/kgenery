@@ -1,0 +1,85 @@
+<header class="c-header" data-module="Header">
+  <div class="c-header__inner">
+
+    <div class="c-header__top">
+      <a href="/home.html" class="c-header__logo"><img src="images/Powershop_Logo_RGB.png" alt="Powershop"></a>
+      <button class="c-nav-toggle" data-nav-toggle aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="u-hidden-visually">Toggle menu</span>
+      </button>
+    </div>
+
+    <div class="c-header__nav" data-nav-container>
+
+      <nav class="c-nav" role="navigation" data-nav>
+        <ul>
+          <li class="c-nav__item  c-nav__item--has-children" data-nav-accordion>
+            <a href="/home.html" data-nav-accordion-toggle>Residential
+              <span class="c-nav__icon"><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#chevron-down"></use></svg></span>
+            </a>
+            <ul>
+              <li><a href="/home.html">Overview</a></li>
+              <li><a href="#">Get a price</a></li>
+              <li><a href="#">Moving house</a></li>
+              <li><a href="#">Find your rates</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="c-nav__item  c-nav__item--has-children" data-nav-accordion>
+            <a href="#" data-nav-accordion-toggle>Business
+              <span class="c-nav__icon"><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#chevron-down"></use></svg></span>
+            </a>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="/business-quote.html">Get a price</a></li>
+              <li><a href="#">Moving premises</a></li>
+              <li><a href="#">Find your rates</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </li>
+          <li class="c-nav__item  c-nav__item--has-children" data-nav-accordion>
+            <a href="/why-powershop.html"  data-nav-accordion-toggle>Why Powershop
+              <span class="c-nav__icon"><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#chevron-down"></use></svg></span>
+            </a>
+            <ul>
+              <li><a href="/why-powershop.html">Overview</a></li>
+              <li><a href="#">Get a price</a></li>
+              <li><a href="#">Moving house</a></li>
+              <li><a href="#">Find your rates</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="c-subnav">
+        <ul>
+          <li>
+            <a href="#" class="c-btn--icon-right"><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#phone-bold"></use></svg>Contact</a>
+          </li>
+          <li>
+            <a href="#" class="c-btn--icon-right" data-search-toggle><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#search"></use></svg>Search</a>
+          </li>
+          <li>
+            <a href="#" class="c-btn--icon-right"><svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#user"></use></svg>Login</a>
+          </li>
+          <li class="c-subnav__button">
+            <a href="#" class="c-btn  c-btn--icon-right">
+              Join now <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#arrow-right"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Used to close the nav when clicked on -->
+      <div class="c-header__bg" data-nav-close></div>
+
+    </div><!-- c-header__nav -->
+
+    {% include 'shared/search.njk' %}
+
+  </div><!-- c-header__inner -->
+</header>

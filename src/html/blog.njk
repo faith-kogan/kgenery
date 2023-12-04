@@ -1,0 +1,17 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<div class="u-bg-grey-xlight">
+  <div class="o-wrapper  o-wrapper--vertical-spacing">
+    <section class="o-layout" data-module="MatchHeights">
+
+      {% include "shared/cards-split.njk" %}
+
+      <div class="o-layout__item">
+        {% include "shared/pagination.njk" %}
+      </div>
+    </section><!-- o-layout -->
+  </div><!-- o-wrapper -->
+</div><!-- u-bg-grey-xlight -->
+
+{% endblock %}

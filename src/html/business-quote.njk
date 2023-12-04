@@ -1,0 +1,73 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<div class="o-wrapper  o-wrapper--vertical-spacing">
+
+  <section class="o-layout  o-layout--center">
+
+    <div class="o-layout__item  u-1/1">
+
+      <header class="c-section-heading">
+        <h1 class="c-section-heading__title  u-font-h2  u-pink">Want a business quote?</h1>
+      </header>
+
+      <article class="c-split-callout">
+        <header class="u-bg-pink-to-purple">
+          <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#phone-thin"></use></svg>
+          <h2 class="u-font-h4"><a class="u-white" href="javascript:void(0);">1800 728 197</a></h2>
+        </header>
+        <footer>
+          <h3 class="u-font-h5">We’ve got you covered</h3>
+          <h4 class="u-font-p1-semibold  u-margin-bottom-zero">Call us and we will</h4>
+          <ul class="c-list  c-list--unordered">
+            <li>Contact your existing supplier</li>
+            <li>Switch you to Powershop with no interruption to your power</li>
+            <li>Keep you fully updated via email about your switch.</li>
+          </ul>
+        </footer>
+      </article>
+
+      <p class="c-rounded-title"><span>or</span></p>
+
+    </div><!-- o-layout__item -->
+
+    <div class="o-layout__item  u-8/12@tablet  u-6/12@wide">
+
+      <form class="c-form  c-form--bordered" action="#" method="post">
+        <fieldset>
+          <legend>We'll call you</legend>
+
+          <div class="c-input">
+            <label class="c-input-label" for="full-name">Full name</label>
+            <input class="c-input-text" id="full-name" type="text" />
+          </div>
+          <div class="c-input">
+            <label class="c-input-label" for="business">Business</label>
+            <input class="c-input-text" id="business" type="text" />
+          </div>
+          <div class="c-input">
+            <label class="c-input-label" for="email">Email</label>
+            <input class="c-input-text" id="email" type="email" />
+          </div>
+          <div class="c-input">
+            <label class="c-input-label" for="phone">Phone no.</label>
+            <input class="c-input-text" id="phone" type="text" />
+          </div>
+          <div class="c-input">
+            <label class="c-input-label" for="business">Anything else?</label>
+            <textarea name="textarea" class="c-textarea" id="business" rows="4"></textarea>
+          </div>
+          <div class="c-input  c-input">
+            <button class="c-btn  c-btn--icon-right  c-btn--chunky  c-btn--full  c-btn--pink" type="submit" name="button">Send  <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#arrow-right"></use></svg></button>
+          </div>
+        </fieldset>
+
+      </form>
+
+    </div><!-- o-layout__item -->
+
+  </section><!-- o-layout -->
+
+</div><!-- o-wrapper -->
+
+{% endblock %}

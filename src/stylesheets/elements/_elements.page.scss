@@ -1,0 +1,38 @@
+html,
+body {
+  -moz-osx-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased !important;
+  color: $grey-dark;
+  font-family: $boing;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  min-width: 320px;
+  position: relative;
+  text-rendering: optimizeLegibility !important;
+  width: 100%;
+  z-index: 0;
+}
+
+body {
+  .wf-loading & {
+    visibility: hidden;
+  }
+
+  .wf-active & {
+    visibility: visible;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &.nav-is-active {
+    @include mq($until: desktop) {
+      position: fixed;
+      height: 100%;
+    }
+  }
+}

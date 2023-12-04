@@ -1,0 +1,147 @@
+.c-campaign-full {
+
+  header {
+
+    img {
+      width: 100%;
+
+      @include mq($until: tablet) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  // section heading custom spacing and reduce space on mobile
+  .c-section-heading {
+    width: 100%;
+    padding-top: $sp-medium;
+
+    @include mq($until: tablet) {
+      padding-top: $sp-small;
+      padding-bottom: $sp-large;
+      text-align: left;
+    }
+
+    &.c-section-heading--faq {
+      padding-bottom: $sp-large;
+
+      @include mq($until: tablet) {
+        padding-bottom: $sp-tiny;
+      }
+    }
+  }
+
+  // spacing fixes
+
+  .c-campaign-full__banner {
+    padding: $sp-base 0;
+  }
+
+  p:last-of-type {
+    margin: 0;
+  }
+
+  .o-halves,
+  .o-grid-layout--usp-images {
+    margin-bottom: $sp-large;
+  }
+}
+
+// grid USP images
+// powerpack card detailed
+@supports (display: grid) {
+  .o-grid-layout--usp-images {
+
+    // mobile first grid template
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: $sp-base;
+
+    /*
+    @include mq($from: desktop) {
+      grid-template-columns: repeat(2, minmax(288px, 1fr));
+      grid-gap: $sp-large;
+    }
+    */
+
+    .c-card--powerpack {
+      position: relative;
+      max-width: none;
+      flex-direction: column;
+    }
+
+    .c-card__details {
+      display: grid;
+
+      @include mq($from: large) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+.c-card.c-card--small .c-card-footer p:last-of-type {
+  margin-bottom: 0;
+}
+
+.c-card {
+
+  .c-card__background-image {
+    width: 100%;
+  }
+
+  .c-campaign-full--card-link {
+    padding: $sp-medium;
+    margin-top: auto;
+
+    a {
+      min-height: 0;
+      padding: $sp-base;
+      background: $pink;
+      color: $white;
+      font-weight: $font-weight-semibold;
+      font-size: $sp-base;
+      text-align: center;
+      display: block;
+      border-radius: $global-button-radius;
+      transition: $global-transition;
+
+      &:hover {
+        background: darken($pink, $global-darken);
+      }
+    }
+  }
+}
+
+.c-campaign-full--grid-two-column.o-grid-layout {
+  grid-gap: $sp-large;
+
+  @include mq($from: desktop) {
+    grid-gap: $sp-huge;
+  }
+
+  h4 {
+    margin-bottom: $sp-tiny;
+    font-size: $sp-medium;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

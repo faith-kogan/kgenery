@@ -1,0 +1,226 @@
+// form
+.hs-form {
+  @extend fieldset;
+
+  // Center align richtext to match design
+  .hs-richtext {
+    text-align: center;
+  }
+
+  // Hubspot markup input wrapper
+  .field  {
+    @include spacing($sp-tiny);
+
+    // label
+    > label {
+      @include sf-typography("label");
+    }
+
+    // remove required span as it breaks layout over two lines
+    .hs-form-required {
+      display: none;
+    }
+
+    // error message (ul)
+    .hs-error-msgs {
+      color: $orange;
+      list-style: none;
+      margin: 0;
+
+      label {
+        @include sf-typography("small");
+      }
+    }
+
+    // input
+    .input {
+
+      .hs-input {
+        @extend %input-styles;
+
+        &.invalid {
+          border: 1px solid $orange;
+          box-shadow: none;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  // field type checkbox container
+  // field type radio container
+  .hs-fieldtype-checkbox,
+  .hs-fieldtype-booleancheckbox,
+  .hs-fieldtype-radio {
+
+    > label {
+      @include spacing($sp-tiny);
+    }
+
+    .input {
+
+      ul {
+        list-style: none;
+        margin: 0;
+
+        li {
+          padding-left: 0;
+
+          &:before {
+            display: none; // QA - Hubspot uses :before for list styles
+          }
+        }
+
+        // each checkbox
+        // each radio
+        .hs-form-checkbox,
+        .hs-form-booleancheckbox,
+        .hs-form-radio {
+          @include spacing($sp-tiny);
+          position: relative;
+
+          label {
+
+            // input checkbox
+            .hs-input {
+              opacity: 0;
+              position: absolute;
+
+              + span {
+                display: flex;
+                line-height: $sp-base * 1.8;
+
+                &::before {
+                  background-color: $white;
+                  background-position: center center;
+                  background-repeat: no-repeat;
+                  border: 2px solid $grey-xlight;
+                  border-radius: $global-button-radius;
+                  content: "";
+                  display: inline-block;
+                  height: 24px;
+                  margin-right: $sp-base;
+                  transition: $global-transition;
+                  width: 24px;
+                }
+              }
+
+              // focus
+              &:focus + span::before {
+                box-shadow: 0 0 3px $blue-light;
+              }
+
+              // checked
+              &:checked + span::before {
+                background-color: $pink;
+                background-image: url('data:image/svg+xml;utf8,
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24">
+                    <path fill="white" d="M6.8,11.3c-0.6-0.6-1.5-0.6-2.2,0C4,11.9,4,13,4.6,13.6l3.9,3.8c0.6,0.6,1.5,0.6,2.2,0L19.4,9c0.6-0.6,0.7-1.5,0-2.2c-0.6-0.6-1.5-0.7-2.2,0L9.6,14L6.8,11.3z"/>
+                </svg>');
+                border: 2px solid $pink;
+              }
+            }
+          }
+        }
+
+        // radio checked style
+        .hs-form-radio label .hs-input {
+
+          + span {
+
+            &::before {
+              border-radius: 50%;
+              height: 26px;
+              width: 26px;
+            }
+          }
+
+          // checked
+          &:checked + span::before {
+            background-color: $white;
+            background-image: url('data:image/svg+xml;utf8,
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewbox="0 0 24 24">
+              <circle fill="%23ed193a" cx="12" cy="12" r="8"/>
+            </svg>');
+          }
+        }
+      }
+    }
+  }
+
+  // select
+  .hs-fieldtype-select {
+
+    select {
+      @extend %input-styles;
+      appearance: none;
+      background: url('data:image/svg+xml;utf8,
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="24"
+          viewbox="0 0 30 24">
+          <path fill="%23ebebeb" d="M0.5,0L0.5,0C0.8,0,1,0.2,1,0.5v23C1,23.8,0.8,24,0.5,24l0,0C0.2,24,0,23.8,0,23.5v-23C0,0.2,0.2,0,0.5,0z"/>
+          <path fill="%23464646" d="M21,14.6l-5.3-5.3c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4l6,6c0.4,0.4,1,0.4,1.4,0l6-6c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L21,14.6z"/>
+      </svg>')
+        no-repeat calc(100% - 15px) center;
+      cursor: pointer;
+      // padding: $sp-tiny $sp-base;
+      padding-right: $sp-xxlarge;
+    }
+  }
+
+
+  // submit button
+  .hs-submit {
+    position: relative;
+
+    &:after {
+      content: url('data:image/svg+xml;utf8,
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewbox="0 0 16 16">
+            <path fill="white" d="M15.9,7.7c0-0.1-0.1-0.2-0.2-0.3L10.4,2c-0.3-0.3-0.9-0.3-1.3,0s-0.3,0.9,0,1.3L13,7.1H0.9C0.4,7.1,0,7.5,0,8c0,0.5,0.4,0.9,0.9,0.9H13l-3.8,3.8c-0.3,0.3-0.3,0.9,0,1.3c0.3,0.3,0.9,0.3,1.3,0l5.3-5.3c0.1-0.1,0.1-0.2,0.2-0.3C16,8.1,16,7.9,15.9,7.7z"/>
+        </svg>');
+        position: absolute;
+        right: 16px;
+        top: 0px;
+        transform: translateY(60%);
+        transition: $global-transition;
+      }
+
+      &:hover:after {
+        transform: translateY(60%) translateX(5px);
+      }
+  }
+
+  .hs-button {
+    @extend .c-btn;
+    background-color: $pink;
+    border-color: $pink;
+    width: 100%;
+
+    &:hover {
+      background-color: darken($pink, $global-darken);
+      background-position: right 10px bottom 12px;
+      border-color: darken($pink, $global-darken);
+    }
+  }
+}

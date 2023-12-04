@@ -1,0 +1,41 @@
+.kogan-style {
+  .kogan-estimate {
+    line-height: 1.4;
+    margin: $sp-base 0;
+  }
+  .kogan-rates {
+    margin-bottom: $sp-base;
+  }
+  .kogan-rates > div {
+    display: inline-block;
+    margin-right: $sp-tiny;
+    vertical-align: middle;
+  }
+  ul.kogan-benefits {
+    list-style: none;
+    font-size: 20px;
+
+    li {
+      margin-left: $sp-base;
+      list-style-type: none;
+      text-indent: unset;
+      padding-left: 32px;
+    }
+
+    li:before {
+      display: inline-block;
+      content: '✓';
+      color: $koganRed;
+    }
+  }
+  .ref-price {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .secondary {
+    color: gray;
+  }
+  .font-normal-weight {
+    font-weight: normal;
+  }
+}

@@ -1,0 +1,473 @@
+// ==========================================================================||
+//	Card component
+//
+// Responsive text which is mainly needed when in the .o-split-hero object
+// is all contained here, may need to isolate specificy to those objects only
+// leaving in place for now as it may be useful
+// ==========================================================================||
+
+.c-card {
+  background-color: $white;
+  background-position: 50% 100%;
+  background-size: cover;
+  border-radius: $global-radius;
+  box-shadow: 0px 0px 0px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: box-shadow $global-transition-duration
+    $global-transition-timing-function;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+    @include mq($from: desktop) {
+      box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.is-shadowed {
+    box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+    @include mq($from: desktop) {
+      box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  a,
+  .no-link {
+    @include spacing($sp-base, padding, all);
+    color: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 160px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover {
+      .c-card__icon {
+        transform: translateX(5px);
+      }
+    }
+
+    @include mq($from: desktop) {
+      min-height: 250px;
+      padding: $sp-large;
+    }
+  }
+
+  .c-card__heading {
+    @include sf-typography("h5");
+
+    font-weight: $font-weight-semibold;
+    margin-bottom: $sp-xlarge;
+
+    span {
+      color: $pink;
+    }
+
+    @include mq($from: desktop, $until: wide) {
+      @include responsive-font(2.2vw, 20px, 46px);
+      line-height: 1.2;
+    }
+
+    // update line height
+    line-height: 100% !important;
+    + p {
+      @include sf-typography("footer-p");
+      padding-right: $sp-medium;
+    }
+
+    + p.c-card__heading--text {
+      @include sf-typography("p2");
+    }
+  } 
+
+  .c-card__heading--short {
+    margin-bottom: $sp-base;
+  }
+
+  .c-card__icon {
+    @include spacing($sp-base, padding, $direction: all);
+    align-self: flex-end;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    transition: $global-transition;
+
+    svg {
+      fill: $pink;
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  .c-card__extras {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+
+    .c-card__image {
+      margin-left: auto;
+
+      img {
+        max-width: 100%;
+      }
+
+      @include mq($until: wide) {
+        margin-bottom: $sp-medium;
+        width: 100%;
+      }
+
+      @include mq($from: wide) {
+        align-self: flex-end;
+        order: 1;
+      }
+    }
+
+    .c-card__image {
+      width: 150px;
+
+      @include mq($from: wide) {
+        width: 230px;
+      }
+    }
+
+    .c-card__actions {
+      @include mq($until: wide) {
+        .c-btn {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    @include mq($from: wide) {
+      align-items: flex-end;
+      flex-direction: row;
+    }
+  }
+
+  &.c-card--small {
+    a {
+      .c-card__heading {
+        @include sf-typography("p3");
+        font-weight: $font-weight-semibold;
+        margin-bottom: 0.2em;
+      }
+    }
+
+    .c-card__body {
+      @include spacing($sp-base, padding, all);
+
+      @include mq($from: desktop) {
+        @include spacing($sp-small, padding, all);
+      }
+    }
+
+    .c-card-footer__icon {
+      bottom: -5px;
+    }
+
+    .c-card-footer p {
+      @include sf-typography("list");
+
+      &:last-of-type {
+        margin-bottom: $sp-large;
+      }
+    }
+  }
+
+  &.c-card--medium {
+    a {
+      .c-card__heading {
+        @include mq($until: desktop) {
+          @include sf-typography("h4");
+        }
+
+        @include mq($from: desktop, $until: wide) {
+          @include responsive-font(3vw, 32px, 46px);
+          line-height: 1.1;
+        }
+
+        @include mq($from: wide) {
+          @include sf-typography("h4");
+        }
+
+        @include mq($from: desktop) {
+          margin-bottom: $sp-huge * 2;
+        }
+      }
+    }
+  }
+
+  &.c-card--large {
+    a {
+      // QA - mobile box height
+      min-height: 283px;
+
+      @include mq($from: tablet) {
+        min-height: 400px;
+      }
+      // QA - mobile box height
+
+      @include spacing($sp-medium, padding, all);
+
+      .c-card__heading {
+        @extend .u-font-h2;
+
+        @include mq($until: desktop) {
+          @include sf-typography("h2");
+        }
+
+        @include mq($from: wide) {
+          @include sf-typography("h2");
+        }
+
+        @include mq($from: desktop, $until: wide) {
+          @include responsive-font(4vw, 38px, 52px);
+          line-height: 1.1;
+        }
+
+        @include mq($from: desktop) {
+          margin-bottom: $sp-huge * 2;
+        }
+      }
+
+      @include mq($from: desktop) {
+        min-height: 530px;
+      }
+    }
+  }
+
+  // Main hero feature with image, _might_ be worth creating a new component as
+  // it has some fairly custom styling
+  &.c-card--feature {
+    a,
+    .no-link {
+      @include spacing($sp-base, padding, all);
+      min-height: 350px;
+      padding-top: $sp-large;
+
+      .c-card__heading {
+        @extend .u-font-h2;
+        font-weight: $font-weight-bold !important;
+
+        @include mq($until: desktop) {
+          @include sf-typography("h2");
+          margin-bottom: 0.5em;
+        }
+
+        @include mq($from: wide) {
+          @include sf-typography("h2");
+        }
+
+        @include mq($from: desktop, $until: wide) {
+          @include responsive-font(4vw, 38px, 52px);
+          line-height: 1.1;
+        }
+      }
+
+      .c-card__heading--huge {
+        font-weight: $font-weight-bold !important;
+
+        @include mq($until: desktop) {
+          @include sf-typography("h1");
+        }
+
+        @include mq($from: wide) {
+          @include sf-typography("h1");
+        }
+
+        @include mq($from: desktop, $until: wide) {
+          @include responsive-font(5vw, 66px, 76px);
+          line-height: 1.1;
+        }
+      }
+
+      // alternate heading sizes
+      .c-card__heading {
+
+        .c-card--alternate & {
+
+          @include mq($from: wide) {
+            font-size: 64px;
+            line-height: 1.2;
+          }
+        }
+
+        .c-card--alternate-v2 & {
+
+          @include mq($until: tablet) {
+            font-size: 32px;
+            line-height: 1;
+            margin-bottom: $sp-medium;
+          }
+
+          @include mq($from: wide) {
+            font-size: 48px;
+            line-height: 1.2;
+          }
+        }
+      }
+
+      .c-card__heading--huge {
+
+        .c-card--alternate & {
+
+          @include mq($from: wide) {
+            font-size: 120px;
+            line-height: 1;
+          }
+        }
+
+        .c-card--alternate-v2 & {
+
+          @include mq($until: tablet) {
+            font-size: 40px;
+            line-height: 1;
+            margin-bottom: $sp-medium;
+          }
+
+          @include mq($from: wide) {
+            font-size: 90px;
+            line-height: 1;
+            margin-bottom: $sp-medium;
+          }
+        }
+      }
+
+      &:hover {
+        .c-btn--white {
+          background-color: $blue;
+          border-color: $blue;
+          color: $white;
+
+          svg {
+            fill: $white;
+          }
+        }
+      }
+
+      @include mq($from: desktop) {
+        min-height: 530px;
+      }
+    }
+  }
+
+  &.c-card--dark {
+    a {
+      color: $white;
+
+      span:not(.c-btn) {
+        color: $yellow;
+      }
+
+      .c-card__icon svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &.c-card--no-bottom-margin {
+    margin-bottom: 0;
+  }
+}
+
+.c-card--split {
+  @include spacing($sp-base);
+
+  a {
+    padding: 0;
+
+    .c-card__heading {
+      @include sf-typography("h6");
+    }
+
+    svg {
+      transition: transform $global-transition-duration
+        $global-transition-timing-function;
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &.is-hero {
+    a {
+      .c-card__heading {
+        @include sf-typography("h5");
+      }
+
+      .c-card__fig {
+        @include mq($from: tablet) {
+          border-radius: 0 $global-radius $global-radius 0;
+          flex: 1;
+        }
+
+        // QA - IE11 windows 10
+        @include mq($from: desktop) {
+          min-height: 448px;
+        }
+      }
+
+      .c-card__body {
+        @include mq($from: tablet) {
+          flex: 0 0 25%;
+        }
+      }
+
+      @include mq($from: tablet) {
+        display: flex;
+        flex-direction: row-reverse;
+        min-height: 360px;
+      }
+    }
+  }
+}
+
+.c-card__fig {
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: $global-radius $global-radius 0 0;
+  margin: 0;
+  min-height: 150px;
+  width: 100%;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  &.c-card__fig--with-image {
+    min-height: 0;
+  }
+
+  @include mq($from: desktop) {
+    min-height: 256px;
+  }
+}
+
+.c-card__body {
+  @include spacing($sp-base, padding, all);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &.c-card__body-top-align {
+    align-content: flex-start;
+
+    .c-card-footer {
+      position: absolute;
+      right: $sp-large;
+      bottom: $sp-large;
+    }
+  }
+}

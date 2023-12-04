@@ -1,0 +1,26 @@
+.c-image-and-text {
+  @include spacing($sp-base);
+  display: flex;
+
+  svg {
+    @include spacing($sp-base, margin, right);
+    width: $sp-xxlarge;
+    height: $sp-xxlarge;
+
+    @include mq($from: desktop) {
+      width: $sp-huge;
+      height: $sp-huge;
+    }
+  }
+
+  .c-image-and-text__title {
+    @extend .u-font-h6;
+    margin-bottom: 0.5em;
+  }
+
+  .c-image-and-text__content {
+    p {
+      @extend .u-font-p3;
+    }
+  }
+}

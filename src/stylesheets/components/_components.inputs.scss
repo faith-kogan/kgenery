@@ -1,0 +1,128 @@
+/**
+ * 1. Line height on custom font is imbalanced so magic numbers needed
+ */
+
+.c-input {
+  @include spacing($sp-tiny);
+
+  .c-input__button-inside {
+    text-align: center;
+    width: 100%;
+
+    > div {
+      position: relative;
+    }
+
+    input {
+      display: block;
+      margin: 0 auto;
+      padding-right: 80px;
+    }
+
+    + .c-input__error {
+      display: block;
+      padding-top: $sp-small;
+
+      &.no-gap {
+        display: inline;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 55%;
+      transform: translateY(-50%);
+      width: 60px;
+
+      svg {
+        fill: $grey-dark;
+        height: 22px;
+        width: 22px;
+      }
+
+      &:disabled {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .c-input__info {
+    @include spacing();
+    @include sf-typography("p3");
+    font-weight: $font-weight-medium;
+    text-align: center;
+  }
+
+  &.c-input--submit {
+    @include spacing($sp-tiny, padding, top);
+  }
+
+  &.c-input--centered {
+    text-align: center;
+  }
+}
+
+.c-input__error {
+  color: $magenta;
+
+  .u-bg-pink-to-purple & {
+    color: $white;
+  }
+}
+
+.c-background-koganRed .c-input__error {
+  color: $white;
+}
+
+.c-input__separator {
+  @include spacing($sp-small, margin, top);
+  border-top: 1px solid $grey-light;
+
+  &.c-input__separator-border-none {
+    border: none;
+  }
+
+  &.c-input__separator-spacing-bottom {
+    @include spacing($sp-tiny, margin, top);
+    @include spacing($sp-small, margin, bottom);
+  }
+
+  .c-input__error + & {
+    @include spacing($sp-tiny, margin, top);
+  }
+}
+
+%input-styles {
+  @include sf-typography("input");
+  -webkit-appearance: none;
+  backface-visibility: hidden;
+  border: 1px solid $grey-light;
+  border-radius: $global-radius;
+  display: block;
+  padding: $sp-base $sp-base 14px; // [1]
+  transition: $global-transition;
+  width: 100%;
+
+  @include mq($from: tablet) {
+    padding: 20px 18px 18px; // [1]
+  }
+
+  &:focus {
+    border: 1px solid $blue-light;
+    box-shadow: 0 0 4px $blue-light;
+    outline: 0;
+  }
+
+  &:disabled {
+    background: $grey-xlight;
+  }
+}

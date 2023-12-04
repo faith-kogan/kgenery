@@ -1,0 +1,79 @@
+.o-panel {
+  @include spacing($sp-xxlarge, padding, top);
+  @include spacing($sp-xxlarge, padding, bottom);
+
+  &.o-panel--no-top-spacing {
+    padding-top: 0;
+  }
+
+  &.o-panel--top-spacing-tiny {
+    padding-top: $sp-tiny;
+  }
+
+  &.o-panel--top-spacing-small {
+    padding-top: $sp-small;
+  }
+
+  &.o-panel--top-spacing-base {
+    padding-top: $sp-base;
+  }
+
+  &.o-panel--top-spacing-medium {
+    padding-top: $sp-medium;
+  }
+
+  &.o-panel--top-spacing-large {
+    padding-top: $sp-large;
+  }
+
+  &.o-panel--top-spacing-xlarge {
+    padding-top: $sp-xlarge;
+  }
+
+  &.o-panel--top-spacing-xxlarge {
+    padding-top: $sp-xxlarge;
+  }
+
+  &.o-panel--top-spacing-huge {
+    padding-top: $sp-huge;
+  }
+
+  &.o-panel--top-spacing-massive {
+    padding-top: $sp-massive;
+  }
+
+  &.o-panel--no-bottom-spacing-custom {
+    padding-bottom: 0;
+  }
+
+  // updates to include more bottom spacing flexibility
+  /*
+  &.u-margin-bottom-zero {
+  	margin-bottom: 0;
+  }
+
+  &.u-spacing-bottom-large {
+  	margin-bottom: $sp-huge;
+
+  	@include mq($from: desktop) {
+    	margin-bottom: 124px;
+  	}
+  }
+
+  &.u-margin-bottom-medium {
+  	@include spacing($sp-medium);
+  }
+
+  &.u-spacing-bottom-large {
+  	@include spacing($sp-large);
+  }
+
+  &.u-spacing-bottom-huge {
+  	margin-bottom: $sp-huge;
+
+  	@include mq($from: desktop) {
+  		margin-bottom: 124px;
+  	}
+  }
+  */
+}

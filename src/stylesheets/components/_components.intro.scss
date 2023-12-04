@@ -1,0 +1,10 @@
+.c-intro {
+  p {
+    @include sf-typography("p1");
+
+    @include mq($from: desktop) {
+      font-size: rem(26px);
+      line-height: 1.8em;
+    }
+  }
+}

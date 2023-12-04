@@ -1,0 +1,27 @@
+// breadcrumb margin reduce for archive
+.archive,
+.blog {
+
+  .c-breadcrumbs {
+    margin-bottom: $sp-base;
+  }
+
+  .u-font-p4 {
+    font-weight: $font-weight-medium;
+  }
+
+  .c-select {
+    background-color: $white;
+    margin-bottom: $sp-base;
+    max-width: 420px;
+    // line height so no text cutoff
+    line-height: 19px!important;
+  }
+}
+
+.blog {
+
+  .breadcrumb_last {
+    display: none;
+  }
+}

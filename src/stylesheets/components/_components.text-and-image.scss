@@ -1,0 +1,46 @@
+.c-text-and-image {
+  display: flex;
+
+  figure {
+    flex: 0 0 110px;
+
+    img {
+      border-radius: $global-radius;
+      width: 80px;
+    }
+
+    @include mq($until: tablet) {
+      display: none;
+    }
+  }
+
+  .c-text-and-image__meta {
+    @include sf-typography("p5");
+    margin-bottom: 0;
+
+    a {
+      font-weight: $font-weight-medium;
+      text-transform: uppercase;
+    }
+  }
+
+  .c-text-and-image__title {
+    @include sf-typography("p2");
+    font-weight: $font-weight-semibold;
+    margin: 0;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .c-text-and-image__content {
+    p:not(.c-text-and-image__meta) {
+      @include sf-typography("p3");
+    }
+  }
+}
+
+.c-image--rounded-global {
+  border-radius: $global-radius;
+}

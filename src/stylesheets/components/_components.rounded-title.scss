@@ -1,0 +1,21 @@
+.c-rounded-title {
+  @include sf-typography("h6");
+  margin-bottom: 0;
+  text-align: center;
+
+  span {
+    @include spacing($sp-medium, margin, bottom);
+    @include spacing($sp-medium, margin, top);
+    background-color: $blue;
+    border-radius: 100%;
+    color: $white;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $sp-base;
+
+    @include mq($from: desktop) {
+      padding: 20px;
+    }
+  }
+}

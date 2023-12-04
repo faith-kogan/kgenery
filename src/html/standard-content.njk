@@ -1,0 +1,46 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item  u-1/4@desktop">
+      {% include "shared/accordion.njk" %}
+    </div>
+    <div class="o-layout__item  u-7/12@desktop  u-push-1/12@desktop">
+      <div class="c-article-intro">
+        <h1 class="u-font-h2  c-article-intro__title">Renewable Energy</h1>
+      </div>
+      <div class="u-spacing-bottom-large  s-cms-content">
+        <p>The 2018 Green Electricity Guide has been released, and we’re thrilled that Powershop Australia are still Australia’s Greenest Power Company! We ranked #1 nationally against 30 other retailers and retained our green crown with a near-perfect score of 9.7 out of 10.</p>
+        <p>The Green Electricity Guide has been released in 2014, 2015 and now 2018, and we’ve topped the list every single year. This is a huge achievement for the Powershop team, because we all work really hard to make sure that we’re running a better and greener power company.</p>
+        <p>Greenpeace and the Total Environment Centre (TEC) produce the Green Electricity Guide to assist consumers with their choices and to help advocacy efforts to create a greener, more sustainable energy system.</p>
+        <p>The Green Electricity Guide is totally unbiased. Neither Greenpeace nor the TEC endorse any particular retailer, and don’t receive any corporate funding from any energy providers, corporations or Governments. The Green Electricity Guide is funded by Energy Consumers Australia.</p>
+        <p><strong>Read more:</strong> <a href="#">greenelectricityguide.org.au</a></p>
+        <h2>How are we greener?</h2>
+        <p>We’re greener in heaps of ways. You can read how we stacked up on the Green Electricity Guide criteria <a href="">here</a>.</p>
+        <p>Powershop is greener behind the scenes:</p>
+        <ul>
+          <li>Powershop’s parent company Meridian Energy, a 100% renewable generator, owns and operates all 5 renewable generation assets in Australia:</li>
+          <li>Powershop customers get 100% accredited carbon neutral energy – at no extra cost to them.</li>
+          <li>We facilitate the funding of community renewable energy projects through our Your Community Energy program, where Powershop customers pay a small premium; the money is pooled and then distributed to community energy projects, like Milparinka in Brunswick, VIC.</li>
+          <li>Our customers buy heaps of GreenPower because a) they’re amazing and b) we make it super easy and flexible for them to purchase GreenPower products through our online shop.</li>
+        </ul>
+        <h2>Why are we greener?</h2>
+        <p>We know Australians want more renewables. Because Powershop can’t control where the power that gets delivered to your door comes from, we do heaps of stuff to make sure we’re supporting renewable investment in Australia as well as offsetting all our customer’s and our own emissions. It’s the right thing to do and we want you to join us on the journey of cleaning up the Australian energy industry.</p>
+        <p><strong>Read next:</strong> <a href="">Magna Carta 2.0 – Powershop CEO Ed McManus at TEDx</a></p>
+      </div>
+    </div>
+  </div>
+</section><!-- o-wrapper -->
+
+{% include "shared/cta.njk" %}
+
+{% endblock %}

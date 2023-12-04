@@ -1,0 +1,53 @@
+{% extends 'layouts/campaign.njk' %}
+
+{% block content %}
+<div class="o-wrapper" data-module="PromoCookies" data-promoName="oxfam" data-promoId="223" data-promoTermsUrl="/switch-now/terms" data-promoExpires="June 30, 2018 23:59:59">
+
+  <div class="o-layout">
+
+    <div class="o-layout__item  u-1/1">
+      <figure class="c-article-header">
+        <img src="images/mv-campaign-header.svg" alt="Powershop" />
+      </figure>
+    </div>
+
+    <div class="o-layout__item s-cms-content">
+      <section>
+        <h1>Wind Wheels</h1>
+        <h4>Harvest the power of wind energy with your own wind turbine windwheel!</h4>
+        <p>Join us in transforming the unique space at Melbourne Museum into a mini wind farm while you learn about all things renewable energy and how we can create a sustainable future. Visit Melbourne Museum and get a chance to build your own wind turbine windwheel and, together with other guests over the weeks, create what will be the world’s largest pinwheel installation.</p>
+      </section>
+
+      <!-- add ticker with data module -->
+      {% include 'shared/mv/counter-mv.njk' %}
+
+      <!-- find out more image and CTA -->
+      {% include 'shared/mv/mv-cta-1.njk' %}
+
+      <!-- add instagram curated posts carousel -->
+      {% include 'shared/mv/instagram-carousel.njk' %}
+
+      <!-- wind you know -->
+      {% include 'shared/mv/mv-wind-you-know.njk' %}
+      
+      <!-- wind farms section -->
+      {% include 'shared/mv/mv-wind-farms.njk' %}
+
+      <!-- about powershop -->
+      {% include 'shared/mv/mv-about-powershop.njk' %}
+
+      <!-- about powershop wind farms -->
+      {% include 'shared/mv/mv-powershop-wind-farms.njk' %}
+
+      <h2 class="u-font-h5  u-pink">Q&amp;A</h2>
+      {% include 'shared/faqs.njk' %}
+
+    </div>
+
+  </div><!-- o-layout -->
+
+</div><!-- o-wrapper -->
+
+{% include "shared/cta-extended.njk" %}
+
+{% endblock %}

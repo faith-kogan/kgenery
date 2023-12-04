@@ -1,0 +1,9 @@
+export default class JotformResidentialQuote {
+  constructor(el) {
+    this.el = el
+	
+JotForm.init(function(){ JotForm.alterTexts(undefined); JotForm.clearFieldOnHide="disable"; JotForm.submitError="jumpToFirstError"; /*INIT-END*/
+}); JotForm.prepareCalculationsOnTheFly([null,{"name":"estimatorPage","qid":"1","text":"Estimator page callback","type":"control_head"},{"name":"send","qid":"2","text":"Send","type":"control_button"},{"description":"","name":"name","qid":"3","subLabel":"Full name please","text":"Name","type":"control_textbox"},{"description":"","name":"contactNumber","qid":"4","subLabel":"","text":"Contact number","type":"control_textbox"},{"description":"","name":"email","qid":"5","subLabel":"","text":"Email","type":"control_email"},{"description":"","name":"iAgree","qid":"6","text":"I agree","type":"control_checkbox"},{"description":"","name":"getA","qid":"7","subLabel":"","text":"Get a price tool used","type":"control_textbox"}]); setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,{"name":"estimatorPage","qid":"1","text":"Estimator page callback","type":"control_head"},{"name":"send","qid":"2","text":"Send","type":"control_button"},{"description":"","name":"name","qid":"3","subLabel":"Full name please","text":"Name","type":"control_textbox"},{"description":"","name":"contactNumber","qid":"4","subLabel":"","text":"Contact number","type":"control_textbox"},{"description":"","name":"email","qid":"5","subLabel":"","text":"Email","type":"control_email"},{"description":"","name":"iAgree","qid":"6","text":"I agree","type":"control_checkbox"},{"description":"","name":"getA","qid":"7","subLabel":"","text":"Get a price tool used","type":"control_textbox"}]);}, 20);
+  }
+}

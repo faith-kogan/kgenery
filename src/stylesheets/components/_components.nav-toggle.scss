@@ -1,0 +1,72 @@
+$toggle-spacing: 24px;
+
+.c-nav-toggle {
+  align-items: center;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+  display: block;
+  display: flex;
+  height: $header-mobile-height;
+  justify-content: center;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+
+  span {
+    backface-visibility: hidden;
+    background: $grey-dark;
+    display: block;
+    height: 2px;
+    left: 14px;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: $global-transition-duration $global-transition-timing-function;
+    width: 100%;
+    width: 20px;
+
+    &:nth-child(1) {
+      top: $toggle-spacing;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 30px;
+    }
+
+    &:nth-child(4) {
+      top: 36px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    span {
+      &:nth-child(1) {
+        left: $toggle-spacing;
+        top: $sp-large; // To the middle
+        width: 0%;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(4) {
+        left: $toggle-spacing;
+        top: $sp-large; // To the middle
+        width: 0%;
+      }
+    }
+  }
+
+  @include mq($from: desktop) {
+    display: none;
+  }
+}

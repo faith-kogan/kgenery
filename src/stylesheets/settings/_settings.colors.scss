@@ -1,0 +1,69 @@
+$black: #000;
+$white: #fff;
+
+// Primary colours
+$pink: #ed193a;
+$magenta: #bb206b;
+$purple: #662244;
+$koganRed: #DB2828;
+
+// Greys
+$grey-dark: #454849;
+$grey: #7d7d7d;
+$grey-mid: #d8d8d8;
+$grey-light: #ebebeb;
+$grey-xlight: #f5f5f5;
+
+// Secondary colours
+$blue: #1390ce;
+$blue-light: #afdffa;
+$green: #7cae41;
+$orange: #ff9900;
+$yellow: #ffdd00;
+$peach: #ffa276;
+
+// Gradients
+$pink-to-purple: linear-gradient(134deg, $pink 36%, $purple 100%);
+$pink-to-orange: linear-gradient(134deg, $pink 36%, #fc3949 56%, $orange 100%);
+
+$tap-highlight-color: rgba(255, 255, 255, 0);
+
+// Social
+$facebook: #3b5998;
+$instagram: #125688;
+$linked-in: #007bb5;
+$twitter: #00aced;
+$youtube: #bb0000;
+
+// Based off styleguide
+$honest-fox: #ef5737;
+
+// ==========================================================================||
+//  Colors included in $colors map will be used in utilities
+// ==========================================================================||
+
+$colors: (
+  "honest-fox": $honest-fox,
+  "pink": $pink,
+  "magenta": $magenta,
+  "purple": $purple,
+  "grey-dark": $grey-dark,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-xlight": $grey-xlight,
+  "blue": $blue,
+  "blue-light": $blue-light,
+  "green": $green,
+  "orange": $orange,
+  "yellow": $yellow,
+  "peach": $peach,
+  "white": $white,
+  "black": $black
+);
+
+
+
+$gradients: (
+  "pink-to-purple": $pink-to-purple,
+  "pink-to-orange": $pink-to-orange
+);

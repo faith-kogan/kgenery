@@ -1,0 +1,111 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<section class="o-wrapper">
+  <article class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </article>
+</section>
+
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item  u-1/4@desktop">
+      {% include "shared/accordion.njk" %}
+    </div>
+    <div class="o-layout__item  u-7/12@desktop  u-push-1/12@desktop">
+      <div class="c-article-intro">
+        <h1 class="c-section-heading__title u-font-h2">Carbon calculator</h1>
+      </div>
+      <div class="u-spacing-bottom-large  s-cms-content">
+        <p>At Powershop, being carbon neutral is kind of a big deal. All the electricity we supply to our customers is 100% carbon neutral (at no extra cost). No need to opt in or pay more – it’s done for you, behind the scenes. We’re the only power company in Australia to be accredited 100% carbon neutral by the Australian Government.</p>
+        <p>Whether you’re a Powershop customer or not, we’ve put together this simple, handy calculator to help you see your household’s carbon emissions generated from electricity usage at your home or business (this is important because about one third of Australia’s greenhouse gas emissions are from electricity emissions).</p>
+          <div class="calculator-body c-form c-form--bordered" data-module="CarbonCalculator">
+            
+            <!-- choose state -->
+            
+            <p class="u-font-h5">
+              Choose your state <br>
+              <small>(each state has a different emission factor).</small>
+            </p>
+            <hr />
+            <div class="c-input state-vic state-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-1" />
+                <label class="c-radio__label" for="radio-1">Victoria</label>
+              </div>
+            </div>
+            <div class="c-input state-nsw state-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-2" />
+                <label class="c-radio__label" for="radio-2">New South Wales / ACT</label>
+              </div>
+            </div>
+            <div class="c-input state-qld state-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-3" />
+                <label class="c-radio__label" for="radio-3">Queensland</label>
+              </div>
+            </div>
+            <div class="c-input state-sa not-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-4" />
+                <label class="c-radio__label" for="radio-4">South Australia</label>
+              </div>
+            </div>
+            <div class="c-input state-s-wa not-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-5" />
+                <label class="c-radio__label" for="radio-5">South Western Australia</label>
+              </div>
+            </div>
+            <div class="c-input state-n-wa not-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-6" />
+                <label class="c-radio__label" for="radio-6">North Western Australia</label>
+              </div>
+            </div>
+            <div class="c-input state-tas not-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-7" />
+                <label class="c-radio__label" for="radio-7">Tasmania</label>
+              </div>
+            </div>
+            <div class="c-input state-nt not-customers">
+              <div class="c-radio">
+                <input class="c-radio__input" type="radio" name="common-radio-name" id="radio-8" />
+                <label class="c-radio__label" for="radio-8">Northern Territory</label>
+              </div>
+            </div>
+            <hr />
+
+            <!-- number input of kWh of purchased electricity from the grid -->
+            <label class="c-input-label">
+              Enter your home or business's kWh electricity usage. <br>
+              <small>(For Powershop customers, this can be found in your Account Review, online account or smartphone app).</small>
+            </label>
+            <input class="c-input-text" id="kwh" type="text" value="" data-no-uniform="true" disabled placeholder="kWh" />
+            <p class="warning-text warning-hide">Please add numbers only.</p>
+            <hr />
+
+            <p class="u-font-h5">Your emissions result is:</p>
+            <p class="result u-font-h1 u-margin-bottom-zero">0.0000</p>
+            <p class="result-small">Tonnes of carbon dioxide equivalent.</p>
+            <a class="calculator reset c-btn c-btn--centered c-btn--full\@mobile" href="javascript:void(0);">Reset</a>
+            <hr />
+
+            <p>
+              <small><strong>Source:</strong> <a href="https://www.environment.gov.au/climate-change/climate-science-data/greenhouse-gas-measurement/publications/national-greenhouse-accounts-factors-july-2017" target="_blank">Australian Government - Department of the Environment and Energy</a>.</small>
+            </p>
+            <p><strong>Note:</strong> If you are a Powershop customer the emissions shown on this calculator will not be consistent with the emissions shown on your account review due to two different emission factors being used (Essential Services Commission emission factor for the account review and NCOS emission factor for this calculator).</p>
+            <p><small><strong>South WA</strong> represents Albany, north through to Bunbury, Perth then up to Geraldton. <br /><strong>North WA</strong> represents Port Headland and its surrounding towns.</small>
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section><!-- o-wrapper -->
+
+{% endblock %}

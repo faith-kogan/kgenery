@@ -1,0 +1,76 @@
+/**
+ * This is just to override the styles from the compiled CSS file in the node_modules folder
+ * We have the option to include all the pre-compiled Sass files
+ * but there are many and have names that clash with our own files and it gets annoying
+ * when using ⌘ + t in your text editor.
+ *
+ * If we find we need to include them, download from here
+ * https://github.com/sampotts/plyr/tree/develop/src/sass
+ * BUT you must rename all the files, prefixing with an underscore otherwise our
+ * build script tries to parse them before they are ready
+ */
+
+.plyr {
+  font-family: $boing, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica,
+    Arial, sans-serif;
+}
+
+.plyr--stopped .plyr__controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plyr--audio .plyr__control.plyr__tab-focus,
+.plyr--audio .plyr__control:hover,
+.plyr--audio .plyr__control[aria-expanded="true"] {
+  background: $pink;
+  color: #fff;
+}
+
+.plyr__control--overlaid {
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  padding: 16px 34px;
+
+  @include mq($until: desktop) {
+    padding: 12px 24px;
+  }
+}
+
+.plyr__control--overlaid svg {
+  height: 24px;
+  left: 2px;
+  position: relative;
+  width: 24px;
+  fill: $black;
+  transition: $global-transition;
+
+  @include mq($until: desktop) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.plyr__control--overlaid:focus,
+.plyr__control--overlaid:hover {
+  background: $pink;
+
+  svg {
+    fill: $white;
+  }
+}
+
+.plyr--video .plyr__controls .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__controls .plyr__control:hover,
+.plyr--video .plyr__controls .plyr__control[aria-expanded="true"] {
+  background: $pink;
+}
+
+.plyr__menu__container label.plyr__control input[type="radio"]:checked + span {
+  background: $pink;
+}
+
+.plyr--full-ui input[type="range"] {
+  color: $pink;
+}

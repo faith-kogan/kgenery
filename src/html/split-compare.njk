@@ -1,0 +1,36 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+
+<section class="o-wrapper">
+  <article class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </article>
+</section>
+
+<section class="o-panel o-panel--no-bottom-spacing o-panel--no-top-spacing c-custom--split-compare">
+  <div class="o-wrapper o-wrapper--vertical-spacing">
+    <section class="o-layout o-layout--center">
+      <div class="o-layout__item  u-10/12@tablet">
+        <header class="c-section-heading false ">
+          <h1 class="c-section-heading__title  u-font-h2  u-pink">Get a price</h1>
+        </header>
+        <article class="c-split-callout">
+          <header>
+            <h1>left</h1>
+            <p class="c-rounded-title">
+              <span>or</span>
+            </p>
+          </header>
+          <footer>
+            <h1>right</h1>
+          </footer>
+        </article>
+      </div>
+    </section>
+  </div><!-- o-wrapper -->
+</section>
+
+{% endblock %}

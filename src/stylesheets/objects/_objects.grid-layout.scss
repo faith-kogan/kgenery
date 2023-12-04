@@ -1,0 +1,124 @@
+.o-grid-layout {
+  display: grid;
+
+  // images 100% width to avoid scrolling
+  img {
+    width: 100%;
+  }
+
+  // 5 columns
+  &.o-grid-layout--columns-5 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  // 4 columns
+  &.o-grid-layout--columns-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  // 3 columns
+  &.o-grid-layout--columns-3 {
+    
+    @include mq($from: tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  // 2 columns half/half width
+  &.o-grid-layout--columns-2-half-half {
+
+    @include mq($from: tablet) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2em;
+    }
+  }
+
+  // 2 columns 2 thirds / 1 third width
+  &.o-grid-layout--columns-2-2third-1third {
+
+    @include mq($from: tablet) {
+      grid-template-columns: 2fr 1fr;
+      grid-gap: 2em;
+    }
+  }
+
+  // custom grid
+  // 3 columns
+  &.o-grid-layout--columns-2-form-radio {
+    grid-template-columns: auto 1fr;
+  }
+
+  &.o-grid-layout--columns-2-half-half-mobile {
+
+    @include mq($from: mobile) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2em;
+    }
+  }
+
+  // 2 columns auto width
+  &.o-grid-layout--columns-2-auto-width {
+
+    @include mq($from: tablet) {
+      grid-template-columns: auto auto;
+      grid-gap: 2em;
+    }
+  }
+
+  // 2 columns auto width
+  &.o-grid-layout--columns-3-auto-width {
+    grid-template-columns: auto auto auto;
+  }
+
+  // grid gaps
+  &.o-grid-layout--gap-tiny {grid-gap: $sp-tiny;}
+  &.o-grid-layout--gap-small {grid-gap: $sp-small;}
+  &.o-grid-layout--gap-base {grid-gap: $sp-base;}
+  &.o-grid-layout--gap-medium {grid-gap: $sp-medium;}
+  &.o-grid-layout--gap-large {grid-gap: $sp-large;}
+  &.o-grid-layout--gap-xlarge {grid-gap: $sp-xlarge;}
+  &.o-grid-layout--gap-xxlarge {grid-gap: $sp-xxlarge;}
+  &.o-grid-layout--gap-huge {grid-gap: $sp-huge;}
+  &.o-grid-layout--gap-massive {grid-gap: $sp-massive;}
+
+  // grid version of centered layout framework
+  &.o-grid-layout--centered {
+    padding-left: $sp-base;
+    padding-right: $sp-base;
+    grid-gap: $sp-base;
+
+    @include mq($from: tablet) {
+      padding-left: $sp-large;
+      padding-right: $sp-large;
+    }
+
+    @include mq($from: desktop) {
+      max-width: 1440px;
+      padding-left: $sp-huge;
+      padding-right: $sp-huge;
+      margin: auto;
+    }
+  }
+
+  // grid version of centered layout framework
+  &.o-grid-layout--left {
+    margin: 0;
+  }
+
+  // grid on tablet and above
+  &.o-grid-layout--tablet {
+    @include mq($until: tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// rounded image (used on Business meet preople page)
+.o-grid-layout--rounded-image {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: $sp-large;
+  flex-shrink: 0;
+}

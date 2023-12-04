@@ -1,0 +1,24 @@
+.c-article-header {
+  @include spacing($sp-xlarge);
+  @include spacing($sp-large, margin, top);
+
+  img {
+    max-width: 100%;
+  }
+
+  &.c-article-header--margin-medium {
+  	margin-bottom: $sp-medium;
+  }
+
+  &.c-article-header--margin-large {
+  	margin-bottom: $sp-large;
+  }
+
+  &.c-article-header--margin-xlarge {
+  	margin-bottom: $sp-xlarge;
+  }
+
+  &.c-article-header--margin-xxlarge {
+  	margin-bottom: $sp-xxlarge;
+  }
+}

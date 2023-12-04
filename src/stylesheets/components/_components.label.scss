@@ -1,0 +1,28 @@
+.c-input-label {
+  @include sf-typography("label");
+  display: block;
+
+  &.c-input-label--with-icon {
+    @include sf-typography("h6");
+    @include spacing();
+    text-align: center;
+
+    svg {
+      width: 42px;
+      height: 42px;
+      fill: $white;
+      display: block;
+      margin: 0 auto $sp-small;
+
+      @include mq($from: desktop) {
+        margin-bottom: $sp-base;
+      }
+    }
+  }
+
+  &.c-input-label--pink-icon {
+    svg {
+      fill: $pink;
+    }
+  }
+}

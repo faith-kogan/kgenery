@@ -1,0 +1,35 @@
+.c-section-heading {
+  @include spacing($sp-xlarge, padding, top);
+  @include spacing($sp-xlarge, padding, bottom);
+  text-align: center;
+
+  .c-section-heading__title {
+    @extend .u-font-h2;
+    margin: 0 0 $sp-tiny;
+
+    span {
+      color: $pink;
+    }
+  }
+
+  &.c-section-heading--less-bottom-spacing {
+    @include spacing($sp-medium, padding, bottom);
+  }
+
+  &.c-section-heading--no-top-spacing {
+    padding-top: 0;
+  }
+
+  &.c-section-heading--align-left {
+    text-align: left;
+  }
+}
+
+.c-section-heading__content {
+  @include inuit-font-size(18px, 24px);
+  font-weight: $font-weight-medium;
+
+  @include mq($from: tablet) {
+    @include inuit-font-size(20px, 36px);
+  }
+}

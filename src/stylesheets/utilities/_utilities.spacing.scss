@@ -1,0 +1,99 @@
+// ==========================================================================||
+//  Simple spacing helper
+//
+//  Usage: @include spacing($sp-large, padding, top)
+//  Defaults to margin bottom
+//
+//  spacings defined in settings.config
+// ==========================================================================||
+
+@mixin spacing($size: $sp-base, $property: margin, $direction: bottom) {
+  @if $direction == all {
+    #{$property}: $size;
+
+    @include mq($from: tablet) {
+      #{$property}: $size * 1.5;
+    }
+
+    @include mq($from: desktop) {
+      #{$property}: $size * 2;
+    }
+  } @else {
+    #{$property}-#{$direction}: $size;
+
+    @include mq($from: tablet) {
+      #{$property}-#{$direction}: $size * 1.5;
+    }
+
+    @include mq($from: desktop) {
+      #{$property}-#{$direction}: $size * 2;
+    }
+  }
+}
+
+.u-margin-bottom-zero {
+  margin-bottom: 0 !important;
+}
+
+.u-spacing-bottom-large {
+  margin-bottom: $sp-huge;
+
+  @include mq($from: desktop) {
+    margin-bottom: 124px;
+  }
+}
+
+.u-margin-bottom-tiny {
+  @include spacing($sp-tiny);
+}
+
+.u-margin-bottom-small {
+  @include spacing($sp-small);
+}
+
+.u-margin-bottom-base {
+  @include spacing($sp-base);
+}
+
+.u-margin-bottom-medium {
+  @include spacing($sp-medium);
+}
+
+.u-spacing-bottom-medium {
+  @include spacing($sp-medium);
+}
+
+.u-spacing-bottom-large {
+  @include spacing($sp-large);
+}
+
+.u-spacing-bottom-xlarge {
+  @include spacing($sp-xlarge);
+}
+
+.u-spacing-bottom-xxlarge {
+  @include spacing($sp-xxlarge);
+}
+
+.u-spacing-bottom-huge {
+  margin-bottom: $sp-huge;
+
+  @include mq($from: desktop) {
+    margin-bottom: 124px;
+  }
+}
+
+.u-spacing-bottom-huge {
+  @include spacing($sp-huge);
+}
+
+.u-min-height {
+  min-height: 500px;
+  position: relative;
+}
+
+// Used for the sidebar <select /> replacement on the search results page
+.u-negative-horizontal-spacing {
+  @include spacing(-$sp-base, margin, left);
+  @include spacing(-$sp-base, margin, right);
+}

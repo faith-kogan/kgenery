@@ -1,0 +1,23 @@
+.c-document-list {
+  @include spacing($sp-large);
+
+  h2 {
+    @include sf-typography("h5");
+    @include spacing($sp-small, padding, bottom);
+    border-bottom: 1px solid $grey-mid;
+    margin-bottom: 0;
+    padding-left: $sp-base;
+    padding-right: $sp-base;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    @include spacing($sp-medium);
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+  }
+}

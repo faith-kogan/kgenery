@@ -1,0 +1,122 @@
+.c-cta {
+  @include spacing($sp-huge, margin, top);
+  @include spacing($sp-large, padding, all);
+  color: $white;
+  text-align: center;
+  position: relative;
+  padding-top: 88px; // @TODO: Consider using JS to get the height of the title and use that value to pad the top so we're not using magic numbers
+
+  @include mq($until: desktop) {
+    margin-top: 78px; // Needed a little tweak here to accomodate for the negative spacing
+  }
+
+  @include mq($from: cta) {
+    padding-top: 72px;
+  }
+
+  @include mq($from: tablet) {
+    padding-top: 94px;
+  }
+
+  @include mq($from: desktop) {
+    padding-top: 140px;
+  }
+
+  .o-wrapper {
+    padding: 0;
+  }
+
+  .c-cta__title {
+    left: 50%;
+    margin: 0;
+    padding: 0 $sp-base;
+    position: absolute;
+    top: 0;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+  }
+
+  .c-cta__content {
+    @include spacing($sp-medium);
+    margin-top: -$sp-small;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .c-cta__content-main {
+      p {
+        @include sf-typography("p2");
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+
+  .c-cta__large {
+    @include sf-typography("h4");
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: inline-block;
+    color: $white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include mq($from: tablet) {
+      padding: 0 $sp-medium;
+      @include sf-typography("h3");
+    }
+  }
+
+  h2 {
+    @extend .u-font-h3;
+    background-color: $white;
+    border-radius: 5px; // @TODO: Add this as a variable
+    box-shadow: $global-box-shadow-large;
+    color: $pink;
+    display: inline-block;
+    margin: 0;
+    padding: $sp-medium $sp-large;
+    text-align: center;
+
+    // style now it is a link
+    transition: $global-transition;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transform: translate(0px,2px);
+    }
+
+    @include mq($from: desktop) {
+      padding: $sp-xxlarge $sp-huge;
+    }
+
+    @include mq($from: wide) {
+      padding: $sp-xxlarge 140px;
+    }
+  }
+}
+
+// update for CMS cta
+.c-cta.c-cta__small {
+  padding: $sp-medium;
+  border-radius: 4px;
+  margin-top: 0;
+
+  p {
+    @include sf-typography("p1");
+  }
+}
+
+.c-cta--btn {
+  border-bottom: 0;
+}

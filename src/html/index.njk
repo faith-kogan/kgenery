@@ -1,0 +1,386 @@
+{#
+Nunjucks Templating!
+Homepage: https://mozilla.github.io/nunjucks/
+Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<div class="o-wrapper">
+
+  <div class="o-panel o-panel--top-spacing-xxlarge o-panel--no-bottom-spacing-custom">
+  <div class="o-wrapper">
+    <div class="o-layout">
+      <div class="o-layout__item  u-6/12@desktop">
+        <h1 class="u-font-h4">Scroll to anchor link</h1>
+        <div class="s-cms-content">
+          <a href="#anchor" class="e-scroll-link c-btn c-btn--pink c-btn--chunky u-margin-bottom-small">Scroll to the anchor link</a>
+
+          <div id="anchor">
+            <h2>Does it scroll to this?</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="o-panel o-panel--top-spacing-xxlarge o-panel--no-bottom-spacing-custom u-hidden-visually">
+  <div class="o-wrapper">
+    <div class="o-layout">
+      <div class="o-layout__item  u-6/12@desktop">
+        <h1 class="u-font-h4">List styles</h1>
+        <div class="s-cms-content">
+<ul>
+  <li>List item one</li>
+  <li>List item two and a whiole lot of other text to get to two lines. Lorem ipsum dolor amet roof party green juice everyday carry +1, master cleanse tumeric cronut hexagon sustainable. Lyft activated charcoal mlkshk etsy +1 stumptown. Shabby chic franzen blue bottle waistcoat food truck. Cornhole iceland marfa, post-ironic +1 plaid iPhone synth vexillologist.</li>
+  <li>List item three with nested <strong>ul</strong>
+      <ul>
+      <li>List item five</li>
+      <li>List item six</li>
+      <li>List item seven with nested <strong>ul</strong> and a whiole lot of other text to get to two lines. Lorem ipsum dolor amet roof party green juice everyday carry +1, master cleanse tumeric cronut hexagon sustainable. Lyft activated charcoal mlkshk etsy +1 stumptown. Shabby chic franzen blue bottle waistcoat food truck. Cornhole iceland marfa, post-ironic +1 plaid iPhone synth vexillologist.
+        <ul>
+          <li>List item eight</li>
+          <li>List item nine and a whiole lot of other text to get to two lines. Lorem ipsum dolor amet roof party green juice everyday carry +1, master cleanse tumeric cronut hexagon sustainable. Lyft activated charcoal mlkshk etsy +1 stumptown. Shabby chic franzen blue bottle waistcoat food truck. Cornhole iceland marfa, post-ironic +1 plaid iPhone synth vexillologist.</li>
+          <li>List item ten and a whiole lot of other text to get to two lines. Lorem ipsum dolor amet roof party green juice everyday carry +1, master cleanse tumeric cronut hexagon sustainable. Lyft activated charcoal mlkshk etsy +1 stumptown. Shabby chic franzen blue bottle waistcoat food truck. Cornhole iceland marfa, post-ironic +1 plaid iPhone synth vexillologist.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>List item four</li>
+</ul>
+<hr>
+<ul>
+  <li>List item one</li>
+  <li>List item two</li>
+  <li>List item three with nested <strong>ol</strong>
+    <ol>
+      <li>List item five</li>
+      <li>List item six</li>
+      <li>List item seven with nested <strong>ol</strong>
+        <ol>
+          <li>List item eight</li>
+          <li>List item nine</li>
+          <li>List item ten</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>List item with nested <strong>ol</strong>
+    <ol>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item with nested <strong>ul</strong>
+        <ul>
+          <li>List item</li>
+          <li>List item</li>
+          <li>List item</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>List item four</li>
+</ul>
+<hr>
+<ol>
+  <li>List item one</li>
+  <li>List item two</li>
+  <li>List item three with nested <strong>ul</strong>
+    <ul>
+      <li>List item five</li>
+      <li>List item six</li>
+      <li>List item seven with nested <strong>ol</strong>
+        <ol>
+          <li>List item eight</li>
+          <li>List item nine</li>
+          <li>List item ten</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>List item with nested <strong>ol</strong>
+    <ol>
+      <li>List item</li>
+      <li>List item</li>
+      <li>List item with nested <strong>ul</strong>
+        <ul>
+          <li>List item</li>
+          <li>List item</li>
+          <li>List item</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>List item four</li>
+</ol>
+<hr>
+<ol>
+  <li>List item one</li>
+  <li>List item two</li>
+  <li>List item three
+      <ol>
+      <li>List item five</li>
+      <li>List item six</li>
+      <li>List item seven with nested <strong>ol</strong>
+        <ol>
+          <li>List item eight</li>
+          <li>List item nine</li>
+          <li>List item ten</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>List item four with nested</li>
+</ol>
+            
+            
+          
+
+          <hr>
+        </div>
+      </div>
+
+      <div class="o-layout__item  u-push-1/12@desktop  u-5/12@desktop">
+              </div><!-- u-5/12@desktop -->
+
+    </div><!-- o-layout -->
+  </div><!-- o-wrapper -->
+</div>
+  <section class="o-layout  u-ui-section">
+    <div class="o-layout__item  u-1/1">
+      {#% include "shared/rating-module.njk" %#}
+    </div>
+  </section>
+
+  <div class="o-wrapper">
+    {#% include "shared/form-jotform-powerpanel.njk" %#}
+    {#% include "shared/form-jotform-electric-vehicle.njk" %#}
+    {#% include "shared/form-jotform-callback.njk" %#}
+    {#% include "shared/form-jotform-windwheel.njk" %#}
+    {#% include "shared/form-jotform-do-not-knock.njk" %#}
+    {#% include "shared/form-jotform-careers.njk" %#}
+    {#% include "shared/form-comments.njk" %#}
+    {#% include "shared/form-jotform-contact-us.njk" %#}
+    {#% include "shared/form-jotform-pricedrop-lead.njk" %#}
+    {#% include "shared/form-jotform-solar-lead.njk" %#}
+    {% include "shared/form-jotform-residential-quote.njk" %}
+    {#% include "shared/form-jotform-business-quote.njk" %#}
+    {#% include "shared/form-jotform-concession-consent.njk" %#}
+    {#% include "shared/form-jotform-join-grid-impact.njk" %#}
+    {#% include "shared/form-jotform-better-solar.njk" %#}
+    {#% include "shared/form-jotform-powershop-labs.njk" %#}
+    {#% include "shared/form-jotform-yce.njk" %#}
+    {#% include "shared/form-jotform-curb-power.njk" %#}
+    {#% include "shared/form-jotform-smart-meter.njk" %#}
+  </div>
+  
+  <section class="o-layout  u-ui-section">
+    <div class="o-layout__item  u-1/1">
+      <h1 class="u-font-h4">Powershop styleguide</h1>
+      <h2 class="u-font-h5  u-ui-heading">Colours</h2>
+      <ul class="u-ui-colors">
+        {% for color in colors %}
+        <li class="u-bg-{{ color }}">
+          <p>{{ color }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  
+  <section class="o-layout">
+    <div class="o-layout__item  u-1/1">
+      <h2 class="u-font-h5  u-ui-heading">Fonts</h2>
+      <h1 class="u-font-h1">Heading 1 <code class="u-ui-code">.u-font-h1</code></h1>
+      <h2 class="u-font-h2">Heading 2 <code class="u-ui-code">.u-font-h2</code></h2>
+      <h2 class="u-font-h3">Heading 3 <code class="u-ui-code">.u-font-h3</code></h2>
+      <h2 class="u-font-h4">Heading 4 <code class="u-ui-code">.u-font-h4</code></h2>
+      <h2 class="u-font-h5">Heading 5 <code class="u-ui-code">.u-font-h5</code></h2>
+      <h2 class="u-font-h6">Heading 6 <code class="u-ui-code">.u-font-h6</code></h2>
+      <p class="u-font-p1">Paragraph-1 <code class="u-ui-code">.u-font-p1</code> - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore <a href="#">oh look, a text link</a> et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="u-font-p2">Paragraph-2<code class="u-ui-code">.u-font-p2</code> -  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="u-font-p3">Paragraph-3<code class="u-ui-code">.u-font-p3</code> -  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="u-font-p4">Paragraph-4<code class="u-ui-code">.u-font-p4</code> -  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="u-font-p5">Paragraph-5<code class="u-ui-code">.u-font-p5</code> -  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </section>
+  
+  <section class="o-layout  u-ui-section">
+    <div class="o-layout__item  u-1/1">
+      <h2 class="u-font-h5  u-ui-heading">Lists <code>.c-list</code></h2>
+      <h3 class="u-font-h6  u-ui-heading-small">Unordered list <code>.c-list--unordered</code></h3>
+      
+      <ul class="c-list  c-list--unordered">
+        {% for item in list %}
+        <li>
+          {{ item }}
+        </li>
+        {% endfor %}
+      </ul>
+      
+      <h3 class="u-font-h6  u-ui-heading-small">Ordered list <code>.c-list--ordered</code></h3>
+      <ol class="c-list  c-list--ordered">
+        {% for item in list %}
+        <li>
+          {{ item }}
+        </li>
+        {% endfor %}
+      </ol>
+      
+      <h3 class="u-font-h6  u-ui-heading-small">Breadcrumb list <code>.c-breadcrumbs</code></h3>
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </section>
+  
+  <section class="o-layout  u-ui-section">
+    <div class="o-layout__item  u-1/1">
+      <h2 class="u-font-h5  u-ui-heading">Cards <code>.c-card</code></h2>
+      
+      {% for card in cards %}
+      <article class="c-card">
+        <a href="#">
+          {{ card | safe }}
+          
+          <span class="c-card__icon">
+            <svg viewBox="0 0 1 1"><use xlink:href="images/icons.svg#arrow-right"></use></svg>
+          </span>
+        </a>
+      </article>
+      {% endfor %}
+      
+    </div>
+  </section>
+  
+  
+</div><!-- o-wrapper -->
+
+<div class="u-bg-grey-xlight">
+  <div class="o-wrapper">
+    <div class="o-layout u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        <h2 class="u-font-h5  u-ui-heading">Simple cards list <code>.o-grid-list</code></h2>
+
+          <ul class="o-grid-list">
+            <li>
+              {% include "shared/card-small.njk" %}
+            </li>
+            <li>
+              {% include "shared/card-small.njk" %}
+            </li>
+            <li>
+              {% include "shared/card-small.njk" %}
+            </li>
+            <li>
+              {% include "shared/card-small.njk" %}
+            </li>
+            <li>
+              {% include "shared/card-small.njk" %}
+            </li>
+          </ul>
+          
+        </div><!-- o-layout__item -->
+      </div>
+    </div><!-- o-wrapper -->
+  </div>
+  
+  
+  <h2 class="u-font-h5  u-ui-heading">Card Listing <code>.c-card  .c-card--split  .c-pagination</code></h2>
+  
+  <div class="u-bg-grey-xlight">
+    <div class="o-wrapper">
+      <section class="o-layout  u-ui-section" data-module="MatchHeights">
+        
+        {% include "shared/cards-split.njk" %}
+        
+        <div class="o-layout__item">
+          {% include "shared/pagination.njk" %}
+        </div>
+      </section>
+    </div><!-- o-wrapper -->
+  </div>
+  
+  
+  <h2 class="u-font-h5  u-ui-heading">Split hero <code>.o-split-hero</code></h2>
+  
+  {% include "shared/split-hero.njk" %}
+  
+  <div class="o-wrapper">
+    <section class="o-layout  u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        <h2 class="u-font-h5  u-ui-heading">Split hero <code>.o-split-hero.o-split-hero--uneven</code></h2>
+      </div>
+    </section>
+  </div>
+  
+  {% include "shared/split-hero-uneven.njk" %}
+  
+  <div class="o-wrapper">
+    <section class="o-layout  u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        <h2 class="u-font-h5  u-ui-heading">USP icon section <code>.o-halves</code> Also, contains <code>.c-image-and-text</code> components</h2>
+        
+        <div class="u-ui-note">
+          data-module="Toggle" also in use, a simple toggle with a button and a target container. Usage details in <code>js/Toggle.js</code>
+        </div>
+        
+        {% include "shared/icon-section.njk" %}
+      </div>
+    </section>
+  </div>
+  
+  <h2 class="u-font-h5  u-ui-heading">CTA <code>.c-cta</code></h2>
+  
+  {% include "shared/cta.njk" %}
+  
+  <h2 class="u-font-h5  u-ui-heading">CTA Extended <code>.c-cta</code> (no class change needed)</h2>
+  
+  {% include "shared/cta-extended.njk" %}
+  
+  <div class="o-wrapper">
+    <section class="o-layout  u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        
+        <h2 class="u-font-h5  u-ui-heading">FAQs accordion <code>.c-faqs</code></h2>
+        
+        <div class="u-ui-note">
+          data-module="Faqs" in use, Usage details in <code>js/Faqs.js</code>
+        </div>
+        
+        {% include "shared/faqs.njk" %}
+      </div> 
+    </section>
+    {% include "shared/form.njk" %}
+    
+    {#% include "shared/form-hubspot.njk" %#}
+    
+  </div>
+
+  <div class="o-wrapper">
+    <section class="o-layout  u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        <h2 class="u-font-h5  u-ui-heading">Video <code>.c-video</code></h2>
+      </div>
+
+      <div class="o-layout__item  u-1/1">
+        {% include "shared/video.njk" %}
+      </div>
+    </section>
+  </div>
+
+  <div class="o-wrapper">
+    <section class="o-layout  u-ui-section">
+      <div class="o-layout__item  u-1/1">
+        <h2 class="u-font-h5  u-ui-heading">WYSIWYG content <code>.s-cms-content</code></h2>
+      </div>
+
+      <div class="o-layout__item  u-1/1  s-cms-content">
+        {% include "shared/wysiwyg.njk" %}
+      </div>
+    </section>
+  </div>
+
+  {% endblock %}

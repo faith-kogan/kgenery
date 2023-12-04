@@ -1,0 +1,151 @@
+// @TODO - this could probably be made reusable for header/nav, and footer
+.c-accordion {
+  margin-bottom: $sp-medium;
+  position: relative;
+
+  // Controls mobile accordions
+  &.is-active {
+    ul {
+      @include mq($until: desktop) {
+        max-height: 80em;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .c-accordion__icon {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  h2 {
+    @include sf-typography("footer-heading");
+    @include spacing($sp-base, padding, left);
+    @include spacing($sp-base, padding, right);
+
+    @include mq($from: tablet) {
+    }
+    background-color: $grey-xlight;
+    margin: 0;
+    padding-bottom: 22px;
+    padding-top: 22px;
+    position: relative;
+
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+
+  // Child nav
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    a {
+      @include sf-typography("p2");
+      @include spacing($sp-tiny, padding, top);
+      @include spacing($sp-tiny, padding, bottom);
+      @include spacing($sp-base, padding, left);
+      @include spacing($sp-base, padding, right);
+      color: $grey-dark;
+      display: block;
+      font-weight: $font-weight-medium;
+      line-height: 1.6 !important;
+
+      @include mq($until: desktop) {
+        // font-weight: $font-weight-medium;
+        // padding: 22px $sp-base;
+
+        &:hover {
+          background-color: $grey-xlight;
+          color: $pink;
+          text-decoration: none;
+        }
+      }
+    }
+
+    > li {
+      > a {
+        border-bottom: 1px solid $grey-light;
+
+        &:hover,
+        &:focus {
+          @include mq($from: desktop) {
+            background-color: $grey-xlight;
+            color: $pink;
+            text-decoration: none;
+          }
+        }
+
+        &.is-active {
+          color: $pink;
+          text-decoration: none;
+
+          @include mq($from: desktop) {
+            background-color: $grey-xlight;
+          }
+        }
+
+        @include mq($until: desktop) {
+          display: flex;
+        }
+      }
+    }
+
+    @include mq($until: desktop) {
+      max-height: 0;
+      opacity: 0.5;
+      overflow: hidden;
+      transform: translateY(-5px);
+      transition: $global-accordion-transition;
+    }
+  }
+
+  @include mq($until: tablet) {
+    margin-left: -$sp-base;
+    margin-right: -$sp-base;
+  }
+
+  @include mq($from: tablet, $until: desktop) {
+    margin-left: -$sp-large;
+    margin-right: -$sp-large;
+  }
+
+  @include mq($from: desktop) {
+    width: 100%;
+  }
+
+  @include mq($from: desktop) {
+    display: flex;
+  }
+}
+
+.c-accordion__icon {
+  align-items: center;
+  backface-visibility: hidden;
+  background: none;
+  border: none;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-left: auto;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: $global-transition;
+  width: 50px;
+
+  svg {
+    fill: $grey-dark;
+    width: $sp-base;
+  }
+
+  @include mq($from: desktop) {
+    display: none;
+  }
+}

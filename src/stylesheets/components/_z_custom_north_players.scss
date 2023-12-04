@@ -1,0 +1,87 @@
+.c-custom-north-players {
+
+  // grid overrides
+  .o-grid-layout--columns-5 {
+
+    grid-template-columns: 1fr;
+
+    @include mq($from: tablet) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @include mq($from: desktop) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .s-cms-content {
+
+    ul.form-section {
+
+      li {
+        margin-bottom: $sp-base;
+        max-width: 320px;
+        margin: 0 auto;
+
+        label {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+}
+
+// confirm button
+.north-player {
+  opacity: 0;
+  display: block;
+  text-align: center;
+
+  .is-active & {
+    opacity: 1;
+  }
+}
+
+// scooter animation
+@keyframes scooter_left_right {
+  0% { right: calc(100% - 200px); }
+  3% { 
+    transform: rotate(-12deg);
+    right: calc(100% - 200px);
+  }
+  100% { right: 0% }
+}
+
+@keyframes scooter_right_left {
+  0% { right: 0% }
+  100% { right: calc(100% - 200px); }
+}
+
+.c-scooter-container {
+  position: relative;
+  height: 100px;
+}
+
+.c-powershop-scooter {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  cursor: pointer;
+
+  &.left-to-right {
+    transition: rotate 1s ease-in;
+    transform-origin: bottom left;
+    animation: scooter_left_right 3s .5s 1;
+  }
+
+  &.right-to-left {
+    transform: scaleX(-1);
+    right: 0%;
+    animation: scooter_right_left 4s 1s 1;
+  }
+}

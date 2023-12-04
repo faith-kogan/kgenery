@@ -1,0 +1,101 @@
+.c-list,
+%c-list {
+  @include sf-typography("list");
+  list-style-type: none;
+  margin-bottom: 2.5em;
+  margin-left: 0;
+  padding: 0;
+  position: relative;
+
+  li {
+    margin-bottom: 0.8em;
+    padding-left: 1.2em;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      display: inline-block;
+      left: 0;
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      vertical-align: middle;
+
+      @include mq($from: tablet) {
+        line-height: 0.9;
+      }
+
+      @include mq($from: desktop) {
+        line-height: 0.75;
+      }
+    }
+
+    &.page_item_has_children {
+      
+      a {
+        display: inline-block;
+        margin-bottom: $sp-small;
+      }
+    }
+
+    ul {
+      margin-bottom: $sp-base;
+    }
+  }
+
+  // Unordered Lists
+  &.c-list--unordered {
+    @extend %c-list--unordered;
+  }
+
+  // Ordered Lists
+  &.c-list--ordered {
+    @extend %c-list--ordered;
+  }
+}
+
+%c-list--unordered {
+  li:before {
+    content: "•";
+    font-size: 24px;
+    top: 0;
+
+    @include mq($from: tablet) {
+      top: 0.04em;
+    }
+
+    @include mq($from: desktop) {
+      top: 0.15em;
+    }
+  }
+}
+
+%c-list--ordered {
+  counter-reset: section;
+
+  li:before {
+    content: counter(section, decimal) ".";
+    counter-increment: section;
+    left: 0;
+    top: 5px;
+
+    @include mq($from: tablet) {
+      top: 6px;
+    }
+
+    @include mq($from: desktop) {
+      top: 8px;
+    }
+  }
+
+  ol {
+    li {
+      &:before {
+        content: counter(section);
+      }
+    }
+  }
+}

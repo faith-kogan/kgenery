@@ -1,0 +1,19 @@
+.c-roundel {
+  @include spacing();
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 460px;
+
+  @include mq($until: desktop) {
+    max-width: 312px;
+  }
+
+  img {
+    max-width: 100%;
+
+    @include mq($until: desktop) {
+      padding-left: $sp-base;
+      padding-right: $sp-base;
+    }
+  }
+}

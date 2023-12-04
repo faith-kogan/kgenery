@@ -1,0 +1,28 @@
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item">
+      {% include "shared/breadcrumbs.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="o-wrapper">
+  <div class="o-layout">
+    <div class="o-layout__item">
+      <!-- Container for rates React app -->
+      <div class="u-min-height" data-module="BasicPlanApp" data-rates-customer="residential">
+        {% include "shared/loading.njk" %}
+      </div>
+      <div class="u-spacing-bottom-large  s-cms-content">
+        <p>content here</p>
+      </div>
+    </div>
+  </div>
+</section><!-- o-wrapper -->
+
+{% include "shared/cta.njk" %}
+
+{% endblock %}

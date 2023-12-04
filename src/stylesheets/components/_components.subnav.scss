@@ -1,0 +1,104 @@
+.c-subnav {
+  margin-left: auto;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+    }
+
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      height: $header-height;
+    }
+  }
+
+  a:not(.c-btn) {
+    align-items: center;
+    color: $grey-dark;
+    display: flex;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    text-decoration: none;
+
+    &.is-media-click {
+      @include mq($from: desktop) {
+        display: none;
+      }
+    }
+    &.is-media-hover {
+      @include mq($until: desktop) {
+        display: none;
+      }
+    }
+
+    svg {
+      fill: $pink;
+      height: 20px;
+      margin-right: $sp-small;
+      position: relative;
+      top: -3px;
+      width: 20px;
+    }
+
+    @include mq($until: desktop) {
+      border-bottom: 1px solid $grey-light;
+      display: flex;
+      padding: $sp-medium $sp-base;
+    }
+
+    @include mq($from: desktop) {
+      font-size: 16px;
+      padding-bottom: 29px;
+      padding-left: $sp-tiny;
+      padding-right: $sp-tiny;
+      padding-top: 31px;
+
+      &:hover {
+        color: $pink;
+      }
+    }
+
+    @include mq($from: large) {
+      font-size: 18px;
+      padding-bottom: 26px;
+      padding-left: $sp-base;
+      padding-right: $sp-base;
+      padding-top: 30px;
+    }
+  }
+
+  .c-subnav__button {
+    @include mq($until: desktop) {
+      background-color: $white;
+      padding: $sp-large;
+
+      .c-btn {
+        width: 100%;
+      }
+    }
+
+    @include mq($from: desktop) {
+      margin-left: $sp-base;
+    }
+
+    @include mq($from: large) {
+      font-size: 18px;
+    }
+
+    @include mq($from: wide) {
+      .c-btn {
+        padding-right: $sp-huge;
+      }
+    }
+  }
+
+  @include mq($until: desktop) {
+    background-color: $white;
+    // box-shadow: $header-box-shadow;
+  }
+}

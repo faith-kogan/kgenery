@@ -1,0 +1,59 @@
+.c-text-link {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: $pink;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $boing;
+  font-weight: $font-weight-medium;
+  outline: none;
+
+  svg {
+    fill: $pink;
+    height: 22px;
+    margin-right: $sp-tiny;
+    width: 22px;
+
+    path {
+      fill: $pink;
+    }
+  }
+
+  &:hover {
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+// colour variations
+.c-text-link--grey {
+
+  .c-text-link {
+    color: $grey;
+
+    svg {
+      fill: $grey;
+
+      path {
+        fill: $grey;
+      }
+    }
+  }
+}
+
+.c-text-link--grey-dark {
+
+  .c-text-link {
+    color: $grey-dark;
+
+    svg {
+      fill: $grey-dark;
+
+      path {
+        fill: $grey-dark;
+      }
+    }
+  }
+}

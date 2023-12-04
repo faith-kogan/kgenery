@@ -1,0 +1,12 @@
+a,
+input[type="text"],
+textarea,
+button {
+  -webkit-tap-highlight-color: $tap-highlight-color;
+  transition-duration: 0.26s;
+  transition-property: background-color, color, opacity, border, border-color,
+    background-position, outline, box-shadow, border-bottom, text-decoration,
+    left, top, transform, width;
+  transition-timing-function: $global-transition-timing-function;
+  transform-origin: center center;
+}

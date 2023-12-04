@@ -1,0 +1,9 @@
+.c-stacked-buttons {
+  list-style: none;
+  margin-left: 0;
+  text-align: center;
+
+  li {
+    @include spacing();
+  }
+}

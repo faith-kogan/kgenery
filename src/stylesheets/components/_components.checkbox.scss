@@ -1,0 +1,81 @@
+.c-checkbox {
+  .c-checkbox__input {
+    opacity: 0;
+    position: absolute;
+
+    & + .c-checkbox__label {
+      display: flex;
+      line-height: $sp-base * 1.8;
+
+      &::before {
+        background-color: $white;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 2px solid $grey-xlight;
+        border-radius: 3px;
+        content: "";
+        display: inline-block;
+        height: 24px;
+        margin-right: $sp-base;
+        transition: $global-transition;
+        width: 24px;
+      }
+    }
+
+    // QA - mobile devices
+    & + .c-checkbox__label {
+      text-align: left;
+
+      &::before {
+        flex-shrink: 0;
+      }
+    }
+    // QA - mobile devices
+
+    &:focus + .c-checkbox__label::before {
+      box-shadow: 0 0 3px $blue-light;
+    }
+
+    &:checked + .c-checkbox__label::before {
+      background-color: $koganRed;
+      background-image: url('data:image/svg+xml;utf8,
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewbox="0 0 24 24">
+          <path fill="white" d="M6.8,11.3c-0.6-0.6-1.5-0.6-2.2,0C4,11.9,4,13,4.6,13.6l3.9,3.8c0.6,0.6,1.5,0.6,2.2,0L19.4,9c0.6-0.6,0.7-1.5,0-2.2c-0.6-0.6-1.5-0.7-2.2,0L9.6,14L6.8,11.3z"/>
+      </svg>');
+      border: 2px solid $koganRed;
+    }
+  }
+
+  &.c-checkbox--center {
+    .c-checkbox__label {
+      justify-content: center;
+    }
+  }
+}
+
+.c-checkbox--alt {
+  .c-checkbox__input {
+    & + .c-checkbox__label {
+      &::before {
+        border: 2px solid $white;
+      }
+    }
+
+    &:checked + .c-checkbox__label::before {
+      background-color: $white;
+      background-image: url('data:image/svg+xml;utf8,
+      <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewbox="0 0 24 24">
+          <path fill="black" d="M6.8,11.3c-0.6-0.6-1.5-0.6-2.2,0C4,11.9,4,13,4.6,13.6l3.9,3.8c0.6,0.6,1.5,0.6,2.2,0L19.4,9c0.6-0.6,0.7-1.5,0-2.2c-0.6-0.6-1.5-0.7-2.2,0L9.6,14L6.8,11.3z"/>
+      </svg>');
+      border: 2px solid $white;
+    }
+  }
+}

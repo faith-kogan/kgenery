@@ -1,0 +1,160 @@
+// split card heights
+.c-custom--business-full {
+
+  .o-split-hero__item {
+
+    .c-card.c-card--feature a,
+    .c-card.c-card--feature .no-link {
+      height: auto;
+      min-height: 0;
+      padding: $sp-base;
+
+      @include mq($from: desktop) {
+        padding: $sp-large;
+      }
+    }
+  }
+}
+
+
+// left side font sizing -it's a bit specific
+.c-custom--business-full {
+  .o-split-hero__item {
+
+    .c-card.c-card--feature .no-link,
+    .c-card.c-card--feature a {
+      height: auto;
+
+      // mobile to desktop heading
+      .c-card__heading {
+        @include mq($until: desktop) {
+          @include responsive-font(4vw, 24px, 32px);
+          margin-bottom: $sp-base;
+        }
+
+        @include mq($from: desktop, $until: wide) {
+          @include responsive-font(4vw, 38px, 60px);
+          line-height: 1.1;
+        }
+
+        // mobile to desktop huge heading
+        .c-card__heading--huge {
+          @include mq($until: desktop) {
+            line-height: 1em;
+            font-size: 48px;
+            margin-bottom: $sp-base;
+          }
+
+          @include mq($from: desktop) {
+            line-height: .9em;
+            font-size: 80px;
+            margin-bottom: 24px;
+          }
+
+          @include mq($from: wide) {
+            font-size: 100px;
+            line-height: .9em;
+            margin-bottom: $sp-medium;
+          }
+        }
+      }
+    }
+  }
+}
+
+// mobile no min height on the top two cards
+.o-split-hero__item {
+
+  .c-card.c-card--feature a {
+
+    @media only screen and (max-width: 640px) {
+      min-height: 0;
+    }
+  }
+}
+
+
+// grid support fallback
+@supports (display: grid) {
+  // moved this class under grid class so had to tweak sizing
+  .c-custom--business-full {
+    .o-split-hero__item {
+      width: 100%;
+
+      &:first-child,
+      &:last-child {
+        margin: 0;
+      }
+
+      .o-split-hero__row {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.c-custom--business-full {
+
+  // remove default link style
+  a.c-card,
+  a.c-card:hover {
+    text-decoration: none;
+    color: $grey-dark;
+  }
+
+  a.c-card:hover {
+
+    .c-card__body .c-card__icon {
+      transform: translateX(5px);
+    }
+  }
+
+  .c-card--powerpack {
+    margin: 0!important;
+  }
+
+  // add back shadow on hover
+  .c-card {
+
+    margin: 0;
+    height: 100%;
+
+    &:hover {
+      box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+      @include mq($from: desktop) {
+        box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  // card title revert size back
+  .c-card__body {
+
+    .c-card__heading {
+      @include sf-typography("h5");
+      margin-bottom: 0;
+    }
+  }
+}
+
+// single post
+.o-grid-layout--margin-large {
+  margin-bottom: 32px;
+}
+
+.c-business-images {
+  div {
+    width: 100%;
+    img {
+      border-radius: $global-radius;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.c-business-full__breadcrumbs {
+  margin-bottom: $sp-medium;
+  padding: 0;
+}

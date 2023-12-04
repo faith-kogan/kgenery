@@ -1,0 +1,141 @@
+.c-header {
+  height: $header-mobile-height;
+  position: relative;
+  z-index: $z-header;
+
+  // Header scroll reveal, not mobile nav
+  &.is-hidden {
+    .c-header__inner {
+      @include mq($from: desktop) {
+        transform: translate3d(0, -100%, 0);
+      }
+    }
+  }
+
+  .c-header__inner {
+    background-color: $white;
+    position: fixed;
+    transition: $global-transition;
+    width: 100%;
+
+    // This class is added to the html tag to fix the page so we can scroll the nav
+    .nav-is-active & {
+      @include mq($until: desktop) {
+        position: relative;
+      }
+    }
+
+    @include mq($from: desktop) {
+      box-shadow: $header-box-shadow;
+      display: flex;
+      height: $header-height;
+      padding-left: $sp-large;
+      padding-right: $sp-large;
+    }
+
+    @include mq($from: large) {
+      padding-left: $sp-huge;
+      padding-right: $sp-huge;
+    }
+  }
+
+  .c-header__top {
+    @include mq($until: desktop) {
+      background-color: $white;
+      box-shadow: $header-box-shadow;
+      padding: 20px $sp-base;
+      position: relative;
+      z-index: 10;
+    }
+
+    @include mq($from: desktop) {
+      align-items: center;
+      display: flex;
+      margin-right: $sp-small;
+    }
+  }
+
+  // campaign header uopdate
+  .c-header__inner-campaign {
+
+    .c-header__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .c-header__logo-right {
+        height: auto;
+        width: auto;
+        min-width: 0;
+
+        @include mq($from: desktop) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Contains the main nav and subnav
+  .c-header__nav {
+    background-color: $white;
+
+    &.is-active {
+      @include mq($until: desktop) {
+        display: block;
+        height: 100%;
+        max-height: 80em;
+        opacity: 1;
+        overflow: scroll;
+        padding-top: $header-mobile-height;
+        position: fixed;
+        top: 0;
+        transform: translateY(0);
+        width: 100%;
+      }
+    }
+
+    @include mq($until: desktop) {
+      max-height: 0;
+      overflow: hidden;
+      transform: translateY(-5px);
+      transition: $global-accordion-transition;
+    }
+
+    @include mq($from: desktop) {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  .c-header__logo {
+    display: block;
+    height: 22px;
+    width: 140px;
+
+    img {
+      max-width: 100%;
+    }
+
+    @include mq($from: large) {
+      height: 28px;
+      width: 180px;
+    }
+  }
+
+  // Invisible overlay, used to close the nav when clicked on
+  .c-header__bg {
+    background-color: transparent;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+
+    @include mq($from: desktop) {
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+
+  @include mq($from: desktop) {
+    height: $header-height;
+  }
+}

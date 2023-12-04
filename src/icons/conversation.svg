@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="59px" viewBox="0 0 68 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>LargeIcon/Leaf Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design-system" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="2-Icons" transform="translate(-713.000000, -1641.000000)" stroke="#ed193a">
+            <g id="LargeIcon/Conversation" transform="translate(707.000000, 1631.000000)">
+                <g id="Group" transform="translate(7.000000, 11.000000)">
+                    <path d="M31,46.6666667 C31,48.5689808 29.4578697,50.1111111 27.5555556,50.1111111 L6.88888889,50.1111111 L0,57 L0,29.4444444 C0,27.5421303 1.54213031,26 3.44444444,26 L27.5555556,26 C29.4578697,26 31,27.5421303 31,29.4444444 L31,46.6666667 Z" id="Shape" stroke-width="2" fill="#ed193a"></path>
+                    <path d="M66,33.3333333 C66,36.4015819 63.5126931,38.8888889 60.4444444,38.8888889 L27.1111111,38.8888889 L16,50 L16,5.55555556 C16,2.48730695 18.4873069,0 21.5555556,0 L60.4444444,0 C63.5126931,0 66,2.48730695 66,5.55555556 L66,33.3333333 Z" id="Shape" stroke-width="2" fill="#FFFFFF" transform="translate(41.000000, 25.000000) scale(-1, 1) translate(-41.000000, -25.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

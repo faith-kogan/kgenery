@@ -1,0 +1,20 @@
+@keyframes spinLoader {
+  from {
+    transform: translate(-50%, -50%) rotate(0turn);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.c-spinner {
+  animation: spinLoader 0.8s steps(8, end) infinite;
+  display: block;
+  height: 26px;
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 26px;
+}
