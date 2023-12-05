@@ -57,5 +57,8 @@
     "stylelint-config-prettier": "^3.2.0",
     "stylelint-order": "^0.8.1",
     "stylelint-scss": "^3.1.0"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.11"
   }
 }
