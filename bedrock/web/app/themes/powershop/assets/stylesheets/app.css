@@ -12951,6 +12951,10 @@ span.u-font-breadcrumbs {
     margin-top: 16px;
     margin-bottom: 0; }
 
+.c-switch-app {
+  font-family: "Figtree", Arial, sans-serif;
+}
+
 .c-switch-app .c-switch-app__inner {
   margin-left: auto;
   margin-right: auto;
@@ -12987,6 +12991,14 @@ span.u-font-breadcrumbs {
 .c-switch-app .c-switch-app__offer-heading {
   font-weight: 600;
   text-transform: uppercase; }
+
+.c-switch-app .c-switch-app-packs-flex {
+  display: flex;
+  .c-input {
+    flex: 1;
+    margin: 5px;
+  }
+}
 
 .c-switch-app .c-switch-app-packs-grid {
   border: none; }

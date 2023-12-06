@@ -9,13 +9,53 @@ import * as calcData from "../data/calcData";
 import * as ratesData from "../data/ratesData";
 
 // Components
-import Button from "../components/Button";
 import LayoutContainer from "../components/LayoutContainer";
 import PostcodeEntryField from "../components/PostcodeEntryField";
+import ButtonLabel from "../components/kogan/ButtonLabel";
+import ButtonIcon from "../components/kogan/ButtonIcon";
+import BrandedButton from "../components/kogan/BrandedButton";
 import SwitchAppResults from "../components/SwitchAppResults";
 
 // Utils
 import * as Utils from "../utils";
+
+// const HOUSEHOLD_OPTIONS = ["Average household", "1 person household", "2-3 person household", "4+ person household"];
+// const FREQUENCY_OPTIONS = ["Monthly", "Quarterly", "Yearly"];
+
+const HOUSEHOLD_OPTIONS = [{
+  name: "Average household",
+  value: "average",
+},{
+  name: "1 person household",
+  value: "one"
+},{
+  name: "2-3 person household",
+  value: "twothree"
+},{
+  name: "4+ person household",
+  value: "four"
+}];
+
+const FREQUENCY_OPTIONS = [{
+  name: "Monthly",
+  value: "monthly",
+},{
+  name: "Quarterly",
+  value: "quarterly"
+},{
+  name: "Yearly",
+  value: "yearly"
+}];
+
+const FUEL_TYPE_OPTIONS = [{
+  name: "Electricity & Gas",
+  value: "dual_fuel",
+  fuelType: ["electricity", "gas"]
+},{
+  name: "Electricity",
+  value: "electricity",
+  fuelType: ["electricity"]
+}];
 
 const defaultAppState = {
   postcode: "",
@@ -24,7 +64,9 @@ const defaultAppState = {
   gasDistributors: [],
   supportedFuelType: "",
   fuelType: ["electricity"],
-  chosenFuelType: "",
+  chosenFuelType: FUEL_TYPE_OPTIONS[0].value,
+  chosenHouseholdType: HOUSEHOLD_OPTIONS[0].value,
+  chosenFrequency: FREQUENCY_OPTIONS[0].value,
   hasSolar: false,
   hasCC: false,
   state: "",
@@ -38,6 +80,7 @@ const defaultAppState = {
   formSubmitted: false,
   formNotServiceable: false,
 };
+
 
 class SwitchApp extends Component {
   state = defaultAppState;
@@ -132,6 +175,17 @@ class SwitchApp extends Component {
       },
       callback
     );
+  };
+  
+  handleDropdownChange = (state, value) => {
+    let { fuelType } = this.state;
+    if (state === "chosenFuelType") {
+      fuelType = FUEL_TYPE_OPTIONS.find(option => option.value === value).fuelType;
+    }
+    this.setState({
+      [state]: value,
+      fuelType,
+    });
   };
 
   validateField = (field, value) => {
@@ -282,40 +336,83 @@ class SwitchApp extends Component {
     return true;
   };
 
-  renderFuelTypes = () => {
-    const { fuelType } = this.state;
+  renderHouseholdOptions = () => (
+    HOUSEHOLD_OPTIONS.map(household => (
+      <option value={household.value} key={`household-${household.value}`}>
+        {household.name}
+      </option>
+    ))
+  );
+
+  renderFrequencyOptions = () => (
+    FREQUENCY_OPTIONS.map(frequency => (
+      <option value={frequency.value} key={`frequency-${frequency.value}`}>
+        {frequency.name}
+      </option>
+    ))
+  );
+
+  renderFuelTypeOptions = () => (
+    FUEL_TYPE_OPTIONS.map(fuelType => (
+      <option value={fuelType.value} key={`fuelType-${fuelType.value}`}>
+        {fuelType.name}
+      </option>
+    ))
+  );
+
+  renderDropdownOptions = () => {
+    const {
+      fuelType,
+      chosenFuelType,
+      chosenFrequency,
+      chosenHouseholdType,
+    } = this.state;
 
     return (
       <Fragment>
-        <div className="c-checkbox">
-          <input
-            className="c-checkbox__input"
-            id="fuel-type-electricity"
-            name="fuelType"
-            type="checkbox"
-            value="electricity"
-            onChange={e => this.handleChange(e, "fuelType")}
-            checked={fuelType.includes("electricity")}
-            disabled
-          />
-          <label className="c-checkbox__label" htmlFor="fuel-type-electricity">
-            Electricity
-          </label>
-        </div>
-        <div className="c-checkbox">
-          <input
-            className="c-checkbox__input"
-            id="fuel-type-gas"
-            name="fuelType"
-            type="checkbox"
-            value="gas"
-            onChange={e => this.handleChange(e, "fuelType")}
-            checked={fuelType.includes("gas")}
-          />
-          <label className="c-checkbox__label c-switch-app--gas-label" htmlFor="fuel-type-gas">
-            Gas
-          </label>
-          <p className="gas-note">If you don&apos;t have gas at your property, please unselect gas.</p>
+        <div className="c-switch-app-packs-flex">
+          <div className="c-input">
+            <select
+              className="c-select"
+              name="household"
+              onChange={e =>
+                this.handleDropdownChange("chosenHouseholdType", e.target.value)
+              }
+              value={chosenHouseholdType}
+            >
+              <Fragment>
+                {this.renderHouseholdOptions()}
+              </Fragment>
+            </select>
+          </div>
+          <div className="c-input">
+            <select
+              className="c-select"
+              name="frequency"
+              onChange={e =>
+                this.handleDropdownChange("chosenFrequency", e.target.value)
+              }
+              value={chosenFrequency}
+            >
+              <Fragment>
+                {this.renderFrequencyOptions()}
+              </Fragment>
+            </select>
+          </div>
+          <div className="c-input">
+            <select
+              className="c-select"
+              name="fuelType"
+              onChange={e =>
+                this.handleDropdownChange("chosenFuelType", e.target.value)
+              }
+              value={chosenFuelType}
+            >
+              <Fragment>
+                {this.renderFuelTypeOptions()}
+              </Fragment>
+            </select>
+          </div>
         </div>
       </Fragment>
     );
@@ -336,7 +433,7 @@ class SwitchApp extends Component {
     return (
       <Fragment>
         {/* add grid wrapper */}
-        <div className="c-switch-app__inner">
+        <div>
           <div className="c-input u-margin-bottom-zero">
             {formSubmitted &&
               errors.customerType && (
@@ -346,13 +443,15 @@ class SwitchApp extends Component {
           </div>
           {/* remove .o-grid-layout - not sure if you need this */}
           {/* <div className="o-grid-layout "> */}
-          <PostcodeEntryField
-            appState={this.state}
-            handleChange={this.handlePostcodeChange}
-            handleError={this.handlePostcodeError}
-            showError={formSubmitted}
-            required
-          />
+          <div className="c-switch-app__inner">
+            <PostcodeEntryField
+              appState={this.state}
+              handleChange={this.handlePostcodeChange}
+              handleError={this.handlePostcodeError}
+              showError={formSubmitted}
+              required
+            />
+          </div>
           <div className="c-input__separator c-input__separator-border-none"></div>
           {/* </div> */}
           {!formNotServiceable && (
@@ -360,59 +459,21 @@ class SwitchApp extends Component {
             {/* start of fuel type and/or solar */}
               {supportedFuelType === "dual_fuel" && (
                 <div className="c-input u-margin-bottom-small">
-                  <label className="c-input-label" htmlFor="fuelType">
-                    Fuel type
-                  </label>
-                  {this.renderFuelTypes()}
+                  {this.renderDropdownOptions()}
                   <div className="c-input__separator c-input__separator-border-none" />
                 </div>
               )}
-              <div className="c-input u-margin-bottom-zero">
-                <div className="c-checkbox">
-                  <input
-                    className="c-checkbox__input"
-                    id="solar-available"
-                    name="hasSolar"
-                    type="checkbox"
-                    onChange={e => this.handleChange(e, "hasSolar")}
-                    checked={hasSolar}
-                  />
-                  <label
-                    className="c-checkbox__label"
-                    htmlFor="solar-available"
-                  >
-                    Yes, I have solar
-                  </label>
-                  <input
-                    className="c-checkbox__input"
-                    id="K1-existing"
-                    name="hasCC"
-                    type="checkbox"
-                    onChange={e => this.handleChange(e, "hasCC")}
-                    checked={hasCC}
-                  />
-                  <label
-                    className="c-checkbox__label"
-                    htmlFor="K1-existing"
-                  >
-                    I have an existing Kogan First Membership 
-                  </label>
-                </div>
-              </div>
               <div className="c-input__separator c-input__separator-spacing-bottom" />
               {/* end of solar */}
-              <Button
-                element="button"
-                letsGetStarted
-                centered
-                full
-                red
-                type="button"
-                disabled={formSubmitted && this.doesFormHaveErrors()}
-                onClick={this.validate}
-              >
-                Let's get started
-              </Button>
+
+              <center>
+                <BrandedButton
+                  disabled={formSubmitted && this.doesFormHaveErrors()}
+                  onClick={this.validate}>
+                  <ButtonLabel text="Let's get started" />
+                  <ButtonIcon />
+                </BrandedButton>
+              </center>
               {formSubmitted &&
                 !this.doesFormHaveErrors() &&
                 !this.hasMatchWithDistributorRate() && (
@@ -432,6 +493,7 @@ class SwitchApp extends Component {
       customerType,
       elecDistributors,
       gasDistributors,
+      chosenFrequency,
       state,
       fuelType,
       hasSolar,
@@ -439,18 +501,17 @@ class SwitchApp extends Component {
     } = this.state;
 
     return (
-      <div className="c-form c-form--bordered-dense u-bg-white results">
-        <SwitchAppResults
-          elecDistributors={elecDistributors}
-          gasDistributors={gasDistributors}
-          customerType={customerType}
-          disableGasTab={!fuelType.includes("gas")}
-          state={state}
-          showSolar={hasSolar}
-          showCC={hasCC}
-          onClickJoinNow={this.handleSubmit}
-        />
-      </div>
+      <SwitchAppResults
+        elecDistributors={elecDistributors}
+        gasDistributors={gasDistributors}
+        customerType={customerType}
+        chosenFrequency={chosenFrequency}
+        disableGasTab={!fuelType.includes("gas")}
+        state={state}
+        showSolar={hasSolar}
+        showCC={hasCC}
+        onClickJoinNow={this.handleSubmit}
+      />
     );
   };
 

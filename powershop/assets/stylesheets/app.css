@@ -12070,6 +12070,10 @@ span.u-font-breadcrumbs {
     margin-top: 16px;
     margin-bottom: 0; }
 
+.c-switch-app {
+  font-family: "Figtree", Arial, sans-serif;
+}
+
 .c-switch-app .c-switch-app__inner {
   margin-left: auto;
   margin-right: auto;
@@ -12092,6 +12096,21 @@ span.u-font-breadcrumbs {
   font-weight: 600;
   text-transform: uppercase; }
 
+.c-switch-app .c-switch-app-packs-flex {
+  display: flex;
+  .c-input {
+    flex: 1;
+    margin: 5px;
+  }
+}
+
+.c-switch-app .c-input-label-header {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+  
 .c-switch-app .c-switch-app-packs-grid {
   border: none; }
   @media (min-width: 47.9375em) {

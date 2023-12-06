@@ -4,9 +4,14 @@ import PropTypes from "prop-types";
 // Components
 import SwitchAppResidentialInfo from "./SwitchAppResidentialInfo";
 import SwitchAppBusinessInfo from "./SwitchAppBusinessInfo";
+import SwitchAppResidentialSummarizedInfo from "./SwitchAppResidentialSummarizedInfo";
+import ButtonLabel from "../components/kogan/ButtonLabel";
+import ButtonIcon from "../components/kogan/ButtonIcon";
+import BrandedButton from "../components/kogan/BrandedButton";
 
 // Data
 import * as ratesData from "../data/ratesData";
+import * as calcData from "../data/calcData";
 
 const propTypes = {
   elecDistributors: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -47,15 +52,8 @@ class SwitchAppResults extends React.Component {
   componentDidMount() {
     const { elecDistributors, gasDistributors } = this.props;
 
-    // if there is only one electricity distributor, set as selected distributor
-    if (elecDistributors.length === 1) {
-      this.handleChange("elecDistributor", elecDistributors[0]);
-    }
-
-    // if there is only one gas distributor, set as selected distributor
-    if (gasDistributors.length === 1) {
-      this.handleChange("gasDistributor", gasDistributors[0]);
-    }
+    this.getCheapestElectricityDistributor(elecDistributors)
+    this.getCheapestGasDistributor(gasDistributors)
 
     if (!this.doesFormHaveErrors()) {
       setTimeout(function() {
@@ -74,17 +72,8 @@ class SwitchAppResults extends React.Component {
 
     // if currentType updated
     if (currentType !== prevState.currentType) {
-      // if there is only one electricity distributor
-      if (elecDistributors.length === 1) {
-        // set as selected distributor
-        this.handleChange("elecDistributor", elecDistributors[0]);
-      }
-
-      // if there is only one gas distributor, set as selected distributor
-      if (gasDistributors.length === 1) {
-        // set as selected distributor
-        this.handleChange("gasDistributor", gasDistributors[0]);
-      }
+      this.getCheapestElectricityDistributor(elecDistributors)
+      this.getCheapestGasDistributor(gasDistributors)
     }
 
     // if disableGasTab is updated
@@ -93,6 +82,59 @@ class SwitchAppResults extends React.Component {
         this.handleChange("currentType", "electricity");
       }
     }
+  }
+
+  getCheapestElectricityDistributor = (elecDistributors) => {
+    // if there is only one electricity distributor
+    if (elecDistributors.length === 1) {
+      // set as selected distributor
+      this.handleChange("elecDistributor", elecDistributors[0]);
+      return
+    }
+    if (elecDistributors.length === 0) return
+    const { customerType } = this.props;
+    let elecDistributorRates = (customerType === "residential") ? ratesData.elecDistributorRatesResidential : ratesData.elecDistributorRatesBusiness;
+    const filteredData = Object.keys(elecDistributorRates)
+      .filter(key => elecDistributors.includes(key))
+      .reduce((result, key) => {
+        result[key] = elecDistributorRates[key];
+        return result;
+      }, {});
+    const cheapestKey = Object.keys(filteredData).reduce((minKey, currentKey) => {
+      const currentAnnualSpend = parseInt(filteredData[currentKey].averageSpend.replace(/\D/g, ''), 10);
+      const minAnnualSpend = parseInt(filteredData[minKey].averageSpend.replace(/\D/g, ''), 10);
+    
+      return currentAnnualSpend < minAnnualSpend ? currentKey : minKey;
+    }, elecDistributors[0]);
+    
+    this.handleChange("elecDistributor", cheapestKey);
+  }
+
+  getCheapestGasDistributor = (gasDistributors) => {
+    // if there is only one gas distributor, set as selected distributor
+    if (gasDistributors.length === 1) {
+      // set as selected distributor
+      this.handleChange("gasDistributor", gasDistributors[0]);
+      return
+    }
+    if (gasDistributors.length === 0) return
+
+    const { customerType } = this.props;
+    let gasDistributorRates = (customerType === "residential") ? ratesData.gasDistributorRatesResidential : ratesData.gasDistributorRatesBusiness;
+    const filteredData = Object.keys(gasDistributorRates)
+      .filter(key => gasDistributors.includes(key))
+      .reduce((result, key) => {
+        result[key] = gasDistributorRates[key];
+        return result;
+      }, {});
+    const cheapestKey = Object.keys(filteredData).reduce((minKey, currentKey) => {
+      const currentAnnualSpend = parseInt(filteredData[currentKey].annualSpend.replace(/\D/g, ''), 10);
+      const minAnnualSpend = parseInt(filteredData[minKey].annualSpend.replace(/\D/g, ''), 10);
+    
+      return currentAnnualSpend < minAnnualSpend ? currentKey : minKey;
+    }, gasDistributors[0]);
+    
+    this.handleChange("gasDistributor", cheapestKey);
   }
 
   doesFormHaveErrors = () => {
@@ -140,6 +182,169 @@ class SwitchAppResults extends React.Component {
 
     if (!this.doesFormHaveErrors()) {
       this.props.onClickJoinNow()
+    }
+  }
+  renderTerms = (showCC) => (
+    <div>
+      {!showCC &&
+        <Fragment>
+        <p>
+          By clicking ‘Join Now’ and signing up to Kogan Energy, you agree to the Kogan First terms and conditions and Powershop providing your personal information to Kogan to register your Kogan First membership. By entering your details, even if you don't complete the form, you consent to Kogan Energy contacting you (including by calling you) to see if it can help you complete your signup to an energy contract.
+        </p>
+        <div className="u-font-h4">
+          <ul className="kogan-benefits">
+            <p>
+              <strong>Kogan First Benefits:</strong>
+              </p>
+              <li>
+                Earn Kogan Rewards
+              </li>
+              <li>
+                Free Shipping
+              </li>
+              <li>
+                Exclusive Member Specials
+              </li>
+              <li>
+                Priority Customer Service 
+              </li>
+            </ul>
+          </div>
+          </Fragment>
+      }
+      <hr />
+      {!showCC &&
+          <Fragment>
+          <p>
+          *You receive a complimentary <a href="https://www.kogan.com/au/kogan-first/" target="_blank" rel="nofollow noopener">Kogan First</a> membership for 12 months from when you switch to Kogan Energy. <a href="https://www.kogan.com/au/kogan-first-terms-conditions/" target="_blank">Kogan First Terms & Conditions available here</a>. After the initial 12 months, you’ll be charged the then current Kogan First membership annual fee which currently is $99 (incl GST). Membership fees subject to change. Offer not available to existing Kogan First members. 
+        </p>
+        </Fragment>
+      }
+      {showCC &&
+          <Fragment>
+          <p> By clicking ‘Join Now’ and entering your details, even if you don’t complete the form, you consent to Kogan Energy contacting you (including by calling you) to see if it can help you complete your signup to an energy contract.
+            </p>
+          <p>
+          A one-off $99 (incl GST) sign up credit will be applied to your Kogan Energy account on your first electricity bill.
+        </p>
+        </Fragment>
+      }
+    </div>
+  )
+
+  renderGeneralTerms = () => {
+    if (this.props.state === calcData.vic) {
+      return (
+        <div>
+          <p>
+            Ongoing contract, until you or we end it. Your bills will vary depending on your usage, rates and any price changes in the future. The estimate doesn’t include concessions or other rebates, distributor service order costs, fees or, for electricity, solar feed in tariffs that may apply to you. 
+          </p>
+          <p>
+            You may also be able to access our standing offer, including the Victorian Default Offer. For more information, please call 1300 005 123.
+          </p>
+          <p>
+            We may have other generally available offers that may be more suitable for you. Please call us if you want to discuss.
+          </p>
+        </div>
+      )
+    }
+    return (
+      <div>
+        <br></br>
+        <p>
+          Ongoing contract, until you or we end it. Your bills will vary depending on your usage, rates and any price changes in the future. The estimate doesn’t include concessions or other rebates, distributor service order costs, fees or, for electricity, solar feed in tariffs that may apply to you.
+        </p>
+        <p>
+          You may also be able to access our standing offer. For more information, please call 1300 005 123.
+        </p>
+        <p>
+          We may have other generally available offers that may be more suitable for you. Please call us if you want to discuss.
+        </p>
+      </div>
+    )
+  }
+
+  renderSwitchAppInfo = (showCC) => {
+    const { elecDistributor, gasDistributor, terms } = this.state;
+    const { chosenFrequency, customerType, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
+    
+    if (customerType === "residential") {
+      let K1Benefit = ""
+      if (elecDistributor && elecDistributor !== "") {
+        let rates = ratesData.elecDistributorRatesResidential[elecDistributor]
+        K1Benefit = (showCC) ? rates.K1BenefitNew : rates.K1Benefit
+      }
+      return (
+        <div>
+          {(elecDistributor && elecDistributor !== "") && <SwitchAppResidentialSummarizedInfo
+            rates={ratesData.elecDistributorRatesResidential[elecDistributor]}
+            terms={terms}
+            chosenFrequency={chosenFrequency}
+            handleTerms={this.handleTerms}
+            fuelType="electricity"
+            distributor={elecDistributor}
+            state={state}
+            showSolar={showSolar}
+            showCC={showCC}
+          />}
+          {(!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppResidentialSummarizedInfo
+            rates={ratesData.gasDistributorRatesResidential[gasDistributor]}
+            terms={terms}
+            chosenFrequency={chosenFrequency}
+            handleTerms={this.handleTerms}
+            fuelType="gas"
+            distributor={gasDistributor}
+            state={state}
+          />}
+          <div className="s-cms-content u-font-h4">
+            <ul className="kogan-benefits">
+              <li>
+                {K1Benefit}
+              </li>
+              <li>
+                Great customer service
+              </li>
+              <li>
+                Easy to use app
+              </li>
+            </ul>
+          </div>
+          <center>
+            <BrandedButton
+              onClick={onClickJoinNow}>
+              <ButtonLabel text="Join Now" />
+              <ButtonIcon />
+            </BrandedButton>
+          </center>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          (elecDistributor && elecDistributor !== "") && <SwitchAppBusinessInfo
+            rates={ratesData.elecDistributorRatesBusiness[elecDistributor]}
+            fuelType="electricity"
+            distributor={elecDistributor}
+            state={state}
+            showSolar={showSolar}
+            showCC={showCC}
+            onClickJoinNow={this.handleJoinNow}
+          />
+          (!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppBusinessInfo
+            rates={ratesData.gasDistributorRatesBusiness[gasDistributor]}
+            fuelType="gas"
+            distributor={gasDistributor}
+            state={state}
+            onClickJoinNow={onClickJoinNow}
+          />
+          <KoganBrandedButton
+            className="btn-centered btn-bold kogan-join-now"
+            iconName="kgnArrowRight"
+            labelText="JOIN NOW"
+            onClick={onClickJoinNow}
+              />
+        </div>
+      )
     }
   }
 
@@ -218,84 +423,28 @@ class SwitchAppResults extends React.Component {
 
     return (
       <Fragment>
-        {/* If there are distributors for both electricity / gas */}
-        {elecDistributors.length && gasDistributors.length ? (
-          <div className="s-cms-content  c-tabs">
-            <ul className="c-tabs__navigation  o-grid-layout  o-grid-layout--columns-2-half-half-mobile">
-              <li>
-                <button
-                  type="button"
-                  className={`
-                      c-tabs__item
-                      ${currentType === "electricity" && "active"}
-                    `}
-                  onClick={() => {
-                    this.handleChange("currentType", "electricity");
-                  }}
-                >
-                  Electricity
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className={`
-                      c-tabs__item
-                      ${currentType === "gas" && "active"}
-                    `}
-                  onClick={() => {
-                    this.handleChange("currentType", "gas");
-                  }}
-                  disabled={disableGasTab}
-                  style={disableGasTab ? disabledButtonStyle : null}
-                >
-                  Gas
-                </button>
-              </li>
-            </ul>
-          </div>
-        ) : null}
-        <div className="c-tabs__content  u-bg-white  u-margin-bottom-zero">
-          {/* If have more than one distributor, render distributor dropdown */}
-          {distributors.length > 1 && (
-            <div className="c-switch-app__inner  u-margin-bottom-tiny">
-              <div className="c-input  c-input--centered">
-                <label className="c-input-label" htmlFor="distributor">
-                  Choose your {currentType} distributor for a more accurate
-                  estimate
-                </label>
-                <select
-                  className="c-select"
-                  name="distributor"
-                  onChange={e =>
-                    this.handleChange(
-                      currentType === "electricity"
-                        ? "elecDistributor"
-                        : "gasDistributor",
-                      e.target.value
-                    )
-                  }
-                  value={
-                    currentType === "electricity"
-                      ? elecDistributor
-                      : gasDistributor
-                  }
-                >
-                  <Fragment>
-                    <option value="">Select a distributor</option>
-                    {this.renderDistributors(distributors)}
-                  </Fragment>
-                </select>
-                {errors.distributor && (
-                  <small className="c-input__error">{errors.distributor}</small>
-                )}
-              </div>
+        <div className="o-grid-layout--columns-2-half-half-mobile o-grid-layout">
+          <div>
+            <div className="c-switch-pricing-header">
+              <label className="u-font-h5">Kogan Energy Basic</label>
+              <label className="c-input-label-subheader">Make the switch to lower prices</label>
             </div>
-          )}
-
-          {/* Render rates if distributor is selected */}
-          {this.renderResults()}
+            <div className="c-switch-pricing-body">
+              {this.renderSwitchAppInfo(false)}
+            </div>
+          </div>
+          <div>
+            <div className="c-switch-pricing-header">
+              <label className="u-font-h5">Kogan Energy FIRST</label>
+              <label className="c-input-label-subheader">Save more off your bill with FIRST</label>
+            </div>
+            <div className="c-switch-pricing-body">
+              {this.renderSwitchAppInfo(true)}
+            </div>
+          </div>
         </div>
+        {this.renderGeneralTerms()}
+        <br /><br /><br />
       </Fragment>
     );
   }
