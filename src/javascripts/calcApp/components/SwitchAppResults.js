@@ -266,8 +266,9 @@ class SwitchAppResults extends React.Component {
 
   renderSwitchAppInfo = (showCC) => {
     const { elecDistributor, gasDistributor, terms } = this.state;
-    const { chosenFrequency, customerType, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
+    const { chosenFrequency, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
     
+    const customerType = "business"
     if (customerType === "residential") {
       let K1Benefit = ""
       if (elecDistributor && elecDistributor !== "") {
@@ -321,28 +322,31 @@ class SwitchAppResults extends React.Component {
     } else {
       return (
         <div>
-          (elecDistributor && elecDistributor !== "") && <SwitchAppBusinessInfo
+          {(elecDistributor && elecDistributor !== "") && <SwitchAppBusinessInfo
             rates={ratesData.elecDistributorRatesBusiness[elecDistributor]}
             fuelType="electricity"
+            chosenFrequency={chosenFrequency}
             distributor={elecDistributor}
             state={state}
             showSolar={showSolar}
             showCC={showCC}
             onClickJoinNow={this.handleJoinNow}
-          />
-          (!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppBusinessInfo
+          />}
+          {(!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppBusinessInfo
             rates={ratesData.gasDistributorRatesBusiness[gasDistributor]}
             fuelType="gas"
+            chosenFrequency={chosenFrequency}
             distributor={gasDistributor}
             state={state}
             onClickJoinNow={onClickJoinNow}
-          />
-          <KoganBrandedButton
-            className="btn-centered btn-bold kogan-join-now"
-            iconName="kgnArrowRight"
-            labelText="JOIN NOW"
-            onClick={onClickJoinNow}
-              />
+          />}
+          <center>
+            <BrandedButton
+              onClick={onClickJoinNow}>
+              <ButtonLabel text="Join Now" />
+              <ButtonIcon />
+            </BrandedButton>
+          </center>
         </div>
       )
     }

@@ -52,15 +52,15 @@ const SwitchAppResidentialSummarizedInfo = props => {
   if (chosenFrequency === "monthly") {
     electricitySpendPerFrequency = (parseInt(electricitySpendPerFrequency.replace(/\D/g, ''), 10) / 12).toFixed(2);
     gasSpendPerFrequency = (parseInt(gasSpendPerFrequency.replace(/\D/g, ''), 10) / 12).toFixed(2);
-    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString()}`;
-    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString()}`;
+    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString('en-US')}`;
+    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString('en-US')}`;
     frequency = "monthly"
     duration = "month"
   } else if (chosenFrequency === "quarterly") {
     electricitySpendPerFrequency = (parseInt(electricitySpendPerFrequency.replace(/\D/g, ''), 10) / 4).toFixed(2);
     gasSpendPerFrequency = (parseInt(gasSpendPerFrequency.replace(/\D/g, ''), 10) / 4).toFixed(2);
-    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString()}`;
-    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString()}`;
+    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString('en-US')}`;
+    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString('en-US')}`;
     frequency = "quarterly"
     duration = "quarter"
   }
