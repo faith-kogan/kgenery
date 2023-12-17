@@ -2495,7 +2495,7 @@ energyConsumed: "4000kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "5.2c/kWh",
 averageSpendCC: "$1,837",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2514,7 +2514,7 @@ energyConsumed: "4000kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "5.2c/kWh",
 averageSpendCC: "$1,396",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2533,7 +2533,7 @@ energyConsumed: "4000kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "5.2c/kWh",
 averageSpendCC: "$1,534",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2553,7 +2553,7 @@ energyConsumed: "4000kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "5.2c/kWh",
 averageSpendCC: "$1,602",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2572,7 +2572,7 @@ energyConsumed: "4000kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "5.2c/kWh",
 averageSpendCC: "$1,483",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2592,7 +2592,7 @@ energyConsumed: "3911kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "4.35c/kWh",
 averageSpendCC: "$1,664",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2611,7 +2611,7 @@ energyConsumed: "4913kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "4.35c/kWh",
 averageSpendCC: "$2,053",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2630,7 +2630,7 @@ energyConsumed: "4613kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "4.35c/kWh",
 averageSpendCC: "$2,412",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2649,7 +2649,7 @@ energyConsumed: "4613kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "2.88c/kWh",
 averageSpendCC: "$1,791",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2668,7 +2668,7 @@ energyConsumed: "4011kWh",
 tariffName: "Anytime (single rate)",
 solarFeed: "2.06c/kWh",
 averageSpendCC: "$2,090",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12months: "",
 includes49: "This includes the $99 one off sign up credit."
@@ -2715,7 +2715,7 @@ export const gasDistributorRatesResidential = {
 [agnCentral]: {
 energyConsumed: "36,000MJ",
 annualSpend: "$1,469",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2723,7 +2723,7 @@ includes49gas: "This is test includes49gas copy."
 [agnNorth]: {
 energyConsumed: "42,000MJ",
 annualSpend: "$1,639",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2731,7 +2731,7 @@ includes49gas: "This is test includes49gas copy."
 [agnMurray]: {
 energyConsumed: "40,000MJ",
 annualSpend: "$1,575",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2739,7 +2739,7 @@ includes49gas: "This is test includes49gas copy."
 [agnCardinia]: {
 energyConsumed: "35,000MJ",
 annualSpend: "$1,445",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2747,7 +2747,7 @@ includes49gas: "This is test includes49gas copy."
 [ausNetCentral]: {
 energyConsumed: "35,000MJ",
 annualSpend: "$1,463",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2755,7 +2755,7 @@ includes49gas: "This is test includes49gas copy."
 [ausNetWest]: {
 energyConsumed: "45,000MJ",
 annualSpend: "$1,574",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2763,7 +2763,7 @@ includes49gas: "This is test includes49gas copy."
 [ausNetAdjoiningWest]: {
 energyConsumed: "47,000MJ",
 annualSpend: "$1,883",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2771,7 +2771,7 @@ includes49gas: "This is test includes49gas copy."
 [ausNetAdjoiningCentral]: {
 energyConsumed: "39,000MJ",
 annualSpend: "$1,669",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2779,7 +2779,7 @@ includes49gas: "This is test includes49gas copy."
 [multinetMetro]: {
 energyConsumed: "41,000MJ",
 annualSpend: "$1,585",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2787,7 +2787,7 @@ includes49gas: "This is test includes49gas copy."
 [multinetYarraValley]: {
 energyConsumed: "35,000MJ",
 annualSpend: "$1,590",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
@@ -2795,7 +2795,7 @@ includes49gas: "This is test includes49gas copy."
 [JemenaCoastalNetwork]: {
 energyConsumed: "19,000MJ",
 annualSpend: "$892",
-K1Benefit: "12 months complimentary Kogan First membership!*",
+K1Benefit: "12 months complimentary FIRST membership!*",
 K1BenefitNew: "A one-off $99 (incl GST) sign up credit on your first electricity bill",
 includes12monthsgas: "test includes12monthsgas copy.",
 includes49gas: "This is test includes49gas copy."
