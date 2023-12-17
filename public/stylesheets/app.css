@@ -13057,14 +13057,16 @@ span.u-font-breadcrumbs {
     margin-top: 0px;
   }
 }
-.c-switch-app-info {
+.c-switch-pricing-body {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
-.c-switch-app-info .s-cms-content {
+.c-switch-pricing-body .s-cms-content.s-cms-electricity {
   flex: 1;
+}
+.c-switch-pricing-body .s-cms-content.s-cms-gas {
+  margin-top: auto;
 }
 
 .c-switch-app .c-input-label-header {
@@ -13082,8 +13084,12 @@ span.u-font-breadcrumbs {
 }
 
 .c-switch-grid {
-  display: grid;
-  grid-template-rows: auto auto auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-switch-grid .c-switch-pricing-body {
+  flex-grow: 1;
 }
 
 .c-switch-app__inner .c-input .c-checkbox {

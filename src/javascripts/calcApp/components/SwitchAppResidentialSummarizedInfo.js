@@ -66,9 +66,9 @@ const SwitchAppResidentialSummarizedInfo = props => {
   }
 
   return (
-    <div className="s-cms-content ">
+    <Fragment>
       {fuelType === "electricity" ? (
-        <Fragment>
+        <div className="s-cms-content s-cms-electricity">
           <div className="kogan-estimate">
 
             <div className="c-switch-app-packs-flex">
@@ -134,9 +134,9 @@ const SwitchAppResidentialSummarizedInfo = props => {
               </div>
             </Fragment>
           }
-        </Fragment>
+        </div>
       ) : (
-        <Fragment>
+        <div className="s-cms-content s-cms-gas">
         <Fragment>
         <div className="kogan-estimate">
             <hr />
@@ -166,9 +166,9 @@ const SwitchAppResidentialSummarizedInfo = props => {
 
           )}
         </Fragment>
-      </Fragment>
+      </div>
       )}
-    </div>
+    </Fragment>
   );
 };
 

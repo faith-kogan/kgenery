@@ -216,7 +216,7 @@ class SwitchAppResults extends React.Component {
       {!showCC &&
           <Fragment>
           <p>
-          *You receive a complimentary <a href="https://www.kogan.com/au/kogan-first/" target="_blank" rel="nofollow noopener">Kogan First</a> membership for 12 months from when you switch to Kogan Energy. <a href="https://www.kogan.com/au/kogan-first-terms-conditions/" target="_blank">Kogan First Terms & Conditions available here</a>. After the initial 12 months, you’ll be charged the then current Kogan First membership annual fee which currently is $99 (incl GST). Membership fees subject to change. Offer not available to existing Kogan First members. 
+          *You receive a complimentary <a href="https://www.kogan.com/au/kogan-first/" target="_blank" rel="nofollow noopener">FIRST</a> membership for 12 months from when you switch to Kogan Energy. <a href="https://www.kogan.com/au/kogan-first-terms-conditions/" target="_blank">Kogan First Terms & Conditions available here</a>. After the initial 12 months, you’ll be charged the then current Kogan First membership annual fee which currently is $99 (incl GST). Membership fees subject to change. Offer not available to existing Kogan First members. 
         </p>
         </Fragment>
       }
@@ -275,7 +275,7 @@ class SwitchAppResults extends React.Component {
         K1Benefit = (showCC) ? rates.K1BenefitNew : rates.K1Benefit
       }
       return (
-        <div className="c-switch-app-info">
+        <Fragment>
           {(elecDistributor && elecDistributor !== "") && <SwitchAppResidentialSummarizedInfo
             rates={ratesData.elecDistributorRatesResidential[elecDistributor]}
             terms={terms}
@@ -317,7 +317,7 @@ class SwitchAppResults extends React.Component {
               <ButtonIcon />
             </BrandedButton>
           </center>
-        </div>
+        </Fragment>
       )
     } else {
       return (
