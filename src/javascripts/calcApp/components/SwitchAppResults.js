@@ -266,9 +266,8 @@ class SwitchAppResults extends React.Component {
 
   renderSwitchAppInfo = (showCC) => {
     const { elecDistributor, gasDistributor, terms } = this.state;
-    const { chosenFrequency, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
+    const { chosenFrequency, customerType, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
     
-    const customerType = "business"
     if (customerType === "residential") {
       let K1Benefit = ""
       if (elecDistributor && elecDistributor !== "") {
@@ -276,7 +275,7 @@ class SwitchAppResults extends React.Component {
         K1Benefit = (showCC) ? rates.K1BenefitNew : rates.K1Benefit
       }
       return (
-        <div>
+        <div className="c-switch-app-info">
           {(elecDistributor && elecDistributor !== "") && <SwitchAppResidentialSummarizedInfo
             rates={ratesData.elecDistributorRatesResidential[elecDistributor]}
             terms={terms}
@@ -310,6 +309,7 @@ class SwitchAppResults extends React.Component {
               </li>
             </ul>
           </div>
+          <hr />
           <center>
             <BrandedButton
               onClick={onClickJoinNow}>
@@ -417,18 +417,13 @@ class SwitchAppResults extends React.Component {
     ));
 
   render() {
-    const { currentType, elecDistributor, gasDistributor, errors } = this.state;
-    const { disableGasTab, elecDistributors, gasDistributors } = this.props;
-
-    const distributors =
-      currentType === "electricity" ? elecDistributors : gasDistributors;
-
-    const disabledButtonStyle = { opacity: 0.5, cursor: "not-allowed" };
+    const { currentType } = this.state;
+    const { showCC } = this.props;
 
     return (
       <Fragment>
         <div className="o-grid-layout--columns-2-half-half-mobile o-grid-layout">
-          <div>
+          <div className="c-switch-grid">
             <div className="c-switch-pricing-header">
               <label className="u-font-h5">Kogan Energy Basic</label>
               <label className="c-input-label-subheader">Make the switch to lower prices</label>
@@ -443,7 +438,7 @@ class SwitchAppResults extends React.Component {
               <label className="c-input-label-subheader">Save more off your bill with FIRST</label>
             </div>
             <div className="c-switch-pricing-body">
-              {this.renderSwitchAppInfo(true)}
+              {this.renderSwitchAppInfo(!showCC)}
             </div>
           </div>
         </div>

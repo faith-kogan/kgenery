@@ -13010,7 +13010,10 @@ span.u-font-breadcrumbs {
 .c-switch-app .c-switch-app__inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 320px; }
+  max-width: 350px; }
+.c-switch-app .c-switch-app__inner.c-checkboxes{
+  margin-top: 10px;
+}
 
 .c-switch-app .c-switch-app--solar-icon {
   width: 60px;
@@ -13050,6 +13053,18 @@ span.u-font-breadcrumbs {
     flex: 1;
     margin: 5px;
   }
+  .u-font-h3 {
+    margin-top: 0px;
+  }
+}
+.c-switch-app-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.c-switch-app-info .s-cms-content {
+  flex: 1;
 }
 
 .c-switch-app .c-input-label-header {
@@ -13064,6 +13079,15 @@ span.u-font-breadcrumbs {
   font-size: 14px;
   margin-bottom: 8px;
   display: block;
+}
+
+.c-switch-grid {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.c-switch-app__inner .c-input .c-checkbox {
+  text-align: center;
 }
 
 .c-switch-pricing-header {

@@ -366,6 +366,8 @@ class SwitchApp extends Component {
       chosenFuelType,
       chosenFrequency,
       chosenHouseholdType,
+      hasSolar,
+      hasCC,
     } = this.state;
 
     return (
@@ -412,6 +414,40 @@ class SwitchApp extends Component {
                 {this.renderFuelTypeOptions()}
               </Fragment>
             </select>
+          </div>
+        </div>
+        <div className="c-switch-app__inner c-checkboxes">
+          <div className="c-input">
+            <div className="c-checkbox">
+              <input
+                className="c-checkbox__input"
+                id="solar-available"
+                name="hasSolar"
+                type="checkbox"
+                onChange={e => this.handleChange(e, "hasSolar")}
+                checked={hasSolar}
+              />
+              <label
+                className="c-checkbox__label"
+                htmlFor="solar-available"
+              >
+                Yes, I have solar
+              </label>
+              <input
+                className="c-checkbox__input"
+                id="K1-existing"
+                name="hasCC"
+                type="checkbox"
+                onChange={e => this.handleChange(e, "hasCC")}
+                checked={hasCC}
+              />
+              <label
+                className="c-checkbox__label"
+                htmlFor="K1-existing"
+              >
+                I have an existing Kogan First Membership 
+              </label>
+            </div>
           </div>
         </div>
       </Fragment>
@@ -465,7 +501,6 @@ class SwitchApp extends Component {
               )}
               <div className="c-input__separator c-input__separator-spacing-bottom" />
               {/* end of solar */}
-
               <center>
                 <BrandedButton
                   disabled={formSubmitted && this.doesFormHaveErrors()}

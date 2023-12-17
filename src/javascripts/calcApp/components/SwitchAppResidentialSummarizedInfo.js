@@ -72,9 +72,12 @@ const SwitchAppResidentialSummarizedInfo = props => {
           <div className="kogan-estimate">
 
             <div className="c-switch-app-packs-flex">
-                <div className="u-font-h6"><strong>Electricity:<br/> {electricitySpendPerFrequency} per {duration}</strong></div>
+                <div className="pricing-estimate">
+                  <span className="u-font-h6"><strong>Electricity:<br/> {electricitySpendPerFrequency} per {duration}</strong></span>
+                  <span className="u-font-p5 secondary"><br /><i>All prices quoted include GST</i></span>
+                </div>
                 <div className="kogan-rates">
-                    <div className="u-font-h6"><strong>{percentageDiff}</strong></div>
+                    <div className="u-font-h3"><strong>{percentageDiff}</strong></div>
                     <div className="ref-price u-font-p4">
                     {percentageDiffLessMore} the{' '}
                     {state === calcData.vic ? (
@@ -97,7 +100,6 @@ const SwitchAppResidentialSummarizedInfo = props => {
                     </div>
                 </div>
             </div>
-            <div className="u-font-p5 secondary"><i>All prices quoted include GST</i></div>
           </div>
           <hr />
           <p>
@@ -123,14 +125,13 @@ const SwitchAppResidentialSummarizedInfo = props => {
                 </p>
               )}
             </p>
-          <hr />
           {
             showSolar &&
             <Fragment>
-              <div className="u-font-h5">
+              <hr />
+              <div className="u-font-h6">
                 Solar feed-in tariff - <span className="font-normal-weight">{rates.solarFeed}</span>
               </div>
-              <hr />
             </Fragment>
           }
         </Fragment>
@@ -138,6 +139,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
         <Fragment>
         <Fragment>
         <div className="kogan-estimate">
+            <hr />
             <div className="u-font-h6"><strong>Gas: {gasSpendPerFrequency} per {duration}</strong></div>
             <div className="u-font-p5 secondary"><i>All prices quoted include GST</i></div>
           </div>
@@ -163,7 +165,6 @@ const SwitchAppResidentialSummarizedInfo = props => {
           </p>
 
           )}
-          <hr />
         </Fragment>
       </Fragment>
       )}
