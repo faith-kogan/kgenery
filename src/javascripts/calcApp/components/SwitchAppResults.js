@@ -264,7 +264,7 @@ class SwitchAppResults extends React.Component {
     )
   }
 
-  renderSwitchAppInfo = (showCC) => {
+  renderSwitchAppInfo = (isBasic, showCC) => {
     const { elecDistributor, gasDistributor, terms } = this.state;
     const { chosenFrequency, customerType, disableGasTab, state, showSolar, onClickJoinNow } = this.props;
     
@@ -285,6 +285,7 @@ class SwitchAppResults extends React.Component {
             distributor={elecDistributor}
             state={state}
             showSolar={showSolar}
+            isBasic={isBasic}
             showCC={showCC}
           />}
           {(!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppResidentialSummarizedInfo
@@ -298,9 +299,11 @@ class SwitchAppResults extends React.Component {
           />}
           <div className="s-cms-content u-font-h4">
             <ul className="kogan-benefits">
-              <li>
-                {K1Benefit}
-              </li>
+              {(!isBasic) && (
+                <li>
+                  {K1Benefit}
+                </li>
+              )}
               <li>
                 Great customer service
               </li>
@@ -330,6 +333,7 @@ class SwitchAppResults extends React.Component {
             state={state}
             showSolar={showSolar}
             showCC={showCC}
+            isBasic={isBasic}
             onClickJoinNow={this.handleJoinNow}
           />}
           {(!disableGasTab && gasDistributor && gasDistributor !== "") && <SwitchAppBusinessInfo
@@ -429,7 +433,7 @@ class SwitchAppResults extends React.Component {
               <label className="c-input-label-subheader">Make the switch to lower prices</label>
             </div>
             <div className="c-switch-pricing-body">
-              {this.renderSwitchAppInfo(false)}
+              {this.renderSwitchAppInfo(true, showCC)}
             </div>
           </div>
           <div>
@@ -438,7 +442,7 @@ class SwitchAppResults extends React.Component {
               <label className="c-input-label-subheader">Save more off your bill with FIRST</label>
             </div>
             <div className="c-switch-pricing-body">
-              {this.renderSwitchAppInfo(!showCC)}
+              {this.renderSwitchAppInfo(false, !showCC)}
             </div>
           </div>
         </div>

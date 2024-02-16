@@ -19,23 +19,6 @@ import SwitchAppResults from "../components/SwitchAppResults";
 // Utils
 import * as Utils from "../utils";
 
-// const HOUSEHOLD_OPTIONS = ["Average household", "1 person household", "2-3 person household", "4+ person household"];
-// const FREQUENCY_OPTIONS = ["Monthly", "Quarterly", "Yearly"];
-
-const HOUSEHOLD_OPTIONS = [{
-  name: "Average household",
-  value: "average",
-},{
-  name: "1 person household",
-  value: "one"
-},{
-  name: "2-3 person household",
-  value: "twothree"
-},{
-  name: "4+ person household",
-  value: "four"
-}];
-
 const FREQUENCY_OPTIONS = [{
   name: "Monthly",
   value: "monthly",
@@ -65,7 +48,6 @@ const defaultAppState = {
   supportedFuelType: "",
   fuelType: ["electricity"],
   chosenFuelType: FUEL_TYPE_OPTIONS[0].value,
-  chosenHouseholdType: HOUSEHOLD_OPTIONS[0].value,
   chosenFrequency: FREQUENCY_OPTIONS[0].value,
   hasSolar: false,
   hasCC: false,
@@ -336,14 +318,6 @@ class SwitchApp extends Component {
     return true;
   };
 
-  renderHouseholdOptions = () => (
-    HOUSEHOLD_OPTIONS.map(household => (
-      <option value={household.value} key={`household-${household.value}`}>
-        {household.name}
-      </option>
-    ))
-  );
-
   renderFrequencyOptions = () => (
     FREQUENCY_OPTIONS.map(frequency => (
       <option value={frequency.value} key={`frequency-${frequency.value}`}>
@@ -365,7 +339,6 @@ class SwitchApp extends Component {
       fuelType,
       chosenFuelType,
       chosenFrequency,
-      chosenHouseholdType,
       hasSolar,
       hasCC,
     } = this.state;
@@ -373,20 +346,6 @@ class SwitchApp extends Component {
     return (
       <Fragment>
         <div className="c-switch-app-packs-flex">
-          <div className="c-input">
-            <select
-              className="c-select"
-              name="household"
-              onChange={e =>
-                this.handleDropdownChange("chosenHouseholdType", e.target.value)
-              }
-              value={chosenHouseholdType}
-            >
-              <Fragment>
-                {this.renderHouseholdOptions()}
-              </Fragment>
-            </select>
-          </div>
           <div className="c-input">
             <select
               className="c-select"

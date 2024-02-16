@@ -18,6 +18,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
     handleTerms,
     showSolar,
     showCC,
+    isBasic,
   } = props;
 
   let averageSpend, percentageDiff, percentageDiffLessMore, K1Benefit, includes12months, includes12monthsgas;
@@ -29,7 +30,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
       percentageDiffLessMoreSolar: percentageDiffLessMore
     } = rates);
   }
-  if (showCC) {
+  if (isBasic || showCC) {
     ({
       averageSpendCC: averageSpend,
       percentageDiffCC: percentageDiff,
@@ -106,7 +107,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
             
              {state === calcData.vic ? ( 
               <p>
-              The estimated {frequency} cost is {electricitySpendPerFrequency}. {includes12months} These prices are based on a residential customer who uses <strong>{rates.energyConsumed}</strong> per year on a <strong>{rates.tariffName}</strong> tariff in the <strong>{distributor}</strong> network. Your actual bill will vary based on your usage and tariff. If you have a different tariff type, such as a Time of Use Tariff, view your 
+              The estimated {frequency} cost is {electricitySpendPerFrequency}. {!isBasic && includes12months} These prices are based on a residential customer who uses <strong>{rates.energyConsumed}</strong> per year on a <strong>{rates.tariffName}</strong> tariff in the <strong>{distributor}</strong> network. Your actual bill will vary based on your usage and tariff. If you have a different tariff type, such as a Time of Use Tariff, view your 
                 <Fragment>
                   <a href="/vefs/">
                     <strong> Energy Fact Sheet</strong>
@@ -116,7 +117,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
                 </p>
               ) : (
               <p>
-              The estimated {frequency} cost is {electricitySpendPerFrequency}. {includes12months} These prices are based on a residential customer who uses   <strong>{rates.energyConsumed}</strong> per year on a <strong>{rates.tariffName}</strong> tariff in the <strong>{distributor}</strong> network. Your actual bills will vary depending on your usage and any price changes in the future – you'll be notified of any change in accordance with our regulatory requirements. This is an ongoing contract (until you or we end it) with no exit fees. If you have a different tariff type, such as a Time of Use Tariff, view your 
+              The estimated {frequency} cost is {electricitySpendPerFrequency}. {isBasic && includes12months} These prices are based on a residential customer who uses   <strong>{rates.energyConsumed}</strong> per year on a <strong>{rates.tariffName}</strong> tariff in the <strong>{distributor}</strong> network. Your actual bills will vary depending on your usage and any price changes in the future – you'll be notified of any change in accordance with our regulatory requirements. This is an ongoing contract (until you or we end it) with no exit fees. If you have a different tariff type, such as a Time of Use Tariff, view your 
                 <Fragment>
                   <a href="/basic-plan-information/">
                     <strong> Basic Plan Information</strong>
@@ -146,7 +147,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
           {state === calcData.vic ? (
           <p>
             The estimated {frequency} cost is {gasSpendPerFrequency}. 
-            {showCC &&
+            {(!isBasic && showCC) &&
             <Fragment>
                 this includes a one-off $99 (incl GST) sign up credit.
             </Fragment>
@@ -155,7 +156,7 @@ const SwitchAppResidentialSummarizedInfo = props => {
           </p>
           ) : (
           <p>
-            The estimated annual cost is {gasSpendPerFrequency}. {showCC &&
+            The estimated annual cost is {gasSpendPerFrequency}. {(!isBasic && showCC) &&
             <Fragment>
                 this includes a one-off $99 (incl GST) sign up credit.
             </Fragment>
