@@ -5,9 +5,13 @@ import PropTypes from "prop-types";
 import * as calcData from "../data/calcData";
 import Button from "../components/Button";
 import Tooltip from "../components/Tooltip";
+import ButtonLabel from "../components/kogan/ButtonLabel";
+import ButtonIcon from "../components/kogan/ButtonIcon";
+import BrandedButton from "../components/kogan/BrandedButton";
 
 const SwitchAppBusinessInfo = props => {
   const {
+    chosenFrequency,
     rates,
     fuelType,
     distributor,
@@ -15,6 +19,27 @@ const SwitchAppBusinessInfo = props => {
     showSolar,
     onClickJoinNow,
   } = props;
+  
+  let electricitySpendPerFrequency = rates.averageCost || "0"
+  let gasSpendPerFrequency = rates.annualSpend || "0"
+  let frequency = "annual"
+  let duration = "year"
+  if (chosenFrequency === "monthly") {
+    electricitySpendPerFrequency = (parseInt(electricitySpendPerFrequency.replace(/\D/g, ''), 10) / 12).toFixed(2);
+    gasSpendPerFrequency = (parseInt(gasSpendPerFrequency.replace(/\D/g, ''), 10) / 12).toFixed(2);
+    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString()}`;
+    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString()}`;
+    frequency = "monthly"
+    duration = "month"
+  } else if (chosenFrequency === "quarterly") {
+    electricitySpendPerFrequency = (parseInt(electricitySpendPerFrequency.replace(/\D/g, ''), 10) / 4).toFixed(2);
+    gasSpendPerFrequency = (parseInt(gasSpendPerFrequency.replace(/\D/g, ''), 10) / 4).toFixed(2);
+    electricitySpendPerFrequency = `$${electricitySpendPerFrequency.toLocaleString()}`;
+    gasSpendPerFrequency = `$${gasSpendPerFrequency.toLocaleString()}`;
+    frequency = "quarterly"
+    duration = "quarter"
+  }
+
 
   return (
     <div className="s-cms-content ">
@@ -24,24 +49,18 @@ const SwitchAppBusinessInfo = props => {
             <p className="u-font-h4">
               Pay an estimated{" "}
               <span className="e-colour--pink">
-                {rates.averageCost} per year
+                {electricitySpendPerFrequency} per {duration}
               </span>{" "}
               when you purchase Mega Packs
             </p>
             <div className="o-flex-layout o-flex-layout--vertical o-flex-layout--vertical-center">
-              <Button
-                element="button"
-                marginBase
-                joinNow
-                joinNowAbove
-                centered
-                full
-                pink
-                type="button"
-                onClick={onClickJoinNow}
-              >
-                Join now
-              </Button>
+              <center>
+                <BrandedButton
+                  onClick={onClickJoinNow}>
+                  <ButtonLabel text="Join Now" />
+                  <ButtonIcon />
+                </BrandedButton>
+              </center>
             </div>
           </div>
 
@@ -221,7 +240,7 @@ const SwitchAppBusinessInfo = props => {
             <p>
               If you don&apos;t purchase discounted Powerpacks your estimated
               annual spend will be&nbsp;
-              <strong>{rates.annualSpend}</strong> (Powershop’s Auto Pay rates)
+              <strong>{gasSpendPerFrequency}</strong> (Powershop’s Auto Pay rates)
               which is&nbsp;
               <strong>{rates.annualSpendComparison}</strong> the&nbsp;  
               reference price.
@@ -280,20 +299,6 @@ const SwitchAppBusinessInfo = props => {
             </div>
             }
           </div>
-          <hr />
-          <Button
-            element="button"
-            marginBase
-            joinNow
-            joinNowAbove
-            centered
-            full
-            pink
-            type="button"
-            onClick={onClickJoinNow}
-          >
-            Join now
-          </Button>
         </Fragment>
       ) : (
         <Fragment>
@@ -301,24 +306,18 @@ const SwitchAppBusinessInfo = props => {
             <p className="u-font-h4">
               Pay an estimated{" "}
               <span className="e-colour--blue">
-                {rates.annualSpend} per year
+                {gasSpendPerFrequency} per {frequency}
               </span>{" "}
               when you purchase Mega Packs
             </p>
             <div className="o-flex-layout o-flex-layout--vertical o-flex-layout--vertical-center">
-              <Button
-                element="button"
-                marginBase
-                joinNow
-                joinNowAbove
-                centered
-                full
-                pink
-                type="button"
-                onClick={onClickJoinNow}
-              >
-                Join now
-              </Button>
+              <center>
+                <BrandedButton
+                  onClick={onClickJoinNow}>
+                  <ButtonLabel text="Join Now" />
+                  <ButtonIcon />
+                </BrandedButton>
+              </center>
             </div>
           </div>
 
@@ -408,19 +407,6 @@ const SwitchAppBusinessInfo = props => {
             </p>
           </div>
           <hr />
-          <Button
-            element="button"
-            marginBase
-            joinNow
-            joinNowAbove
-            centered
-            full
-            pink
-            type="button"
-            onClick={onClickJoinNow}
-          >
-            Join now
-          </Button>
         </Fragment>
       )}
     </div>
